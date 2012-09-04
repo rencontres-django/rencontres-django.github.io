@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Rencontres Django — Marseille, 24 et 25 avril 2010</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<!--  hack to make IE able to apply CSS to elements that it doesn't usually know about. See http://remysharp.com/2009/01/07/html5-enabling-script/ -->
+<!--[if IE]>
+<script type="text/javascript">
+(function(){if(!/*@cc_on!@*/0)return;var e = "abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,footer,header,mark,menu,meter,nav,output,progress,section,time,video".split(','),i=0,length=e.length;while(i<length){document.createElement(e[i++])}})();
+</script>
+<![endif]-->
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="alternate" type="application/rss+xml" title="Rencontres Django (RSS)" href="http://twitter.com/statuses/user_timeline/djangocong.rss" />
+</head>
+<body id="speakers" class="vevent">
+  <section id="page">
+    <header class="summary">
+      <h1>Rencontres Django</h1>
+      <h2>WE du 24-25 avril 2010, #djangocong à Marseille</h2>
+    </header>
+    <section id="register">
+      <a href="#">
+        Inscriptions terminées<br />
+        <small>Événement COMPLET ! :-)</small>
+      </a>
+    </section>
+    
+    <article>
+      <!-- if you smile, you know who you are :p
+      <p class="intro">
+        <strong>Rencontre</strong> :
+        Entrée en contact de deux corps. <small>(<em><a href="http://fr.wiktionary.org/wiki/rencontre">source</a></em>)</small>
+      </p>
+      -->
+      <p class="intro">
+        <strong>
+          Si vous ne pouvez pas venir (volcan, grève, météorite), prévenez l'organisation !<br />
+        </strong>
+        Si vous ne pouvez <strong>plus</strong> venir, contactez-nous aussi...
+      </p>
+      <h2 id="programme">Programme (<a href="Djangocong.ics" title="Programme au format ics pour votre calendrier personnel">ics</a>)</h2>
+      <section>
+          <table id="program-table">
+          <thead><tr>
+              <th></th>
+              <th>Samedi 24</th>
+              <th>Dimanche 25</th>
+          </tr></thead>
+          <tbody>
+          <tr>
+              <th>09:00</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>09:15</th>
+              <td rowspan="1" class="speak"><span class="speaker">Tous &raquo;</span> <span class="title">Accueil</span> <span class="minutes">15 minutes</span></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>09:30</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#nicolasf">Nicolas Ferrari</a> &raquo;</span> <span class="title">Django 1.2: un point de nouveautés</span> <span class="minutes">30 minutes</span></td>
+              <td rowspan="1" class="speak"><span class="speaker">Tous &raquo;</span> <span class="title">Accueil</span> <span class="minutes">15 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>09:45</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#jeanmichel">Jean-Michel Armand</a> &raquo;</span> <span class="title">Django et XMPP</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>10:00</th>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>10:15</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#mathieu">Mathieu Agopian</a> &raquo;</span> <span class="title">Django pour les fainéants</span> <span class="minutes">30 minutes</span></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>10:30</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#benoitc">Benoît Chesneau</a> &raquo;</span> <span class="title">Gunicorn, Django et WSGI</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>10:45</th>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>11:00</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#eric">Eric Veiras Galisson</a> &raquo;</span> <span class="title">Boîte à outils Django</span> <span class="minutes">30 minutes</span></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>11:15</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#olivier">Olivier Meunier</a> &raquo;</span> <span class="title">Des lapins et des poneys, quand AMPQ rencontre Django</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>11:30</th>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>11:45</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#samuel">Samuel Adam</a> &raquo;</span> <span class="title">Cours de géo</span> <span class="minutes">30 minutes</span></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>12:00</th>
+              <td rowspan="3" class="speak"><span class="speaker">Tous &raquo;</span> <span class="title">Lightning talks</span> <span class="minutes">45 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>12:15</th>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>12:30</th>
+              <td rowspan="1" class="speak"><span class="speaker">Tous &raquo;</span> <span class="title">Evolution de django-fr</span> <span class="minutes">15 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>12:45</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>13:00</th>
+              <td rowspan="4" class="speak"><span class="speaker">Tous &raquo;</span> <span class="title">Trolls dinatoires</span> <span class="minutes">60 minutes</span></td>
+              <td rowspan="4" class="speak"><span class="speaker">Tous &raquo;</span> <span class="title">Sieste dinatoire</span> <span class="minutes">60 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>13:15</th>
+
+          </tr>
+          <tr>
+              <th>13:30</th>
+
+          </tr>
+          <tr>
+              <th>13:45</th>
+
+          </tr>
+          <tr>
+              <th>14:00</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>14:15</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#olivier">Olivier Meunier</a> &raquo;</span> <span class="title">Une authentification pour tous les contrôler</span> <span class="minutes">30 minutes</span></td>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#davidp">David Paccoud</a> &raquo;</span> <span class="title">Introduction à Pinax</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>14:30</th>
+
+          </tr>
+          <tr>
+              <th>14:45</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>15:00</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#brutasse">Bruno Renié</a> &raquo;</span> <span class="title">Tester son projet Django</span> <span class="minutes">30 minutes</span></td>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#stephane">Stéphane Raimbault</a> &raquo;</span> <span class="title">tin cong, Django speaks Marseillais !</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>15:15</th>
+
+          </tr>
+          <tr>
+              <th>15:30</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>15:45</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#cyril">Cyril Baÿ</a> &raquo;</span> <span class="title">Les dessous d'AlwaysData</span> <span class="minutes">30 minutes</span></td>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#benoit">Benoît Bryon</a> &raquo;</span> <span class="title">Internationalisation de contenu avec Django</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>16:00</th>
+
+          </tr>
+          <tr>
+              <th>16:15</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>16:30</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#nicolas">Nicolas Perriault</a> &raquo;</span> <span class="title">Django pour les développeurs Symfony</span> <span class="minutes">30 minutes</span></td>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#benoitc">Benoît Chesneau</a> &raquo;</span> <span class="title">CouchDB et Django, l'utilisation de CouchDBKit</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>16:45</th>
+
+          </tr>
+          <tr>
+              <th>17:00</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+          <tr>
+              <th>17:15</th>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#bruno">Bruno Bord</a> &raquo;</span> <span class="title">Beer Over IP</span> <span class="minutes">30 minutes</span></td>
+              <td rowspan="2" class="speak"><span class="speaker"><a href="#david">David Larlet</a> &raquo;</span> <span class="title">Les limites de Django</span> <span class="minutes">30 minutes</span></td>
+
+          </tr>
+          <tr>
+              <th>17:30</th>
+
+          </tr>
+          <tr>
+              <th>17:45</th>
+              <td></td>
+              <td></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+      <h2>Intervenants</h2>
+        <section id="david">
+          <img src="images/david.png" alt="David Larlet" />
+          <h3><a href="#david" title="Lien permanent vers cet intervenant">David Larlet</a></h3>
+          <p>
+            Développeur Django depuis plus de 20 ans, essaye de faire des 
+            sites web 3.0 avec pleins de buzzwords (mais ça marche pas toujours).
+          </p>
+          <section class="talk">
+            <h3>Les limites de Django</h3>
+            <p>
+              On apprécie tous (ou presque) ce framework pour les raisons
+              qu'on connait mais comment faire lorsqu'on arrive aux limites ?
+            </p>
+            <p>
+              Quelles sont les pistes pour améliorer les performances ?
+              Comment faire pour communiquer avec d'autres modules ?
+              Marque blanche, asynchrone, temps-réel, nosql, RDF,... 
+              possibles avec Django ou pas ?
+            </p>
+          </section>
+          <p class="more"><a href="http://larlet.fr">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="jeanmichel">
+          <img src="images/jeanmichel.png" alt="Jean-Michel Armand" />
+          <h3><a href="#jeanmichel" title="Lien permanent vers cet intervenant">Jean-Michel Armand</a></h3>
+          <p>
+            Geek, linuxien, fan de django, dévoreur de bouquins, joueur de MMORPG, 
+            entrepreneur avec 3 autres geeks, parfois commercial malgré lui.
+          </p>
+          <section class="talk">
+            <h3>Django et XMPP</h3>
+            <p>
+              Pourquoi limiter Django en le considérant comme étant seulement 
+              un framework web ? Pourquoi se limiter à une conception de la 
+              communication basée sur le pull ?
+            </p>
+            <p>
+              L'utilisation du XMPP permet d'imaginer de nouvelles possibilités 
+              d'utilisation de django. Que ce soit pour publier/recevoir 
+              ses statuts, des billets de blogs ou gérer des connexions 
+              entre instances de django.
+            </p>
+            <p>
+              Cette session sera l'occassion d'échanger sur les façons de 
+              faire parler le XMPP à Django ainsi que sur l'utilité que 
+              cela peut avoir.
+            </p>
+          </section>
+          <p class="more"><a href="http://j-mad.com">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="benoitc">
+          <img src="images/benoitc.png" alt="Benoît Chesneau" />
+          <h3><a href="#benoitc" title="Lien permanent vers cet intervenant">Benoît Chesneau</a></h3>
+          <p>
+            Benoît Chesneau est un artisan web habitant près de paris. 
+            Il a fondé Enki Multimedia une société construisant des 
+            services web et des applications opensources innovantes. 
+            Benoît Chesneau est  un développeur Apache Couchdb et 
+            maintiens de nombreux codes opensources.
+          </p>
+          <section class="talk">
+            <h3>CouchDB et Django, l'utilisation de CouchDBkit</h3>
+            <p>
+              Lors de cette présentation, on verra comment gérer facilement 
+              vos données dans CouchDB avec Django en utilisant l'extension 
+              de couchdbkit.
+            </p>
+            <p>
+              Il sera abordé au travers d'exemples l'intégration de couchdbkit  
+              avec les applications "classiques" utilisant l'ORM ainsi que 
+              dans la contribution 'admin'. On abordera par ailleurs 
+              la possibilité d'intégrer les CouchApps (applications embarquées 
+              dans CouchDB) de manière transparente en prenant pour exemple 
+              <a href="http://aimpl.org" title="Accès au site">un site de l'AIM</a>.
+            </p>
+          </section>
+          <section class="talk">
+            <h3>Gunicorn, Django et WSGI</h3>
+            <p>
+              Cette présentation présentera rapidement WSGI et pourquoi 
+              l'utiliser avec Django. Elle dressera en outre un panorama 
+              des différentes solutions/configurations et notamment 
+              l'utilisation de Gunicorn.
+            </p>
+          </section>
+          <p class="more"><a href="http://benoitc.im">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="nicolas">
+          <img src="images/nicolas.jpg" alt="Nicolas Perriault" />
+          <h3><a href="#nicolas" title="Lien permanent vers cet intervenant">Nicolas Perriault</a></h3>
+          <p>
+            Nicolas, après avoir travaillé chez Clever Age et Sensio Labs, est
+            maintenant un consultant indépendant spécialisé dans l'expertise des
+            architectures Web, plus particulièrement sur la mise en oeuvre de la
+            plateforme LAMP et notamment du framework PHP Symfony. Nicolas est
+            membre de la core team Symfony, et a été Release Manager de la version
+            1.1, et met parallèlement en oeuvre Django dans le cadre d'une veille
+            technologique active et sur des projets personnels.
+          </p>
+          <section class="talk">
+            <h3>Django pour les développeurs Symfony</h3>
+            <p>
+              Nombre de développeurs PHP, utilisateurs de frameworks tels Symfony ou
+              le Zend Framework, s'interrogent aujourd'hui sur l'opportunité, dans
+              un marché de plus en plus concurrentiel, mouvant et exigeant, de
+              diversifier leurs compétences en s'essayant à d'autres langages et
+              outils open source combinant rapidité de développement, qualité,
+              respect des bonnes pratiques et support communautaire.
+            </p>
+            <p>
+              Python, et plus particulièrement Django, ont en effet de plus en plus
+              de crédit auprès des grands acteurs du Web et se posent, en 2010, en
+              alternatives de choix à des solutions PHP5 pourtant largement
+              éprouvées. Cette conférence tâchera de proposer une revue des grandes
+              différences existantes entre Python et PHP5, et mettra en regard leur
+              philosophie, leurs fonctionnalités, leur communauté et l'outillage
+              disponible mis en avant par les deux plateformes.
+            </p>
+          </section>
+          <p class="more"><a href="http://prendreuncafe.com">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="bruno">
+          <img src="images/bruno.jpg" alt="Bruno Bord" />
+          <h3><a href="#bruno" title="Lien permanent vers cet intervenant">Bruno Bord</a></h3>
+          <p>
+            Développeur web curieux depuis l'an 2000, Bruno a suivi une progression logique
+            dans son métier : de l'ASP moche, du PHP from scratch, des CMS overkill, pour
+            finalement se rendre compte qu'on pouvait résoudre les problèmes sans avoir
+            trop mal à la tête : en utilisant Django.
+          </p>
+          <p>
+            Depuis qu'il a perdu son job, quand il ne pouponne pas, il code des bidules en
+            Python entre l'utile et l'agréable, il écrit des textes illisibles et fait des
+            photographies regardables, pour peu qu'il ait pensé à retirer le cache.
+            Et s'il porte la barbe, c'est par flemme.
+          </p>
+          <section class="talk">
+            <h3>Beer Over IP</h3>
+            <p>
+              Django peut répondre à des besoins qui n'existaient pas auparavant, mais il peut
+              aussi, s'il est bien orienté par-rapport aux planètes, accomplir une mission de
+              service public s'adressant aux geeks désireux de transférer une bière via le
+              Protocole de l'Internet à destination d'un ami, d'un collègue ou tout simplement
+              de quelqu'un à qui il veut faire plaisir. C'est cette valeureuse mission, et
+              une floppée de verres virtuels que le site beeroverip.org essaie de remplir.
+            </p>
+          </section>
+          <p class="more"><a href="http://jehaisleprintemps.net">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="olivier">
+          <img src="images/olivier.png" alt="Olivier Meunier" />
+          <h3><a href="#olivier" title="Lien permanent vers cet intervenant">Olivier Meunier</a></h3>
+          <p>
+            Personne n'est parfait, et Olivier Meunier, malgré sa ressemblance troublante
+            avec Jack Bauer ne fait pas exception. Très tôt, il s'est lancé dans le marché
+            très porteur du menhir de tradition plugastellen, mais sitôt après
+            l'implosion de la "bulle 2.0", il a préféré se diriger vers le développement web, 
+            et plus spécialement la réalisation d'un outil de gestion de blog mondialement
+            connu dans l'hexagone : DotClear.
+          </p>
+          <p>
+            Revenant à des considérations plus raisonnables, il s'est désormais tourné vers
+            Python et Django, et aime développer dirigé par les tests, parce que sa santé
+            mentale c'est quand même vachement important.
+          </p>
+          <section class="talk">
+            <h3>Des lapins et des poney, quand AMQP rencontre Django</h3>
+            <p>
+              AMQP est un protocole ouvert de messagerie entre processus. 
+              Dans un contexte massivement asynchrone, il peut devenir indispensable.
+            </p>
+            <p>
+              Sur la base d'exemples concrets, nous verrons comment instaurer 
+              un dialogue simple entre un site créé avec Django et des processus 
+              asynchrones de différentes natures, à l'aide d'AMQP.
+            </p>
+          </section>
+          <section class="talk">
+            <h3>Une authentification pour tous les contrôler</h3>
+            <p>
+              L'application d'authentification fournie par Django est d'une 
+              grande qualité mais peut être trop limitée pour certains projets. 
+              Pour cela, Django propose de nombreuse techniques différentes 
+              selon les modifications à apporter. Nous verrons les divers moyens 
+              de personnaliser cette application centrale de nombreux projets Django.
+            </p>
+          </section>
+          <p class="more"><a href="http://neokraft.net">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="mathieu">
+          <img src="images/mathieu.jpg" alt="Mathieu Agopian" />
+          <h3><a href="#mathieu" title="Lien permanent vers cet intervenant">Mathieu Agopian</a></h3>
+          <p>
+            Touche-à-tout, insatiable curieux, fainéant notoire, Mathieu Agopian 
+            s'est adonné à plusieurs domaines aussi divers que variés, en passant 
+            de la robotique au web, de logiciel desktop monolithique aux 
+            applications pour Android. Il code régulièrement en PHP (bouh!), 
+            Java (eurk!), python (classe!), django (poneys!), HTML+CSS+JS 
+            (ouais comme le neveu de ma cousine quoi), et conserve néanmoins 
+            (presque toute) sa santé mentale.
+          </p>
+          <p>
+            Il faut par ailleurs noter que Mathieu Agopian a un goût sûr et 
+            prononcé pour les beaux designs (<a href="http://twitter.com/djangocong/status/8029601139"
+            >la preuve en image</a>).
+          </p>
+          <section class="talk">
+            <h3>Django pour les fainéants</h3>
+            <p>
+              La fainéantise est sans aucun doute un moteur puissant du progrès, 
+              et chaque dévelopeur devrait avoir pour slogan « travailler moins 
+              pour en faire plus » !
+            </p>
+            <p>
+              Liste de buzzwords: Django, DRY, HTML5, CSS3. Nous verrons comment 
+              utiliser ces outils du fainéant au travers de l'exemple concret 
+              de la création d'une application web.
+            </p>
+          </section>
+          <p class="more"><a href="http://agopian.info">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="eric">
+          <img src="images/eric.jpg" alt="Eric Veiras Galissonn" />
+          <h3><a href="#eric" title="Lien permanent vers cet intervenant">Eric Veiras Galisson</a></h3>
+          <p>
+            Avant tout adminsys from hell (comprenez : dans un environnement 
+            de logiciels propriétaires) passionné par les logiciels libres et 
+            toutes les possibilités qu'ils offrent (virtualisation, sécurité, 
+            collaboratif...), et qui, en plus, arrive peu à peu à les faire 
+            entrer dans son cadre de travail.
+          </p>
+          <p>
+            S'est remis au développement avec plaisir depuis qu'il a découvert 
+            Python et Django.
+          </p>
+          <section class="talk">
+            <h3>Boite à outils Django</h3>
+            <p>
+              On peut coder avec ses mains, ses pieds mais également avec de 
+              bons outils permettant de simplifier le travail. C'est ce que 
+              nous allons découvrir avec la présentation de certains d'entre eux 
+              permettant de faciliter le quotidien du développeur Django, 
+              du développement au déploiement.
+            </p>
+          </section>
+          <p class="more"><a href="http://blog.sietch-tabr.com">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="sam">
+          <img src="images/sam.jpg" alt="Sam Cranford" />
+          <h3><a href="#sam" title="Lien permanent vers cet intervenant"><strike>Sam Cranford</strike></a> <span class="important">INTERVENTION ANNULÉE</span></h3>
+          <p>
+            Développeur web depuis 1997, expérimenté de « asp » à « Zope », 
+            après des années de développement MS entreprise, Sam s'est 
+            consacré entièrement au libre en 2007. Il a fait son premier 
+            site Django e-commerce avec Satchmo en 2008.
+          </p>
+        </section>
+        <section id="benoit">
+          <img src="images/benoit.jpg" alt="Benoît Bryon" />
+          <h3><a href="#benoit" title="Lien permanent vers cet intervenant">Benoît Bryon</a></h3>
+          <p>
+            Développeur web consciencieux, Benoît essaye de se poser un peu 
+            moins de questions et d'agir un peu plus. Il a récemment rejoint 
+            l'équipe Django de Makina Corpus.
+          </p>
+          <section class="talk">
+            <h3>Internationalisation de contenu avec Django</h3>
+            <p>
+              Quelles sont les problématiques posées par l'internationalisation, 
+              et plus particulièrement par la traduction des données ? 
+              Comment y répondre ? Avec Django ?
+            </p>
+            <p>
+              Après avoir identifié des besoins et des contraintes, 
+              nous chercherons des solutions adaptées. Pour les aspects techniques, 
+              nous explorerons plusieurs pistes, dont un panel d'applications tierces.
+            </p>
+          </section>
+          <p class="more"><a href="http://www.marmelune.net">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="stephane">
+          <img src="images/stephane.png" alt="Stéphane Raimbault" />
+          <h3><a href="#stephane" title="Lien permanent vers cet intervenant">Stéphane Raimbault</a></h3>
+          <p>
+            Stéphane est un contributeur GNOME pas celui que l'on met dans le 
+            jardin mais celui que l'on met sur le bureau et un fervent 
+            adepte de l'Open Source en général. Après avoir travaillé dans 
+            l'embarqué, le temps réel, l'automatisme et la supervision, 
+            il a rejoint Makina Corpus pour faire du Web avec des solutions 
+            simples et clean telles que Django.
+          </p>
+          <section class="talk">
+            <h3>« tin cong », Django speaks Marseillais !</h3>
+            <p>
+              Reposez-vous sur Django pour internationaliser votre application 
+              et vendre de l'anis à boire dans le monde en entier, vos <del>buveurs</del>
+              utilisateurs pourront ensuite vous soumettre de nouvelles 
+              traductions via Transifex ou Damned-Lies. 
+            </p>
+            <p>
+              Cette présentation évoquera les mécanismes mis en œuvre pour 
+              traduire le contenu statique de votre application, présentera 
+              les nouveautés de Django 1.2 et donnera quelques recommandations, 
+              pour faciliter le travail des traducteurs de votre application.
+            </p>
+          </section>
+          <p class="more"><a href="http://copyleft.free.fr">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="cyril">
+          <img src="images/cyril.jpg" alt="Cyril Baÿ" />
+          <h3><a href="#cyril" title="Lien permanent vers cet intervenant">Cyril Baÿ</a></h3>
+          <p>
+            Co-fondateur et administrateur d'alwaysdata, Cyril a joyeusement abandonné 
+            le PHP au profit de Django un beau matin de 2007. Depuis, c'est un homme 
+            meilleur et les filles se jettent à ses pieds.
+          </p>
+          <section class="talk">
+            <h3>Les dessous d'alwaysdata</h3>
+            <p>
+              Tranches de vie et challenges d'un hébergeur mutualisé spécialiste de 
+              Django.
+            </p>
+            <p>
+              Nous verrons également comment Python et Django sont utilisés à tous les 
+              niveaux dans notre architecture interne.
+            </p>
+          </section>
+          <p class="more"><a href="http://www.alwaysdata.com">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="nicolasf">
+          <img src="images/nicolasf.jpg" alt="Nicolas Ferrari" />
+          <h3><a href="#nicolasf" title="Lien permanent vers cet intervenant">Nicolas Ferrari</a></h3>
+          <p>
+            Co-fondateur de l'agence web excellency (éditrice d'alwaysdata) et 
+            camarade d'enfance de Cyril, il est également passé du PHP à Django 
+            mais ne voit cependant pas de quelles filles son ami parle... 
+            Lorsque les prospects/clients n'ont pas trop d'idées fixes sur 
+            les technos, il propose et met en place des sites développés avec 
+            Django, pour le bonheur de l'équipe de développement !
+            
+          </p>
+          <section class="talk">
+            <h3>Django 1.2 : un point de nouveautés</h3>
+            <p>
+              Passage en revue des principales nouveautés proposées dans notre 
+              framework favori, de la gestion des bases de données à l'interface 
+              d'administration en passant par... le reste.
+            </p>
+          </section>
+          <p class="more"><a href="http://www.excellency.fr/">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="davidp">
+          <img src="images/davidp.jpg" alt="David Paccoud" />
+          <h3><a href="#davidp" title="Lien permanent vers cet intervenant">David Paccoud</a></h3>
+          <p>
+            Passionné par l'informatique depuis qu'il a touché à son premier
+            ordinateur en classe de CM2, David découvre Python en 2001 et
+            l'utilise dans un cadre professionnel depuis 2004. Il a redécouvert le
+            plaisir de développer sur Internet avec Django.
+            
+          </p>
+          <section class="talk">
+            <h3>Introduction à Pinax</h3>
+            <p>
+              Django propose de nombreuses applications dont certaines sont à la
+              base de nombreux projets. Pinax se propose d'intégrer un socle
+              d'applications reconnues pour leur qualité. Au départ tourné vers les
+              sites communautaires, il permet bien d'autres choses encore.
+            </p>
+            <p>
+              Dans un premier temps nous aborderons la philosophie et l'organisation
+              d'un projet basé sur Pinax. Nous réaliserons ensuite une application
+              pour mettre en place un réseau social thématique.
+            </p>
+          </section>
+          <p class="more"><a href="http://djangopeople.net/dpaccoud/">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="samuel">
+          <img src="images/samuel.jpg" alt="Samuel Adam" />
+          <h3><a href="#samuel" title="Lien permanent vers cet intervenant">Samuel Adam</a></h3>
+          <p>
+            Samuel Adam est belge.
+          </p>
+          <section class="talk">
+            <h3>Cours de géo</h3>
+            <p>
+              A la carte, une petite révision de concepts géodésiques pour
+              découvrir, dans les contrées des contrib, le royaume de GeoDjango.
+              Nous ferons un léger détour par OpenLayers (javascrrrtchoum!) et
+              finalement tout ruiner en se perdant dans le développement d'une
+              application GIS.
+            </p>
+          </section>
+          <p class="more"><a href="http://github.com/samueladam">En savoir plus sur l'auteur</a></p>
+        </section>
+        <section id="brutasse">
+          <img src="images/brutasse.png" alt="Bruno Renié" />
+          <h3><a href="#brutasse" title="Lien permanent vers cet intervenant">Bruno Renié</a></h3>
+          <p>
+           Encore étudiant, Bruno a découvert Django en 2007 et l'utilise depuis pour
+           des projets plus ou <a href="http://lolify.org">moins</a> sérieux. Il fait
+           du web et s'intéresse aussi au Python plus largement, mais c'est quand même
+           bien le web.
+          </p>
+          <section class="talk">
+           <h3>Tester son projet Django</h3>
+           <p>
+             Les effets bénéfiques des tests sur la santé des développeurs ne sont plus
+             à prouver. Django propose toute une suite d'outils pour tester son
+             application de fond en comble, et nous allons voir comment en tirer parti.
+           </p>
+          </section>
+          <p class="more"><a href="http://bruno.renie.fr/">En savoir plus sur
+          l'auteur</a></p>
+        </section>
+    </article>
+    <article id="hotels">
+      <p class="intro">
+        Malheureusement, nous n'avons pas réussi à négocier de tarif de groupe
+        préférentiel, on a quand même fait une préselection... située dans le
+        centre pour faciliter les soirées ;-)
+      </p>
+      <h2>Hôtels — <a href="http://maps.google.fr/maps/ms?ie=UTF&msa=0&msid=101809873028973602703.000481e9904b0777c71be" target="blank">carte dynamique</a></h2>
+        <section id="etap">
+          <h3><a href="#etap" title="Lien permanent vers cet hôtel">ETAP HOTEL - 57,40€/nuit</a></h3>
+          <p>
+            46 rue Sainte
+            13001 MARSEILLE
+            08 92 68 05 82
+          </p>
+          <p class="more"><a href="http://www.etaphotel.com/fr/hotel-2575-etap-hotel-etap-hotel-marseille-vieux-port/index.shtml">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="alize">
+          <h3><a href="#alize" title="Lien permanent vers cet hôtel">HOTEL ALIZE ** - 73,90€/nuit</a></h3>
+          <p>
+            35 quai des Belges
+            13001 MARSEILLE
+            04 91 33 66 97
+          </p>
+          <p class="more"><a href="http://www.alize-hotel.com">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="europe">
+          <h3><a href="#europe" title="Lien permanent vers cet hôtel">EUROPE HOTEL ** - 75€/nuit</a></h3>
+          <p>
+            12 rue Beauvau
+            13001 MARSEILLE
+            04 91 33 65 64
+          </p>
+          <p class="more"><a href="http://www.europe-hotel.fr">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="ryad">
+          <h3><a href="#ryad" title="Lien permanent vers cet hôtel">LE RYAD * - 80€/nuit</a></h3>
+          <p>
+            16 rue Sénac
+            13001 MARSEILLE
+            04 91 47 74 54
+          </p>
+          <p class="more"><a href="http://www.leryad.fr">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="kyriad">
+          <h3><a href="#kyriad" title="Lien permanent vers cet hôtel">KYRIAD ** - 86€/nuit</a></h3>
+          <p>
+            6 rue Beauvau
+            13001 MARSEILLE
+            04 91 33 02 33
+          </p>
+          <p class="more"><a href="http://www.hotel-vieux-port-marseille.com">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="mercure">
+          <h3><a href="#mercure" title="Lien permanent vers cet hôtel">MERCURE **** - 130,50€/nuit</a></h3>
+          <p>
+            4 rue Beauvau
+            13001 MARSEILLE
+            04 91 54 91 00
+          </p>
+          <p class="more"><a href="http://www.accorhotels.com/fr/hotel-1293-grand-hotel-beauvau-marseille-vieux-port/index.shtml">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="oceania">
+          <h3><a href="#oceania" title="Lien permanent vers cet hôtel">HOTEL ESCALE OCEANIA *** - 140€/nuit</a></h3>
+          <p>
+            5 La Canebière
+            13001 MARSEILLE
+            04 91 90 61 61
+          </p>
+          <p class="more"><a href="http://www.oceaniahotels.com/mascotte-marseille.php">En savoir plus sur l'hôtel</a></p>
+        </section>
+        <section id="tonic">
+          <h3><a href="#tonic" title="Lien permanent vers cet hôtel">GRAND TONIC HOTEL **** - 159€/nuit</a></h3>
+          <p>
+            43 quai des Belges
+            13001 MARSEILLE
+            04 91 55 67 46
+          </p>
+          <p class="more"><a href="http://www.hotels-de-marseille.com">En savoir plus sur l'hôtel</a></p>
+        </section>
+    </article>
+    <aside>
+      <section>
+        <h3>Venir</h3>
+        <p>
+          <a href="http://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=45,+rue+Fr%C3%A9d%C3%A9ric+Joliot+Curie+Ch%C3%A2teau-Gombert,+Marseille&amp;ie=UTF8&amp;hq=&amp;hnear=Rue+Fr%C3%A9d%C3%A9ric+Joliot-Curie,+13013+Marseille,+Bouches-du-Rh%C3%B4ne,+Provence-Alpes-C%C3%B4te+d'Azur&amp;z=16" target="blank"><img id="map" height="206" width="287" src="images/map.png" alt="Carte pour venir à l'évènement" /></a>
+          <span class="location">
+          45, rue Frédéric Joliot Curie<br />
+          Château-Gombert, Marseille</span>.</p>
+        <h3>Arriver à l'heure</h3>
+        <p>
+          <time datetime="2010-04-24T09:00"><abbr class="dtstart" title="2010-04-24T09:00Z">24</abbr> - 
+          <abbr class="dtend" title="2010-04-25T09:00Z">25</abbr> avril 2010, dès 9h</time>
+        </p>
+        <p>
+          Indications de la RTM pour venir du centre (hôtel) :
+          <ul>
+            <li>Marcher jusqu'à la station de métro Vieux-Port</li>
+            <li>Prendre le métro 1 La Rose - La Timone en direction La Rose</li>
+            <li>Prendre le bus 1 La Rose Métro en direction Val Plan</li>
+            <li>S'arrêter à l'arrêt John Keynes</li>
+            <li>Marcher le long de la rue Albert Einstein</li>
+            <li>Prendre la rue Frédéric Joliot Curie</li>
+            <li>Chercher le bâtiment aux carreaux rouges</li>
+          </ul>
+        </p>
+        <h3>Dormir</h3>
+        <p>
+          Voir la <a href="#hotels" title="">liste des hôtels</a>.
+        </p>
+        <p>
+          Vous pouvez également consulter la carte dynamique regroupant les différents hôtels proposés :
+        </p>
+        <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101809873028973602703.000481e9904b0777c71be&amp;ll=43.295543,5.378838&amp;spn=0.00937,0.012875&amp;z=15&amp;output=embed"></iframe><br />
+        ou accéder à <a href="http://maps.google.fr/maps/ms?ie=UTF&msa=0&msid=101809873028973602703.000481e9904b0777c71be" target="blank">la carte des hôtels des Rencontres Django</a> sur une page dédiée.
+        <h3>Manger &amp; Boire</h3>
+        <p>Les repas du midi seront assurés via commande sur place, une participation sera demandée.</p>
+        <h3>Suivre</h3>
+        <p>Sur twitter : <a href="http://twitter.com/djangocong">@djangocong</a></p>
+        <h3>Taguer</h3>
+        <p>Utilisez partout : <a href="http://search.twitter.com/search?q=djangocong">#djangocong</a></p>
+        <h3>Contacter</h3>
+        <p>
+          Coordination <a href="http://larlet.fr">David Larlet</a>
+          (<a href="tel:+33684935823" title="Téléphoner">06 84 93 58 23</a>)
+        </p>
+        <p>Logistique <a href="http://j-mad.com/blog/about/">Jean-Michel Armand</a></p>
+      </section>
+    </aside>
+    <footer>
+      <p>Événement bénévole, mais vous pouvez sponsoriser quand même alors n'hésitez pas à nous contacter pour en discuter !</p>
+    </footer>
+  </section>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<!--
+  Google I/O 2011 HTML slides template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/io-2011-slides/
+-->
+
+<html>
+  <head>
+    <title>Djangocong2012 Formset & Widget</title>
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="./javascripts/slides.js"></script>
+  </head>
+
+  <body style="display: none">
+
+    <section class="slides layout-regular">
+      
+      <article>
+		<h1>Widget & Formset</h1>
+		<p>
+			Djangocong2012
+			<br />
+			14-15 avril 2012 / Carnon-Mont<span class="black">p</span>ellier France
+			<br />
+			samuel.g<span class="black">o</span>ldszmidt@ircam.fr (@ouhouhsami)
+		</p>
+      </article>
+
+      
+      <article class="smaller">
+		<h3>
+			Le cas trivial : ModelForm / StandardInput 
+		</h3>
+		<pre>
+# models.py
+class PlaceType(models.Model):
+    label = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)</pre>
+<pre>
+# forms.py
+class PlaceTypeForm(ModelForm):
+    class Meta:
+        model = PlaceType
+        exclude = ('slug', )</pre>
+<pre>
+# views.py
+def edit(request, placetype_slug):
+    if request.method == 'POST':
+        ...
+    return render_to_response('edit.html', {'form':form}, ...)
+</pre>
+<pre>
+# edit.html
+{{ form }}
+</pre>
+        </article>
+
+      <article class="smaller">
+        <h3>
+          Moins trivial : ModelForm / "Nouveau Riche" Widget
+        </h3>
+        <p>
+          Solutio<span class="black">n</span> 1 : uniqu<span class="black">e</span>ment django, class Meta de ModelForm
+        </p>
+<pre># models.py
+class Place(models.Model):
+    place_type = models.ForeignKey(PlaceType)
+    title = models.CharField(max_length=255)
+    comment = models.TextField(blank=True)
+    position = models.CharField(max_length=255)
+
+# forms.py
+class PlaceForm(ModelForm):
+    class Meta:
+        model = Place
+        widgets = {
+            'position':HiddenInput,
+            'comment':TextInput(attrs={'placeholder': 'Comment', 'class':'span3'}),
+            'title':TextInput(attrs={'placeholder': 'Title', 'class':'input-medium'}),
+        }
+</pre>
+
+      </article>
+
+
+
+      <article class="smaller">
+        <h3>
+          Moins trivial : ModelForm / "Nouveau Riche" Widget
+        </h3>
+        <p>
+          Solution 2 : template
+        </p>
+<pre># edit.html
+&lt;form action=&quot;/contact/&quot; method=&quot;post&quot;&gt;<br/>    {% for hidden in form.hidden_fields %}<br/>    {{ hidden }}<br/>    {% endfor %}<br/>    {% for field in form.visible_fields %}<br/>        {# case for the custom widget #}<br/>        {% if field.name == &quot;map&quot; %}<br/>            {% include 'my_awesome_widget.html' %}<br/>        {% else %}<br/>        &lt;div class='fieldWrapper'&gt;<br/>            {{ field.errors }}<br/>            {{ field.label_tag }}: {{ field }}<br/>        &lt;/div&gt;<br/>        {% endif %}<br/>    {% endfor %}<br/>    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Send message&quot; /&gt;&lt;/p&gt;<br/>&lt;/form&gt;</pre>
+	  </article>
+
+      <article>
+        <h3>
+          Moins trivial : ModelForm / "Nouveau Riche" Widget
+        </h3>
+        <p>
+          Solution 3 : <a href="http://django-floppyforms.readthedocs.org/en/latest/index.html">django-floppyforms</a>
+        </p>
+		<p><a href="http://django-floppyforms.readthedocs.org/en/latest/examples.html">Exemples sur readthedocs.org</a></p>
+		<ul>
+			<li>date picker</li>
+			<li>autofocus input</li>
+			<li>slider</li>
+			<li>placeholder with fallback</li>
+			<li>geodjango widget : point widget, pol<span class="black">y</span>gon widget ...</li>
+		</ul>
+
+      </article>
+
+
+	<article>
+		<h3>Mais comment faire :<br /> 
+			1 widget pour 1 formset (= ensemble de <i>n</i> forms) <br />
+			tout en étant/restant <i class="green">djangonic</i>, ie. :
+		</h3> 
+		<ul>
+			<li>Utili<span class="black">s</span>er les <span class="blue">formset</span></li>
+			<li>Utiliser le <span class="blue">processus de validation des formulaires</span></li>
+			<li>Proposer une <span class="blue">ergonomie semblable à celle de l'admin de Django</span> <br /><span style="font-size:0.9em">(notamment pour le formset, pour l'ajout et la suppression de formulaires sans recharger la page, ni utiliser Ajax)</span></li>
+			<li>...</li
+		</ul>
+		<br />
+
+	</article>
+
+	<article>
+		<h3>Et réaliser ce type d'interface</h3>
+		<br />
+		<a href="http://pointofinterest.alwaysdata.net/places/edit/djangocong2012" target="_blank"><img src="img/screenshot.png" / width="100%"></a>
+	</article>
+
+      <article class="smaller">
+        <h3>
+			models.py
+        </h3>
+		<pre>
+class PlaceType(models.Model):
+    """
+    Type of place
+    """
+    label = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True)
+
+
+class Place(models.Model):
+    """
+    Place, more ore less point of interest on a map, 
+    with relation to placetype
+
+    For mock-up purpose, we don't use django GIS possibilities
+    """
+    place_type = models.ForeignKey(PlaceType)
+    title = models.CharField(max_length=255)
+    comment = models.TextField(blank=True)
+    position = models.CharField(max_length=255)
+</pre>
+      </article>
+
+      <article class="smaller">
+        <h3>views.py</h3>
+		<pre>def edit(request, placetype_slug):
+    """Edit all Places linked to a PlaceType"""
+    place_type, created = PlaceType.objects.get_or_create(slug=placetype_slug, 
+                                             defaults={'label':placetype_slug})
+    # formset, extra=0, we deal with additionnal forms via empty_form
+    PlaceFormSet = inlineformset_factory(PlaceType, Place, 
+                                                       form=PlaceForm, extra=0)
+    if request.method == "POST":
+        form = PlaceTypeForm(request.POST, instance=place_type)
+        formset = PlaceFormSet(request.POST, instance=place_type)
+        # due to project scope (form is always valid), we process simultaneously form and formset validations
+        if form.is_valid() and formset.is_valid():
+            form.save()
+            formset.save()
+        else:
+            # return below to show invalid forms if needed
+            return render_to_response('places/edit.html', 
+                                      {'form': form, 'formset':formset}, 
+                                      context_instance=RequestContext(request))
+    # if request.method is get or post succeed, we fill form and formset with
+    # latest values. 
+    form = PlaceTypeForm(instance=place_type)
+    formset = PlaceFormSet(instance=place_type)
+    # return below for request.method =! "POST" 
+    return render_to_response('places/edit.html', 
+                                      {'form': form, 'formset':formset, 
+                                       }, 
+                                      context_instance=RequestContext(request))</pre>
+      </article>
+
+      <article class="smaller">
+        <h3>
+          forms.py
+        </h3>
+<pre>
+class PlaceTypeForm(ModelForm):
+    """
+    PlaceType model form
+    """
+    class Meta:
+        model = PlaceType
+        exclude = ('slug', )
+
+class PlaceForm(ModelForm):
+    """
+    Place model form, used in formset
+    """
+    class Meta:
+        model = Place
+        # used to hide position input in the place form
+        widgets = {
+            # below, position field class used to link widget w/ field
+            'position':HiddenInput(attrs={'class':'marker'}), 
+            'comment':TextInput(attrs={'placeholder': 'Comment', 'class':'span3'}),
+            'title':TextInput(attrs={'placeholder': 'Title', 'class':'input-medium'}),
+        }
+</pre>
+	<p>L'information prise en charge par le widget unique est en champ HiddenInput</p>
+      </article>
+
+      <article>
+		<h3>Interface utilisateur<br />Contraintes fonctionnelles et ergonomiques</h3>
+		<ul>
+			<li><span class="blue">1 unique widget</span> permet d'éditer 1 (ou plusieurs) champs d'un formulaire d'un formset</li>
+			<li>Il faut un <span class="blue">retour utilisateur</span> entre l'édition d'un formulaire et sa "vue" sur le widget</li>
+			<li>On doit pouvoir, sans utiliser Ajax : 
+				<ul>
+					<li><span class="blue">Ajouter</span> un élément (= formulaire du formset)</li>
+					<li><span class="blue">Supprimer</span> un élément</li>
+					<li><span class="blue">Modifier</span> un élément</li>
+					<li>Etre averti d'éventuelles erreurs dans les formulaires, pouvoir les <span class="blue">corriger</span> et soumettre à nouveau le formulaire</li>
+				</ul>
+			<li>
+		</ul>
+      </article>
+
+
+	<article class="smaller">
+		<h3>template edit.html</h3>
+<pre style="overflow:scroll;height:500px">{% extends &quot;base.html&quot; %}<br/><br/>{% block extra-js %}<br/>	&lt;script src=&quot;//maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=drawing&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;<br/>	&lt;script type=&quot;text/javascript&quot;&gt;             <br/>		var map;<br/>		var markers = []; // used to hold all marker instances<br/>		$(document).ready(function() {<br/>			/*<br/>			* (Google) Map instantiation<br/>			*/<br/>			// map options<br/>			var myOptions = {<br/>				zoom: 8,<br/>				center: new google.maps.LatLng(-34.397, 150.644),<br/>				mapTypeId: google.maps.MapTypeId.ROADMAP,<br/>				streetViewControl:false,<br/>				mapTypeControl:false<br/>			};<br/>			// map instanciation<br/>			map = new google.maps.Map(document.getElementById('map_canvas'), myOptions); <br/>			// map drawing manager<br/>			var drawingManager = new google.maps.drawing.DrawingManager({<br/>				drawingMode: google.maps.drawing.OverlayType.MARKER,<br/>				drawingControl: false, // use custom button<br/>				drawingControlOptions: {<br/>					position: google.maps.ControlPosition.TOP_CENTER,<br/>					drawingModes: [<br/>					google.maps.drawing.OverlayType.MARKER,<br/>					]<br/>				},<br/>				markerOptions: {<br/>					draggable: true,<br/>					icon:&quot;{{ STATIC_URL}}img/blue-dot.png&quot;<br/>				}<br/>			});<br/>			drawingManager.setMap(map);<br/>			// for better application design/ergonomy<br/>			$('#add_marker').click(function(event){<br/>				$(this).button('toggle');<br/>				drawingManager.setDrawingMode(google.maps.drawing.OverlayType.MARKER)<br/>				return false;<br/>			})<br/>			$('#browser_the_map').click(function(event){<br/>				$(this).button('toggle');<br/>				drawingManager.setDrawingMode(null)<br/>				return false;<br/>			})<br/>			<br/>			// add marker<br/>			google.maps.event.addListener(drawingManager, 'markercomplete', function(event) {<br/>				markers.push(event)<br/>				for(i in markers){<br/>					markers[i].setIcon(&quot;{{ STATIC_URL}}img/red-dot.png&quot;)<br/>				}<br/>				event.setIcon(&quot;{{ STATIC_URL}}img/blue-dot.png&quot;)<br/>				var form_target = add_form();<br/>				// remove all alert-info class<br/>				$('*').removeClass('alert-info');<br/>				// add alert-info class to the created form<br/>				form_target.addClass('alert-info');<br/>				var position = event.getPosition().toString();<br/>				$(form_target).find('.marker').val(position);<br/>				// used to link marker to a form<br/>				$(form_target).find('.marker').data('marker', event);<br/>				addEventsToMarker($(form_target).find('.marker').get(0), event)	<br/>			});<br/>			<br/>			// instanciate marker on map for each form of the formset <br/>			$('.marker').each(function(){<br/>				var re = /\((.*),\s(.*)\)/;<br/>				var m = re.exec($(this).val());<br/>				var lat = parseFloat(m[1]);<br/>				var lng = parseFloat(m[2]);<br/>				// create marker<br/>				var marker = new google.maps.Marker({<br/>					position: new google.maps.LatLng(lat,lng),<br/>					map: map,<br/>					draggable: true,<br/>					icon:&quot;{{ STATIC_URL}}img/red-dot.png&quot;,<br/>				});<br/>				// ref marker inside field position in form<br/>				$(this).data('marker', marker);<br/>				addEventsToMarker(this, marker);<br/>			})<br/>			<br/>			// close functionnality<br/>			$('.close').live('click', function(event){<br/>				// check delete box<br/>				$(this).parent().find(&quot;*[name$='DELETE']&quot;).attr('checked', true);<br/>				// remove marker from map<br/>				$(this).parent().find('.marker').data('marker').setMap(null)<br/>				// &quot;hide form&quot;, not remove form ! formset would be unconsistant<br/>				$(this).parent().hide();<br/>			})<br/>			$('.formset_form_container')<br/>			.live('mouseover', function(event){<br/>				// change current form style<br/>				$(this).addClass('alert-info');<br/>				var current_maker = $(this).find('.marker').data('marker');<br/>				// show marker linked to form on map<br/>				current_maker.setIcon('{{ STATIC_URL}}img/blue-dot.png');<br/>				// center map<br/>				map.setCenter(current_maker.getPosition())<br/>			})<br/>			.live('mouseout', function(event){<br/>				$(this).removeClass('alert-info');<br/>				var current_maker = $(this).find('.marker').data('marker');<br/>				current_maker.setIcon('{{ STATIC_URL}}img/red-dot.png');<br/>			})<br/>		});<br/>		/* dynamically add form to formset */<br/>		var total_form_count = {{ formset.total_form_count }};<br/>		var initial_form_count = {{ formset.initial_form_count }};<br/>		var form = &quot;&lt;div class='formset_form_container well  form-inline'&gt;&quot;+<br/>						&quot;&lt;a class='close'&gt;&#x00d7;&lt;/a&gt;&quot;+<br/>						'{{ formset.empty_form.id }} {{ formset.empty_form.title }} {{ formset.empty_form.comment }} {{ formset.empty_form.position }}'+<br/>						'&lt;span style=&quot;display:none&quot;&gt;{{ formset.empty_form.DELETE }}&lt;/span&gt;'+<br/>					&quot;&lt;/div&gt;&quot;;<br/>		add_form = function(){<br/>			var current_form = form.replace(/__prefix__/g, total_form_count);<br/>			total_form_count += 1;<br/>			$('form').find('*[name$=&quot;TOTAL_FORMS&quot;]').val(total_form_count);<br/>			var ref = $(current_form).prependTo($('.formset_container'));<br/>			return ref.last();<br/>		}<br/>		// events: update value when marker dragend/mouser(over|out)<br/>		addEventsToMarker = function(field, marker){<br/>			var self = field;<br/>			google.maps.event.addListener(marker, 'dragend', function(event){<br/>				$(self).val(event.latLng.toString());<br/>			})<br/>			google.maps.event.addListener(marker, 'mouseover', function(event){<br/>				$(self).parent('.formset_form_container').addClass('alert-info');<br/>				this.setIcon(&quot;{{ STATIC_URL}}img/blue-dot.png&quot;);<br/>			})<br/>			google.maps.event.addListener(marker, 'mouseout', function(event){<br/>				$(self).parent('.formset_form_container').removeClass('alert-info');<br/>				this.setIcon(&quot;{{ STATIC_URL}}img/red-dot.png&quot;);<br/>			})<br/>		}<br/>	&lt;/script&gt;<br/>{% endblock %}<br/><br/>{% block content %}<br/>	&lt;section&gt;<br/>		&lt;form method=&quot;post&quot; action=&quot;&quot;&gt;<br/>					{% csrf_token %}<br/>					{{ form }} <br/>					&lt;!-- form actions button : add marker and submit --&gt;<br/>					&lt;div class=&quot;form-actions&quot;&gt;<br/>						&lt;div class=&quot;span5&quot;&gt;<br/>						&lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons-radio&quot;&gt;<br/>							&lt;a class=&quot;btn active&quot; id=&quot;add_marker&quot;&gt;Add Marker&lt;/a&gt;<br/>							&lt;a class=&quot;btn&quot; id=&quot;browser_the_map&quot;&gt;Update Markers / Browse Map&lt;/a&gt;<br/>						&lt;/div&gt;<br/>						&lt;/div&gt;<br/>						&lt;input style=&quot;float:right&quot; class=&quot;btn btn-primary&quot; type=&quot;submit&quot; value=&quot;Save&quot;&gt;<br/>					&lt;/div&gt;<br/>			&lt;div class=&quot;row&quot;&gt;<br/>				&lt;div class=&quot;span6&quot;&gt;<br/>					&lt;div&gt;<br/>					&lt;div id=&quot;map_canvas&quot; style=&quot;width:100%; height:500px&quot;&gt;&lt;/div&gt;<br/>					&lt;/div&gt;<br/>				&lt;/div&gt;<br/>				&lt;div class=&quot;span6 formset_container&quot; &gt;<br/>					&lt;!-- formset part --&gt;<br/>					{{ formset.management_form }}<br/>					{% for form in formset %}<br/>					{% comment %}set form_id to div below, even if it has got an error.{% endcomment %}<br/>					&lt;div class='formset_form_container well form-inline {% if form.errors %}alert-error{% endif %}'&gt;<br/>						&lt;a class='close'&gt;&#x00d7;&lt;/a&gt; {{ form.errors }}<br/>						{{ form.id }} {{ form.title }} {{ form.comment }} {{ form.position }}<br/>						&lt;span style='display:none'&gt;{{ form.DELETE }}&lt;/span&gt;<br/>					&lt;/div&gt;<br/>					{% endfor %}<br/>				&lt;/div&gt;<br/>			&lt;/div&gt;<br/>		&lt;/form&gt;<br/>	&lt;/section&gt;<br/>{% endblock content %}
+</pre>
+	</article>
+
+	<article >
+		<h3>Détail du javascript du template</h3>
+		<ul>
+			<li><span class="blue">Chargement du widget</span> <br />à priori JavaScript</li>
+			<li><span class="blue">Gestion de l'ajout d'un nouvel élément </span> <br />nouveau formulaire dans le formset, modification de TOTAL_FORMS</li>
+			<li><span class="blue">Création/affichage des éléments déjà présents dans le formset</span> <br />et événements marker => formulaire <br /></li>
+			<li><span class="blue">Fonction de suppression</span> <br />modification de TOTAL_FORMS</li>
+			<li><span class="blue">Evénements depuis les formulaires du formset</span><br /> formulaire => marker</li>
+		</ul>
+	</article>
+
+	<article>
+		<h3>Conclusion</h3>
+		
+		<ul>
+			<li>
+				<span class="blue">Utilité d'une telle interface, pourquoi ne pas éditer le <i>Marker</i> directement ?</span>
+				<br />Dans ce cas de figure, pourquoi pas, dans d'autres cas de figure, non.
+			</li>
+			<li>
+				<span class="blue">Pourquoi sur un <i>formset</i> ?</span>
+				<br />Pour avoir plusieurs formulaires d'un coup, développement envisageable avec plusieurs formulaires distincts.
+			</li>
+			<li><span class="blue">Finalement, aucune spécificité à ce développement ?</span>
+				<br />Essentiellement du JavaScript et sans Ajax.<br />Utilisation de <i class="green">"l'écosystème"</i> Django : Formset (dont empty_form), simplement un attribut spécifique sur le formulaire, utilisation du processus de validation des formulaires.
+			</li>
+		</ul>
+	</article>
+    <article>
+		<h3>Elargissement</h3>
+			<ul>
+				<li><span class="blue">Amélioration views ?</span>
+				<br />Class-based views pour formset + form
+			</li>
+			<li><span class="blue">Amélioration template ?</span>
+				<br />Utiliser django-forms-utils (ou autre) et centraliser la gestion évènementielle.
+			</li>
+			<li><span class="blue">Externalisation ?</span>
+				<br />Par nécessairement besoin d'une application spécifique Django (toujours confronté à des cas spécifiques), mais plutôt de "bonnes pratiques".</li>
+		</ul>
+		<ul style="font-size:0.8em" >
+			<li><a href="https://github.com/ouhouhsami/djangocong2012_formsetwidget">https://github.com/ouhouhsami/djangocong2012_formsetwidget</a>
+			</li>
+			<li>
+			<a href="http://pointofinterest.alwaysdata.net/places/list/">"L'application" en ligne </a>
+			</li>
+		</ul>
+	</article> 
+
+
+    </section>
+
+  </body>
+</html>

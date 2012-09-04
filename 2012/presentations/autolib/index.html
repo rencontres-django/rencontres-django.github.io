@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Autolib’, un SI d'entreprise avec Django</title>
+    <!-- Styles -->
+    <link rel="stylesheet" media="print" href="../landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="../landslide/themes/default/css/screen.css">
+    <link rel="stylesheet" href="../landslide-polyconseil-theme/css/screen.css">
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    <script type="text/javascript" src="../landslide/themes/default/js/slides.js"></script>
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Autolib’, un SI d'entreprise avec Django</h1></header>
+
+
+            <section><p><strong>Service, architecture, organisation et outils</strong></p>
+<img alt="img/avenue-foch.jpg" src="img/avenue-foch.jpg" style="width: 72%;" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              1/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Le service Autolib’</h1></header>
+
+
+            <section><p>Location de véhicules électriques :</p>
+<ul class="simple">
+<li>de courte durée</li>
+<li>en libre service 24/7</li>
+<li>en trace directe</li>
+</ul>
+<img alt="img/autolib-et-borne-abonnement.jpg" src="img/autolib-et-borne-abonnement.jpg" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              2/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Le service Autolib’</h1></header>
+
+
+            <section><img alt="img/suivez-le-guide_1_jeMabonne_1.jpg" src="img/suivez-le-guide_1_jeMabonne_1.jpg" />
+<p>À la borne d'abonnement, en visioconférence.</p>
+<p>(Ou bien sur le site web.)</p></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              3/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Le service Autolib’</h1></header>
+
+
+            <section><img alt="img/suivez-le-guide_2_jeLoue_1.jpg" src="img/suivez-le-guide_2_jeLoue_1.jpg" />
+<p>À la borne de location, avec mon badge RFID.</p></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              4/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Le service Autolib’</h1></header>
+
+
+            <section><img alt="img/suivez-le-guide_3_jeRoule_1.jpg" src="img/suivez-le-guide_3_jeRoule_1.jpg" />
+<p>La voiture me connaît, et je peux appeler le centre opérationnel.</p></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              5/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Le service Autolib’</h1></header>
+
+
+            <section><img alt="img/suivez-le-guide_4_jePasse_1.jpg" src="img/suivez-le-guide_4_jePasse_1.jpg" />
+<p>À la borne de charge, avec mon badge RFID.</p></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              6/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Feuille de route</h1></header>
+
+
+            <section><ul class="simple">
+<li>16/12/10 : Bolloré remporte l'appel d'offres pour Autolib’</li>
+<li>01/02/11 : début des travaux sur le service</li>
+<li>01/03/11 : 2 développeurs</li>
+<li>01/04/11 : 4 développeurs</li>
+<li>01/06/11 : 10 développeurs</li>
+<li>26/06/11 : proof-of-concept</li>
+<li>02/10/11 : beta test</li>
+<li>05/12/11 : ouverture au grand public</li>
+<li>??/04/12 : ouverture aux entreprises</li>
+<li>et beaucoup de projets à venir !</li>
+</ul></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              7/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Rôle de Polyconseil</h1></header>
+
+
+            <section><ul class="simple">
+<li>Cadrage stratégique, définition et spécification du service</li>
+<li>Développement du système d'information métier et du site web</li>
+<li>Télécoms, hébergement, exploitation, supervision, déploiement, etc.</li>
+</ul>
+<img alt="img/role_de_polyconseil.png" src="img/role_de_polyconseil.png" style="width: 70%;" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              8/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Architecture technique générale</h1></header>
+
+
+            <section><img alt="img/schema_si_autolib.png" src="img/schema_si_autolib.png" style="width: 70%;" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              9/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Architecture du SI métier</h1></header>
+
+
+            <section><img alt="img/applis_si_autolib.png" src="img/applis_si_autolib.png" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              10/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Librairies</h1></header>
+
+
+            <section><ul class="simple">
+<li>Django, PostGIS, South</li>
+<li>django-cms, django-cms-search, haystack, whoosh</li>
+<li>piston</li>
+<li>soaplib, suds</li>
+<li>django-resto, django-xworkflows, django-ajax-selects</li>
+<li>django_compressor</li>
+<li>Google Maps</li>
+<li>etc.</li>
+</ul></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              11/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Outils</h1></header>
+
+
+            <section><ul class="simple">
+<li>Mercurial (15&nbsp;000 commits)</li>
+<li>Trac (2&nbsp;000 tickets)</li>
+<li>Jenkins (5&nbsp;000 builds)</li>
+<li>unittest (1&nbsp;800 tests), lettuce (1&nbsp;200 tests)</li>
+<li>factory_boy, fudge</li>
+<li>pylint, coverage</li>
+<li>Sphinx (170 pages)</li>
+<li>Sentry</li>
+</ul></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              12/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Organisation</h1></header>
+
+
+            <section><h2>Contact client</h2>
+<ul class="simple">
+<li>Spécifications légères et travail itératif</li>
+<li>Ré-orientations fréquentes des priorités</li>
+<li>&quot;Gardes du corps&quot; : AMOA et helpdesk</li>
+</ul>
+
+
+<h2>Développement</h2>
+<ul class="simple">
+<li>Une ou deux personnes par sujet</li>
+<li>Review des commits avant chaque release</li>
+</ul>
+
+
+<h2>Mise en production</h2>
+<ul class="simple">
+<li>Une release par semaine</li>
+<li>Passage de dév en prod sans recette (!)</li>
+</ul></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              13/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Pour la route</h1></header>
+
+
+            <section><p>Ne pas dériver sur :</p>
+<ul class="simple">
+<li>les <em>coding rules</em>,</li>
+<li>la couverture de tests,</li>
+<li>l'organisation du code,</li>
+<li>l'ambiance de l'équipe.</li>
+</ul></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              14/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-autolib.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Questions ?</h1></header>
+
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-autolib.rst">djangocong-2012-autolib.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              15/15
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Autolib’, un SI d'entreprise avec Django</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+
+
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Le service Autolib’</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+
+
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Le service Autolib’</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+
+
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Le service Autolib’</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+
+
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Le service Autolib’</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+
+
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Le service Autolib’</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+
+
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Feuille de route</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+
+
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Rôle de Polyconseil</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+
+
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Architecture technique générale</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+
+
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Architecture du SI métier</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+
+
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Librairies</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+
+
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Outils</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+
+
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Organisation</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+
+
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Pour la route</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+
+
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Questions ?</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+
+
+    </table>
+  </div>
+
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>

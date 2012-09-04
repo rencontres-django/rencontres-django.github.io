@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lettuce</title>
+    <!-- Styles -->
+    <link rel="stylesheet" media="print" href="../landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="../landslide/themes/default/css/screen.css">
+    <link rel="stylesheet" href="../landslide-polyconseil-theme/css/screen.css">
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    <script type="text/javascript" src="../landslide/themes/default/js/slides.js"></script>
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Lettuce</h1></header>
+
+
+            <section><p>Racontez-moi des histoires sans me raconter de salades&nbsp;!</p>
+<p>DjangoCong 2012</p>
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Nous allons ensemble raconter des histoires avec Lettuce, des histoires vraies,
+ou du moins c'est ce que nous allons essayer de vérifier.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              1/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Qui suis-je ?</h1></header>
+
+
+            <section><p>Stéphane Raimbault &#64;sraimbault webstack.fr</p>
+<img alt="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/webstack-600.png" src="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/webstack-600.png" style="width: 400px;" />
+<p>Open source fan (Linux, GNOME, Python, libmodbus)</p>
+<p>Djangonaute pour Polyconseil sur le projet Autolib’</p></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              2/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Lettuce en quelques mots</h1></header>
+
+
+            <section><p>Lettuce est outil de <em>Behavior Driven Development</em> (BDD)</p>
+<p>Une fois les tests unitaires écrits, le BDD permet d'écrire les tests
+fonctionnels.</p>
+<p><cite>Ruby</cite> avait <cite>Cucumber</cite>, <cite>Python</cite> a désormais <cite>Lettuce</cite>&nbsp;!</p>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Lettuce est outil de BDD. Une fois les tests unitaires écrits, Lettuce vous
+permet d'écrire des test fonctionnels.</p>
+<p>Lettuce trouve son inspiration dans le monde Ruby avec Cucumber.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              3/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Avant de passer à table</h1></header>
+
+
+            <section><p>Les <cite>features</cite> expriment les intentions du test dans un langage naturel:</p>
+<pre class="literal-block">
+Feature: Attraper les trois petits cochons
+    Dans le but de jouer avec Lettuce
+    Cette histoire étant connue
+
+Scenario: Souffler sur une maison de paille
+    Comme le cochon a construit une maison de paille
+    Quand le loup souffle sur la maison
+    Alors la maison est détruite
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Avant de passer à table un peu de terminologie. Les features décrivent
+l'intention du test en quelques phrases et contiennent des scénaris. Chaque
+étape d'un scénario sera ensuite associé à du code Python.
+Une fois notre premier scénario écrit, nous pouvons lancer Lettuce.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              4/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Lettuce vous tient la main</h1></header>
+
+
+            <section><img alt="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/lettuce-wo-steps.png" src="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/lettuce-wo-steps.png" />
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Lettuce tente de le dérouler sans y parvenir car le code Python n'est pas encore
+écrit. Toutefois, pour nous aider, Lettuce nous donne un squelette, que nous
+allons compléter.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              5/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Et un peu de code</h1></header>
+
+
+            <section><pre><span class="nd">@step</span><span class="p">(</span><span class="s">&#39;cochon a construit une maison de (paille|bois|briques)&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_house_material</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">material</span><span class="p">):</span>
+    <span class="n">world</span><span class="o">.</span><span class="n">resistance</span> <span class="o">=</span> <span class="n">MATERIAL_RESISTANCES</span><span class="p">[</span><span class="n">material</span><span class="p">]</span>
+
+<span class="nd">@step</span><span class="p">(</span><span class="s">&#39;le loup souffle sur la maison&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">blow_on_house</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
+    <span class="n">world</span><span class="o">.</span><span class="n">force</span> <span class="o">=</span> <span class="n">WOLF_FORCE</span>
+
+<span class="nd">@step</span><span class="p">(</span><span class="s">u&quot;la maison est (détruite|intacte)&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">check_house_state</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s">u&quot;détruite&quot;</span><span class="p">:</span>
+        <span class="c"># The wolf force is greater than the house resistance</span>
+        <span class="k">assert</span> <span class="n">world</span><span class="o">.</span><span class="n">force</span> <span class="o">&gt;</span> <span class="n">world</span><span class="o">.</span><span class="n">resistance</span><span class="p">,</span> \
+            <span class="s">&quot;La force </span><span class="si">%d</span><span class="s"> n&#39;est pas superieure a </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">world</span><span class="o">.</span><span class="n">force</span><span class="p">,</span> <span class="n">world</span><span class="o">.</span><span class="n">resistance</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">world</span><span class="o">.</span><span class="n">force</span> <span class="o">&lt;=</span> <span class="n">world</span><span class="o">.</span><span class="n">resistance</span><span class="p">,</span> \
+            <span class="s">&quot;La force </span><span class="si">%d</span><span class="s"> n&#39;est pas inférieure ou égale </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">world</span><span class="o">.</span><span class="n">force</span><span class="p">,</span> <span class="n">world</span><span class="o">.</span><span class="n">resistance</span><span class="p">)</span>
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Chaque phrase est associée à une fonction par le biais d'un décorateur contenant
+une expression régulière. C'est donc cette expression régulière qui va faire la
+jonction, l'extraction des arguments et la fonction Python.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              6/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Lançons les tests</h1></header>
+
+
+            <section><img alt="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/lettuce-fail.png" src="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/lettuce-fail.png" />
+<p>Plus convivial qu'un <tt class="docutils literal">AssertionError: True is not false</tt> :)</p>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Pour vous montrer la qualité du contexte fourni par Lettuce, voici un exemple de
+test qui échoue. Les 2 premières étapes ont réussies, les dernières ont échouées
+car la maison de paille n'est pas intacte.</p>
+<p>Ce qui facilite nettement la maintenabilité des tests.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              7/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Écrivez des variantes</h1></header>
+
+
+            <section><p>En jouant sur les expressions régulières, il est facile d'écrire la variante
+suivante&nbsp;:</p>
+<pre class="literal-block">
+Scenario: Souffler sur une maison de briques
+    Comme un cochon a construit une maison de briques
+    Quand le loup souffle sur la maison
+    Alors la maison est intacte
+</pre>
+<p>Rappel de la première <em>step</em> associée&nbsp;:</p>
+<pre><span class="nd">@step</span><span class="p">(</span><span class="s">&#39;cochon a construit une maison de (paille|bois|briques)&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_house_material</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">material</span><span class="p">):</span>
+    <span class="n">world</span><span class="o">.</span><span class="n">resistance</span> <span class="o">=</span> <span class="n">MATERIAL_RESISTANCES</span><span class="p">[</span><span class="n">material</span><span class="p">]</span>
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Quand le scénario est bon, il est tentant d'en écrire des variantes. Utilisons
+cette fois ci une maison pas de paille mais de briques. Il suffit de nous
+assurer que l'expression régulière sera capable de gérer cet argument.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              8/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>L'usine à variantes</h1></header>
+
+
+            <section><p>Quand l'histoire est la même mais que le contexte change&nbsp;:</p>
+<pre class="literal-block">
+Scenario Outline: Souffler sur différentes maisons
+  Comme un cochon a construit une maison de &lt;materiau&gt;
+  Quand le loup souffle sur la maison
+  Alors la maison est &lt;etat&gt;
+
+  Examples:
+  | materiau | etat     |
+  | paille   | détruite |
+  | bois     | détruite |
+  | briques  | intacte  |
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Pour disposer d'une forme compacte de variantes à nos scénaris. Lettuce nous
+permet de les exprimer sous forme de tableaux. Les variables deviennent des
+placeholders dans les étapes. Comme ici avec &lt;materiau&gt; et &lt;etat&gt;. Lettuce va
+ensuite dérouler un scénario complet pour chaque ligne du tableau.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              9/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>et sa production de résultats</h1></header>
+
+
+            <section><img alt="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/lettuce-factory.png" src="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/lettuce-factory.png" />
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Ce qui donne les résultats suivants, les maisons de paille et bois sont
+détruites et la maison de briques est intacte.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              10/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Ouverture sur Django</h1></header>
+
+
+            <section><p>Il suffit d'ajouter <tt class="docutils literal">lettuce.django</tt> aux <tt class="docutils literal">INSTALLED_APPS</tt>.</p>
+<pre><span class="kn">from</span> <span class="nn">lettuce</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">html</span>
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">test</span> <span class="k">as</span> <span class="n">django_test</span>
+
+<span class="nd">@before.all</span>
+<span class="k">def</span> <span class="nf">set_browser</span><span class="p">():</span>
+    <span class="n">world</span><span class="o">.</span><span class="n">browser</span> <span class="o">=</span> <span class="n">django_test</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+    <span class="n">world</span><span class="o">.</span><span class="n">t</span> <span class="o">=</span> <span class="n">django_test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">()</span>
+
+<span class="nd">@step</span><span class="p">(</span><span class="s">r&#39;I access the url &quot;(.*)&quot;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">access_url</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">browser</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">world</span><span class="o">.</span><span class="n">dom</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+<span class="nd">@step</span><span class="p">(</span><span class="s">r&#39;I see the header &quot;(.*)&quot;&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">see_header</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">dom</span><span class="o">.</span><span class="n">cssselect</span><span class="p">(</span><span class="s">&#39;h1&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">header</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="n">text</span>
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Lettuce étant en Python, intégrons le à Django. Je vous recommande l'utilisation
+de Django TestCase et le client Django qui sont plus complets. Ajoutons les à
+world avec le décorateur &#64;before.all.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              11/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Pour aller plus loin</h1></header>
+
+
+            <section><p>Splinter <strong>https://github.com/cobrateam/splinter</strong>, DOM et AJAX</p>
+<pre><span class="kn">from</span> <span class="nn">splinter.browser</span> <span class="kn">import</span> <span class="n">Browser</span>
+<span class="n">browser</span> <span class="o">=</span> <span class="n">Browser</span><span class="p">()</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://www.google.com&quot;</span>
+<span class="n">browser</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">browser</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s">&#39;q&#39;</span><span class="p">,</span> <span class="s">&quot;#cobrateam&quot;</span><span class="p">)</span>
+
+<span class="c"># Find and click the &#39;search&#39; button</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">find_by_css</span><span class="p">(</span><span class="s">&quot;.lsb&quot;</span><span class="p">)</span>
+
+<span class="c"># Interact with elements</span>
+<span class="n">button</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>Pour aller plus loin, il est intéressant de disposer d'un outil tel que Splinter
+qui permet non seulement de manipuler le DOM mais d'excéuter le Javascript.
+Splinter s'appuie sur Selenium. Si seulement, nous pouvions le combiner avec
+Lettuce. Justement !</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              12/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Encore plus vert</h1></header>
+
+
+            <section><p>Salad <strong>https://github.com/wieden-kennedy/salad</strong> (Lettuce + Splinter)</p>
+<pre class="literal-block">
+Scenario: User enters a username that has been taken
+    Given a user exists with username &quot;joeb&quot;
+    When I go to the &quot;/register/&quot; URL
+    And I fill in &quot;username&quot; with &quot;joeb&quot;
+    And I move focus away from the username field
+    Then I should see &quot;not available&quot;
+</pre>
+
+
+</section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+              <p>C'est ce que fait Salad, la clarté de Lettuce avec la puissance de Splinter.
+Ces 2 projets sont jeunes mais actifs.</p>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              13/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-lettuce.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Mot de la fin</h1></header>
+
+
+            <section><p>Lettuce <strong>http://github.com/gabrielfalcao/lettuce</strong> un bon outil pour compléter
+vos tests !</p>
+<img alt="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/salad.jpg" src="file:///Users/nperriault/Sites/djangocong-2012/lettuce/img/salad.jpg" style="width: 300px;" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-lettuce.rst">djangocong-2012-lettuce.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              14/14
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Lettuce</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+
+
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Qui suis-je ?</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+
+
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Lettuce en quelques mots</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+
+
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Avant de passer à table</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+
+
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Lettuce vous tient la main</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+
+
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Et un peu de code</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+
+
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Lançons les tests</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+
+
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Écrivez des variantes</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+
+
+      <tr id="toc-row-9">
+        <th><a href="#slide9">L'usine à variantes</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+
+
+      <tr id="toc-row-10">
+        <th><a href="#slide10">et sa production de résultats</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+
+
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Ouverture sur Django</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+
+
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Pour aller plus loin</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+
+
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Encore plus vert</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+
+
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Mot de la fin</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+
+
+    </table>
+  </div>
+
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>

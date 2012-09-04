@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "name": "La bo[a]te", "type": "social", "description": "Lieu de rendez-vous le samedi soir", "url": "http://laboate.com/" }, "geometry": { "type": "Point", "coordinates": [ 598106.24864779, 5356502.5832994 ] } }
+,
+{ "type": "Feature", "properties": { "name": "Centrale Marseille", "type": "conference", "description": "Lieu des conférences", "url": "http://www.centrale-marseille.fr/" }, "geometry": { "type": "Point", "coordinates": [ 605302.959454, 5364215.402171 ] } }
+]
+}

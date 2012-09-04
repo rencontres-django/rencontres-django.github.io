@@ -1,0 +1,13 @@
+digraph KioskWorkflow {
+  layout=fdp;
+  K=1;
+
+  preparing -> ready;
+  ready -> maintenance;
+  maintenance -> ready;
+  preparing -> maintenance;
+  maintenance -> destroyed;
+  ready -> running;
+  running -> ready;
+  running -> maintenance;
+}

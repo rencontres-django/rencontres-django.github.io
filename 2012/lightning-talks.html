@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow"/>
+    <title>Rencontres Django 2012 : programme des lightning talks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="only screen and (max-width: 959px)">
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+    <link rel="stylesheet" href="css/blueprint/plugins/fancy-type/screen.css" type="text/css"
+          media="screen, projection">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen, projection">
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <div class="countdown span-24 last hide">
+            <div id="countdown"></div>
+            <p class="alt center">… avant l'arrivée des poneys sur le sable</p>
+        </div>
+        <hr/>
+        <div class="span-12 logo-zone">
+            <a href="./"><img src="images/logo_2012.png" alt="Djangocong" class="logo"/></a>
+        </div>
+        <div class="span-12 last" id="intro">
+            <h1>Rencontres Django<br/>a.k.a #djangocong</h1>
+
+            <h2 class="alt">L'événement annuel regroupant les amateurs francophones de <a
+                    href="http://www.djangoproject.com/">Django</a>, en toute simplicité.</h2>
+
+            <h3 class="alt">Le weekend du 14-15 avril 2012 à Carnon-Montpellier</h3>
+        </div>
+    </div>
+    <hr/>
+    <p class="alt introduction">Le programme - lightning-talks </p>
+
+
+    <div class="box">
+        <p class="intro">7 lightning talks: 5 minutes pour écouter - pas de questions</p>
+
+        <ol class="summary">
+            <li><a href="#l1">Staticfiles: tout ce qu'il faut savoir, rien que ce qu'il faut savoir - Bruno Renié</a>
+            </li>
+            <li><a href="#l2">Gérer un workflow avec xworkflows - Raphaël Barrois</a></li>
+            <li><a href="#l3">Raconter vos tests en histoire avec Lettuce - Stéphane Raimbault</a></li>
+            <li><a href="#l4">Tâches backend avec Celery - Martin De Wulf</a></li>
+            <li><a href="#l5">Le miroir Pypi local du pauvre - Mathieu Agopian</a></li>
+            <li><a href="#l6">It's over 9000 - Marc hertzog</a></li>
+            <li><a href="#l7">Django advanced cache templatetag - Stéphane Angel</a></li>
+        </ol>
+
+        <ul class="talk">
+            <li id="l1"><h4>Staticfiles: tout ce qu'il faut savoir, rien que ce qu'il faut savoir </h4>
+
+
+                <p class="abstract">Django 1.3 intègre contrib.staticfiles pour simplifier la gestion des
+                    ressources statiques (CSS, JS, images). Petit tour d'horizon pour bien
+                    comprendre ce que ça fait, comment s'en servir en développement et en
+                    production, avec à la clé la configuration parfaite. Rien que ça.</p>
+
+                <p class="dl">
+                    <a href="presentations/staticfiles.pdf">Télécharger la présentation [PDF, 256Ko]</a>
+                    <a href="http://www.youtube.com/watch?v=ufTuf25eQYo&list=PL66702ED0B508F4AB&index=7&feature=plpp_video">Voir la vidéo</a>
+                    </p>
+
+                <div class="resume"><h5>Bruno Renié - <a href="https://twitter.com/brutasse">@brutasse</a></h5>
+                    <img src="images/speakers/bruno_renie.jpg" alt="bruno renie">
+
+                    <p>Bruno Renié vit en Suisse.<br>
+                    Il publie dans son blog comme une brutasse.<br>
+                    Il code comme une brutasse sur Github.<br>
+                    Il twitte parfois comme une brutasse.<br>
+                    Il mange les pizzas comme une brutasse.<br>
+                    Tu m'étonnes que son pseudo, ça soit brutasse.<br><br>
+
+                    En revanche, quand on le rencontre, on le trouve d'une charmante délicatesse.</p></div>
+            </li>
+            <li id="l2"><h4>Gérer un workflow avec xworkflows</h4>
+
+
+                <p class="abstract">Une solution pratique pour modéliser un processus métier —états, transitions— et
+                    attacher une
+                    logique spécifique sur chaque transition.</p>
+
+                <p class="dl">
+                    <a href="presentations/xworkflows/">Voir la présentation</a>
+                    <a href="http://www.youtube.com/watch?v=7lqKTs00ojs&list=PL66702ED0B508F4AB&index=6&feature=plpp_video">Voir la vidéo</a>
+
+                    </p>
+
+                <div class="resume"><h5>Raphaël Barrois - <a href="https://twitter.com/raphaelbarrois">@raphaelbarrois</a></h5>
+                    <img src="images/speakers/raphael_barrois.jpg" alt="raphael barrois">
+
+                    <p>Geek. Je fais marcher le SI Autolib'</p></div>
+            </li>
+            <li id="l3"><h4>Raconter vos tests en histoire avec Lettuce </h4>
+
+
+                <p class="abstract">Vous êtes vous déjà demandé quel est le but d'un test qui échoue ?<br>
+
+                    Nous sommes des Djangonautes mais les Rubistes font (rarement) aussi des choses intéressantes, et
+                    c'est le cas
+                    d'un outil de test Cucumber porté de Ruby à Django nommé Lettuce. Cet outil offre une approche
+                    alternative à
+                    l'écriture des tests (Behavior Driven Development) qui facilite la réutilisabilité et la
+                    compréhension. Chaque
+                    test est associé à une simple phrase en language naturel, en composant chacune de ces phrases sous
+                    forme
+                    d’histoires, vous serez en mesure d’écrire des scénari complexes et facile à maintenir.</p>
+
+                <p class="dl">
+                    <a href="presentations/lettuce/">Voir la présentation</a>
+                    <a href="http://www.youtube.com/watch?v=-xOjDvifp6k&list=PL66702ED0B508F4AB&index=5&feature=plpp_video">Voir la vidéo</a>
+                    </p>
+
+                <div class="resume"><h5>Stéphane Raimbault - <a href="https://twitter.com/sraimbault">@sraimbault</a></h5>
+                    <img src="images/speakers/stephane_raimbault.jpeg" alt="stephane raimbault">
+
+                    <p>Développeur pour le Web et l'embarqué.
+                        Projet Autolib’, Polyconseil
+
+                        Mainteneur de <a href="http://libmodbus.org">libmodbus</a>
+                        Contributeur du projet GNOME</p></div>
+
+
+            </li>
+            <li id="l4"><h4>Tâches backend avec Celery </h4>
+
+
+                <p class="abstract">Celery est l'outil le plus fréquemment utilisé pour mettre en place des traitements
+                    de tâches en arrière-plan avec Django. Ce lightning talk vise à faire un rapide résumé des
+                    fonctionnalités disponibles et des difficultés rencontrées lors de la mise en place.
+
+                    Ce talk est principalement un retour d'expérience suite à la réalisation de <a href="http://showyoulike.it">showyoulike.it</a>
+                  qui importe massivement des données en provenance de Facebook en tâche de fond.
+                </p>
+
+                <p class="dl">
+                    <a href="presentations/taches-backend-avec-celery.pdf">Télécharger la présentation [PDF, 455Ko]</a>
+                    <a href="http://www.youtube.com/watch?v=Z2KHeORO2tU&list=PL66702ED0B508F4AB&index=4&feature=plpp_video">Voir la vidéo</a>
+
+                    </p>
+
+                <div class="resume"><h5>Martin De Wulf - <a href="https://twitter.com/madewulf">@madewulf</a></h5>
+                    <img src="images/speakers/martin_de_wulf.jpg" alt="Martin De Wulf">
+
+
+                    <p>Docteur en Informatique devenu développeur web par amour du code. Anciennement développeur principal dans une
+                        agence web:
+                        <a href="http://www.mymediaisrich.com">"my media is rich"</a> et désormais QA Engineer
+			chez <a href="http://www.mondialtelecom.be">Mondial Telecom</a>
+
+                        Blog: <a href="http://multitasked.net">multitasked.net</a></p></div>
+            </li>
+            <li id="l5"><h4>Le miroir Pypi local du pauvre</h4>
+
+                <p class="abstract">Oui, il existe une foultitude de projets, applications, scripts... qui permettent de
+                    créer son
+                    propre miroir de PyPI.
+
+                    Seulement, il y a la solution simple, la solution du pauvre qui se fait en quelques minutes et avec
+                    un minimum
+                    d'effort.
+
+                    Pourquoi utiliser son propre miroir ? Ah mais pas d'inquiétudes, nous allons parler de ça aussi
+                    ;)</p>
+
+                <p class="dl">
+                    <a href="presentations/le-miroir-pypi-local-du-pauvre.pdf">Télécharger la présentation [PDF, 553Ko]</a>
+                    <a href="http://www.youtube.com/watch?v=_bIfEkyME6k&list=PL66702ED0B508F4AB&index=3&feature=plpp_video">Voir la vidéo</a>
+
+                    </p>
+
+                <div class="resume"><h5>Mathieu Agopian - <a href="https://twitter.com/magopian">@magopian</a></h5>
+                    <img src="images/speakers/mathieu_agopian.jpg" alt="mathieu agopian">
+
+                    <p>Développeur passionné et curieux, j'utilise Python et le poney magique depuis plusieurs années,
+                        pour le
+                        loisir et professionnellement.</p>
+                </div>
+            </li>
+            <li id="l6"><h4>It's over 9000</h4>
+
+
+                <p class="abstract">Ma page fait 9000 requêtes SQL, pourquoi, et comment je m’en sors ? D’abord, il faut
+                    s’en
+                    apercevoir avant de passer en production. Ensuite, il existe des techniques classiques, en fonction
+                    de la
+                    complexité de la situation.</p>
+
+                <p class="dl">
+                    <a href="presentations/it-s-over-9000.html">Voir la présentation</a>
+                    <a href="http://www.youtube.com/watch?v=j950wKxfwSE&list=PL66702ED0B508F4AB&index=2&feature=plpp_video">Voir la vidéo</a>
+
+                    </p>
+
+                <div class="resume"><h5>Marc Hertzog - <a href="https://twitter.com/_kemar">@_kemar</a></h5>
+                    <img src="images/speakers/marc_hertzog.jpg" alt="marc hertzog">
+
+                    <p>Développeur web indépendant, fondateur de MarcArea et intervenant sur le projet Autolib’.</p>
+                </div>
+            </li>
+            <li id="c7"><h4>Django advanced cache templatetag</h4>
+
+
+                <p class="abstract">Une application django pour gérer le cache de fragments de templates, avec des
+                    fonctions avancées :<br>
+                    - gestion de version<br>
+                    - compression<br>
+                    - cache partiel<br>
+                    - facilement configurable et extensible<br>
+                    - compatible avec le cache par défaut<br>
+                </p>
+
+                <p class="dl">
+                    <a href="presentations/djangocong-django-adv-cache-tag.pdf">Télécharger la présentation [PDF, 79Ko]</a>
+                        <a href="http://www.youtube.com/watch?v=riG6Myp28YI&list=PL66702ED0B508F4AB&index=1&feature=plpp_video">Voir la vidéo</a>
+
+                    </p>
+
+                <div class="resume"><h5>Stéphane Angel - <a href="https://twitter.com/twidi">@twidi</a></h5>
+                    <img src="images/speakers/stephane_angel.jpg" alt="Stephane angel">
+
+                    <p> Développeur web depuis 98, django depuis 2007, déborde d'idées en tout sens. Freelance,
+                        actuellement chez Libération. Auteur, entre autres, de <a href="http://repos.io">repos.io</a>
+                    </p></div>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="small center span-24 bottom last" id="footer">
+        <p>
+            Événement organisé par l'association <a href="http://django-fr.org/">Django-fr</a>. <a
+                href="mentionslegales.html">Mentions légales</a> Pour les nostalgiques, les sites des rencontres <a
+                href="../2010/">2010</a> et <a href="../2011/">2011</a>.
+            Logo par <a href="http://apluggedinlife.com/fr/">@thoas
+            &amp; @noreljin</a>.
+        </p>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+</body>
+</html>

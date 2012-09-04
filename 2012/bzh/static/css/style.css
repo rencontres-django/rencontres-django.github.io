@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Andada);
+/* change locally the bootstrap variables */
+dd {
+  margin-left: 0px;
+}
+html,
+body {
+  height: 100%;
+}
+p,
+dd {
+  font-size: 15px;
+  line-height: 24px;
+}
+.btn {
+  background-color: #ffc40d;
+  background-image: -webkit-linear-gradient(top, #ffc40d, #eab200);
+  background-image: -moz-linear-gradient(top, #ffc40d, #eab200);
+  background-image: -o-linear-gradient(top, #ffc40d, #eab200);
+  background-image: -ms-linear-gradient(top, #ffc40d, #eab200);
+  background-image: linear-gradient(top, #ffc40d, #eab200);
+  font-family: 'Andada', serif;
+  font-size: 22.5px;
+  height: 60px;
+  width: 200px;
+  padding: 10px 10px 10px 10px;
+}
+.btn:hover {
+  background-color: #de7d9b;
+  background-position: 0 -80px;
+  border: 1px solid #d3557c;
+}
+.btn a {
+  color: #ffffff;
+}
+.footer .container {
+  padding: 20px 0px;
+}
+.footer,
+.push {
+  background-color: #eab200;
+  background-image: -webkit-linear-gradient(top, #eab200, #ffd040);
+  background-image: -moz-linear-gradient(top, #eab200, #ffd040);
+  background-image: -o-linear-gradient(top, #eab200, #ffd040);
+  background-image: -ms-linear-gradient(top, #eab200, #ffd040);
+  background-image: linear-gradient(top, #eab200, #ffd040);
+  border-top: 1px solid #ffdd73;
+  color: #584228;
+  height: 176px;
+  /* .push must be the same height as .footer */
+
+  text-shadow: 0 1px 0 #d9a400;
+}
+.footer a {
+  color: #000000;
+}
+.hero-unit {
+  font-family: 'Andada', serif;
+  background-color: #ffffff;
+  padding: 0px;
+}
+.hero-unit h1 small {
+  margin: 0 0 0 10px;
+}
+.hero-unit .container {
+  background: url('../images/hero-unit-container.jpg') no-repeat;
+  padding: 40px 0 0 0;
+}
+.hero-unit .container h2 {
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+.main .span4 dt,
+.main .span8 h4 {
+  color: #999999;
+  font-family: 'Andada', serif;
+  font-size: 22.5px;
+  line-height: 36px;
+  padding: 0 0px 5px 0;
+  margin-top: 0;
+}
+.main .span8 h3 {
+  font-family: 'Andada', serif;
+  font-size: 30px;
+  line-height: 48px;
+}
+.page-header {
+  text-shadow: 0px 1px 1px #ffffff;
+  padding-bottom: 120px;
+  margin: 18px 0 0 0;
+  border: 0;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  /*height: 100%;*/
+
+  margin: 0 auto -176px;
+  /* the bottom margin is the negative value of the footer's height */
+
+}
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/

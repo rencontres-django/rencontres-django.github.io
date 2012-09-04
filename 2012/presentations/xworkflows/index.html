@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>XWorkflows</title>
+    <!-- Styles -->
+    <link rel="stylesheet" media="print" href="../landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="../landslide/themes/default/css/screen.css">
+    <link rel="stylesheet" href="../landslide-polyconseil-theme/css/screen.css">
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    <script type="text/javascript" src="../landslide/themes/default/js/slides.js"></script>
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>XWorkflows</h1></header>
+
+
+            <section><p><a class="reference external" href="http://github.com/rbarrois/xworkflows/">http://github.com/rbarrois/xworkflows/</a></p>
+<p><a class="reference external" href="http://github.com/rbarrois/django_xworkflows/">http://github.com/rbarrois/django_xworkflows/</a></p></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              1/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Objectifs</h1></header>
+
+
+            <section><ul class="simple">
+<li>Définir des états et transitions</li>
+<li>Valider l'enchaînement des états</li>
+<li>Effectuer des actions lors des transitions</li>
+<li>Décrire lisiblement la logique métier</li>
+</ul>
+<p>Exemple :</p>
+<img alt="example.png" src="example.png" /></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              2/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Définir un workflow</h1></header>
+
+
+            <section><pre><span class="k">class</span> <span class="nc">TicketWorkflow</span><span class="p">(</span><span class="n">xworkflows</span><span class="o">.</span><span class="n">Workflow</span><span class="p">):</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s">&#39;new&#39;</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">u&quot;New&quot;</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s">&#39;assigned&#39;</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">u&quot;Assigned&quot;</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s">&#39;closed&#39;</span><span class="p">,</span> <span class="n">_</span><span class="p">(</span><span class="s">u&quot;Closed&quot;</span><span class="p">)),</span>
+    <span class="p">]</span>
+    <span class="n">transitions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s">&#39;assign&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;new&#39;</span><span class="p">],</span> <span class="s">&#39;assigned&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s">&#39;reject&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;assigned&#39;</span><span class="p">],</span> <span class="s">&#39;new&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s">&#39;reassign&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;assigned&#39;</span><span class="p">],</span> <span class="s">&#39;assigned&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s">&#39;close&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;new&#39;</span><span class="p">,</span> <span class="s">&#39;assigned&#39;</span><span class="p">],</span> <span class="s">&#39;closed&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">initial_state</span> <span class="o">=</span> <span class="s">&#39;new&#39;</span>
+
+<span class="k">class</span> <span class="nc">Ticket</span><span class="p">(</span><span class="n">xworkflows</span><span class="o">.</span><span class="n">WorkflowEnabled</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">TicketWorkflow</span><span class="p">()</span>
+</pre></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              3/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Utiliser un workflow</h1></header>
+
+
+            <section><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span> <span class="o">=</span> <span class="n">MyTicket</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">state</span>
+<span class="go">State(&#39;new&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">assign</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">state</span>
+<span class="go">State(&#39;assigned&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">assign</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">InvalidTransitionError</span>: <span class="n">Transition &quot;assign&quot; isn&#39;t available from state &quot;assigned&quot;</span>
+</pre></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              4/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Actions</h1></header>
+
+
+            <section><pre><span class="k">class</span> <span class="nc">Ticket</span><span class="p">(</span><span class="n">xworkflows</span><span class="o">.</span><span class="n">WorkflowEnabled</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">TicketWorkflow</span><span class="p">()</span>
+
+    <span class="nd">@transition</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">to</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assignee</span> <span class="o">=</span> <span class="n">to</span>
+</pre>
+<pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span> <span class="o">=</span> <span class="n">MyTicket</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">state</span>
+<span class="go">State(&#39;new&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">&#39;ponyconseil&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">state</span>
+<span class="go">State(&#39;assigned&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">assignee</span>
+<span class="go">&#39;ponyconseil&#39;</span>
+</pre></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              5/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Fonctions complémentaires</h1></header>
+
+
+            <section><h2>Pour tester l'état d'un objet</h2>
+<pre><span class="c"># short for ticket.state == TicketWorkflow.states.new</span>
+<span class="n">ticket</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">is_new</span>
+</pre>
+
+
+<h2>Si le nom de la transition est déjà utilisé</h2>
+<pre><span class="k">class</span> <span class="nc">SomeObject</span><span class="p">(</span><span class="n">xworkflows</span><span class="o">.</span><span class="n">WorkflowEnabled</span><span class="p">):</span>
+    <span class="nd">@transition</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">gobar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">42</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">xworkflows</span><span class="o">.</span><span class="n">AbortTransition</span><span class="p">()</span>
+</pre>
+
+
+<h2>Introspection</h2>
+<pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">state</span>
+<span class="go">State(&#39;assigned&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ticket</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">transitions</span>
+<span class="go">[Transition(&#39;reassign&#39;), Transition(&#39;close&#39;)]</span>
+</pre></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              6/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+      <!-- slide source: djangocong-2012-xworkflows.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+
+            <header><h1>Intégration avec Django</h1></header>
+
+
+            <section><ul class="simple">
+<li>Appelle automatiquement <tt class="docutils literal">.save()</tt> après chaque transition</li>
+</ul>
+<pre><span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span><span class="n">django_xworkflows</span><span class="o">.</span><span class="n">XWorkflowEnabled</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">MyWorkflow</span><span class="p">()</span>
+</pre>
+<ul class="simple">
+<li>Crée un <tt class="docutils literal">TransitionLog</tt> à chaque transition</li>
+</ul>
+<pre><span class="gp">&gt;&gt;&gt; </span><span class="n">MyModel</span><span class="p">()</span><span class="o">.</span><span class="n">gobar</span><span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>    <span class="c"># default options</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">django_xworkflows</span><span class="o">.</span><span class="n">TransitionLog</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="go">[&lt;TransitionLog(obj, &#39;gobar&#39;)&gt;]</span>
+</pre></section>
+
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+
+            </section>
+          </div>
+          <footer>
+
+            <aside class="source">
+              Source: <a href="djangocong-2012-xworkflows.rst">djangocong-2012-xworkflows.rst</a>
+            </aside>
+
+            <aside class="page_number">
+              7/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+
+      <tr id="toc-row-1">
+        <th><a href="#slide1">XWorkflows</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+
+
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Objectifs</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+
+
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Définir un workflow</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+
+
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Utiliser un workflow</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+
+
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Actions</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+
+
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Fonctions complémentaires</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+
+
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Intégration avec Django</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+
+
+    </table>
+  </div>
+
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow"/>
+    <title>Rencontres Django 2012 : programme des conférences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="only screen and (max-width: 959px)">
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+    <link rel="stylesheet" href="css/blueprint/plugins/fancy-type/screen.css" type="text/css"
+          media="screen, projection">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen, projection">
+</head>
+<body>
+<div class="container">
+<div id="header">
+    <div class="countdown span-24 last hide">
+        <div id="countdown"></div>
+        <p class="alt center">… avant l'arrivée des poneys sur le sable</p>
+    </div>
+    <hr/>
+    <div class="span-12 logo-zone">
+        <a href="./"><img src="images/logo_2012.png" alt="Djangocong" class="logo"/></a>
+    </div>
+    <div class="span-12 last" id="intro">
+        <h1>Rencontres Django<br/>a.k.a #djangocong</h1>
+
+        <h2 class="alt">L'événement annuel regroupant les amateurs francophones de <a
+                href="http://www.djangoproject.com/">Django</a>, en toute simplicité.</h2>
+
+        <h3 class="alt">Le weekend du 14-15 avril 2012 à Carnon-Montpellier</h3>
+    </div>
+</div>
+<hr/>
+<p class="alt introduction">Le programme - conférences </p>
+
+
+<div class="box">
+<p class="intro">13 conférences: 12 minutes pour écouter - 3 minutes pour questionner</p>
+
+<ol class="summary">
+    <li><a href="#c1">Dans l'enfer de la bascule - Mathieu Pillard</a></li>
+    <li><a href="#c2">Moving from Django Apps to Services - Craig Kertiens</a></li>
+    <li><a href="#c3">Admin Django: aller plus loin, aller plus haut - Souen Boniface</a></li>
+    <li><a href="#c4">Des cartes d'un autre monde - Mathieu Leplâtre</a></li>
+    <li><a href="#c5">Un site web mobile en Django - Timothée Peignier</a></li>
+    <li><a href="#c6">Packager son projet Django - Bruno Renié</a></li>
+    <li><a href="#c7">Garder un oeil sur Django et Python - Xavier Ordoquy</a></li>
+    <li><a href="#c8">Linked Data avec Django - Dominique Guardiola</a></li>
+    <li><a href="#c9">Communautés ouvertes : confiance, tailles critiques et efficacité - David Larlet</a></li>
+    <li><a href="#c10">Python for Humans - Kenneth Reitz</a></li>
+    <li><a href="#c11">Formset &amp; Widget - Samuel Goldszmidt</a></li>
+    <li><a href="#c12">Retour sur le développement d'un site à gros volume de données - Stéphane Angel</a></li>
+    <li><a href="#c13">Présentation de l’architecture Autolib’ - Stéphane Raimbault</a></li>
+</ol>
+<ul class="talk">
+<li id="c1"><h4>Dans l'enfer de la bascule</h4>
+
+
+    <p class="abstract">Libération a basculé 90% de son site en Django pendant l'été 2011. Avant, pendant
+        et malheureusement surtout après la bascule, nous avons découvert plein de petits et gros pièges,
+        essentiellement liés aux performances, qui vont de pair avec le fait d'avoir un ""gros"" site en
+        Django, et l'idée de cette intervention est de les présenter pour que tout le monde puisse en
+        profiter :)</p>
+
+    <p class="dl">
+        <a href="presentations/dans-lenfer-de-la-bascule.pdf">Télécharger la présentation [PDF - 877Ko]</a>
+        <a href="http://www.youtube.com/watch?v=by4Cz88Mkgg&context=C45dca74ADvjVQa1PpcFPMNCOGbyfsPasYXdFm6XnufXUtJIGIrKM=">Voir la vidéo</a>
+    </p>
+
+    <div class="resume"><h5>Mathieu Pillard - <a href="https://twitter.com/dioxmat">@dioxmat</a></h5>
+        <img src="images/speakers/mathieu_pillard.jpg" alt="mathieu pillard">
+
+        <p>Couteau-suisse du web, Mathieu est développeur Django à Libération depuis 2 ans. Trolleur sans
+            pitié, touche à tout mais particulièrement intéressé par les problématiques de performance et de
+            sécurité web, il a aussi été développeur PHP pendant quelques années avant de réaliser que
+            c'était parfaitement possible d'être payé à faire du Python toute la journée.</p></div>
+</li>
+<li id="c2"><h4>Moving from Django Apps to Services (en Anglais, non traduit)</h4>
+
+    <p class="abstract">Django's app structure enables developers to break their application into
+        functional units from the start of a project. This enables multiple developers to easily contribute
+        to a single project and offers great re-use.
+
+        The next step is to move from many Django apps in a single project to many services that talk across
+        defined contracts and API's. We'll walk through practices for doing this and how Django enables it
+        easily, but also the places it introduces complexities.</p>
+
+    <p class="dl">
+        <a href="presentations/django-apps-to-services.pdf">Télécharger la présentation [PDF - 430Ko]</a>
+        <a href="http://www.youtube.com/watch?v=ztGpK-v2Oow&context=C4daa3ffADvjVQa1PpcFPMNCOGbyfsPSwy40UlU3YNi5CcDVHBajg=">Voir la vidéo</a>
+        </p>
+
+    <div class="resume"><h5>Craig Kerstiens - <a href="https://twitter.com/craigkerstiens">@craigkerstiens</a></h5>
+        <img src="images/speakers/craig_kerstiens.jpg" alt="craig kerstiens">
+
+        <p>I'm an engineer and product guy at Heroku. I'm part engineer, working on business tools and
+            analytics in my daytime hours and building web apps in my night time hours. I'm part product
+            guy, helping steer product teams at Heroku and making sure our engineers are enabled to be
+            productive and users receiving value. I love efficiency, efficient engineering, efficient
+            processes, and efficient collaboration.</p></div>
+</li>
+<li id="c3"> <h4>Admin django: aller plus loin, aller plus haut</h4>
+
+    <p class="abstract">Même si l'admin django est très populaire et offre pas mal de documentation sur
+        comment la personnaliser, il n'est pas toujours évident de l'adapter aux besoins réels de ses
+        utilisateurs. Pourtant, en creusant un peu dans les méandres de ses classes, on trouve des
+        possibilités d'extensions un peu cachées qui permettent une personnalisation plus poussée. Cette
+        conférence a pour but de présenter quelques unes de ces possibilités.</p>
+
+    <p class="dl">
+        <a href="presentations/django-admin-hacker-plus-haut- hacker-plus-loin/">Voir la présentation</a>
+    <a href="http://www.youtube.com/watch?v=IvENCRlxchM&list=UUz3p12B1GXiPi7FkS7JejUw&index=2&feature=plcp">Voir la vidéo</a>
+        </p>
+
+    <div class="resume"><h5>Souen Boniface - <a href="https://twitter.com/youpitagada">@youpitagada</a></h5>
+        <img src="images/speakers/souen_boniface.jpg" alt="souen boniface">
+
+        <p>Souen crée et corrige des bugs à Libération.fr depuis 4 ans. C'est son métier.
+
+            Au début, il mettait des points-virgules partout et faisait plein de copier-collers. Très vite,
+            le dieu du DRY l'a puni, lui et plusieurs membres de sa famille, d'ailleurs. Alors, il a
+            découvert Django et s'est rendu compte que le code ça pouvait être joli. Maintenant, quand il ne
+            passe pas deux heures à choisir un nom de variable, il se demande comment bien formuler son
+            commentaire Python.</p></div>
+</li>
+<li id="c4"><h4>Des cartes d'un autre monde</h4>
+
+
+    <p class="abstract">Comment publier des données cartographiques, aussi simplement qu'on publie une image ?
+
+        Il existe un monde où Django expose lui-même des cartes interactives, sans déployer l'artillerie
+        habituelle ! Une approche à contre-courant se prêtant parfaitement à la mise en valeur quasi-immédiate
+        d'informations geographiques, comme celles libérées par votre ville !</p>
+
+    <p class="dl">
+        <a href="presentations/des-cartes-d-un-autre-monde.pdf">Télécharger la présentation [PDF - 2Mo]</a>
+    <a href="http://www.youtube.com/watch?v=7NPQo54NbJ8&list=UUz3p12B1GXiPi7FkS7JejUw&index=4&feature=plcp">
+    Voir la vidéo</a>
+        </p>
+
+    <div class="resume"><h5>Mathieu Leplatre - <a href="https://twitter.com/leplatrem">@leplatrem</a></h5>
+        <img src="images/speakers/mathieu_leplatre.jpg" alt="mathieu leplatre">
+
+
+        <p>Baroudeur passionné qui aime son métier d'artisan, Mathieu Leplatre prend du plaisir à ne pas choisir
+            son camp ! Bricolo ou perfectionniste, borné ou curieux, conciliant ou militant, du Web avec Django
+            ou du lourd avec Qt/C++, même pas peur ! Sa mission reste de maximiser la qualité et la satisfaction
+            des utilisateurs avec du Libre !</p></div>
+</li>
+<li id="c5"><h4>Un site web mobile en Django</h4>
+
+    <p class="abstract">Retour sur la création du nouveau site mobile de 20minutes.fr, du développement au déploiement.</p>
+
+    <p class="dl">
+        <a href="presentations/un-site-web-mobile-en-django.pdf">Télécharger la présentation [PDF - 1.2Mo]</a>
+         <a href="http://www.youtube.com/watch?v=2HCs-6y8_HY&list=PLADB4C31B364E4B22&index=3&feature=plpp_video">
+    Voir la vidéo</a>
+        </p>
+
+
+    <div class="resume"><h5> Timothée Peignier - <a href="https://twitter.com/cyberdelia">@cyberdelia</a></h5>
+        <img src="images/speakers/timothee_peignier.jpg" alt="timothee peignier">
+
+        <p> Je vis à Paris et travaille avec un tas de gens biens avec lesquels je code sur
+            Croisé dans le Métro, 20 Minutes et bien d'autres encore !</p>
+    </div>
+</li>
+<li id="c6"><h4>Packager son projet Django</h4>
+
+
+    <p class="abstract">Les pratiques de distribution en vue du déploiement sont multiples : clone
+        ou archive VCS, rsync… Le packaging est une alternative qui facilite un
+        certain nombre de choses : versionnement, gestion des dépendances, facilité
+        de rétrogradage. Nous verrons ici comment monter une infrastructure de
+        déploiement robuste basée sur les outils de packaging et distribution Python.</p>
+
+    <p class="dl">
+        <a href="presentations/packager-son-projet-django.pdf">Télécharger la présentation [PDF - 512Ko]</a>
+         <a href="http://www.youtube.com/watch?v=jd4dN5QkjNU&list=PLADB4C31B364E4B22&index=1&feature=plpp_video">Voir la vidéo</a>
+
+        </p>
+
+    <div class="resume"><h5>Bruno Renié - <a href="https://twitter.com/brutasse">@brutasse</a></h5>
+                    <img src="images/speakers/bruno_renie.jpg" alt="bruno renie">
+
+                    <p>Bruno Renié vit en Suisse.<br>
+                    Il publie dans son blog comme une brutasse.<br>
+                    Il code comme une brutasse sur Github.<br>
+                    Il twitte parfois comme une brutasse.<br>
+                    Il mange les pizzas comme une brutasse.<br>
+                    Tu m'étonnes que son pseudo, ça soit brutasse.<br><br>
+
+                    En revanche, quand on le rencontre, on le trouve d'une charmante délicatesse.</p></div>
+</li>
+<li id="c7"><h4>Garder un oeil sur Django et Python</h4>
+
+
+    <p class="abstract">Django nous permet d'être averti lorsque l'application plante. Néanmoins les
+        informations fournies ne permettent pas toujours de comprendre ou reproduire le problème. Sentry pallie
+        ce manque, tant avec Django qu'avec Python.
+
+        Nous allons voir ce qu'offre Sentry pour Django en particulier et plus généralement pour les scripts
+        Python.</p>
+
+    <p class="dl">
+        <a href="presentations/sentry.pdf">Télécharger la présentation [PDF - 1.1Mo]</a>
+            <a href="http://www.youtube.com/watch?v=BwLSHeOl7gM&list=UUz3p12B1GXiPi7FkS7JejUw&index=1&feature=plcp">Voir la vidéo</a>
+        </p>
+
+    <div class="resume"><h5>Xavier Ordoquy - <a href="https://twitter.com/linovia_net">@linovia_net</a></h5>
+        <img src="images/speakers/xavier_ordoquy.jpeg" alt="xavier ordoquy">
+
+        <p>Je suis Xavier Ordoquy, Freelance depuis 2004.
+            J'ai découvert Python en 2002 grâce au projet Gnome et Django en 2008. Convaincu par ces
+            technologies, je me suis spécialisé dans le développement Web avec Django et d'outils avec
+            Python.</p></div>
+</li>
+
+<li id="c8"><h4>Linked Data avec Django</h4>
+
+
+    <p class="abstract">Présentation brève d'outils pour que les données de votre application Django puisse rejoindre
+        Linked Open Data Cloud...<br>
+        - Utiliser D2RQ pour partager ses données en RDF<br/>
+        - Lier ses tags à un thesaurus SKOS<br/>
+        - WebID, authentification décentralisée<br/></p>
+
+    <p class="dl">
+        <a href="presentations/linked-data-django.pdf">Télécharger la présentation [PDF - 3.3Mo]</a>
+            <a href="http://www.youtube.com/watch?v=Zyw9HESJYjY&list=UUz3p12B1GXiPi7FkS7JejUw&index=3&feature=plcp
+            ">Voir la vidéo</a>
+        </p>
+
+    <div class="resume"><h5>Dominique Guardiola - <a href="https://twitter.com/quinode">@quinode</a></h5>
+        <img src="images/speakers/dominique_guardiola.jpg" alt="dominique guardiola">
+
+        <p>Passé du bon côté de la force (free software!) depuis un an à peine mais bien content d'avoir sauté le pas.
+            Je travaille actuellement sur un projet de plate-forme d'échanges pour l'économie solidaire avec plusieurs
+            régions.</p></div>
+
+</li>
+
+
+<li id="c9"><h4>Communautés ouvertes : confiance, tailles critiques et efficacité</h4>
+
+
+    <p class="abstract">Il existe des moments clés dans un groupe qui sont liés à sa taille. Dans les communautés
+        ouvertes, c'est d'autant plus flagrant car la croissance est incontrôlée. Via un savant mélange de chiffres,
+        d'expérience et de trolls vous pourrez analyser les succès et surtout les échecs de projets comme Django ou
+        django-fr. Et notamment comprendre pourquoi vous n'êtes pas 200 dans la salle :)</p>
+
+    <p class="dl">
+        <a href="presentations/djangocong-communities.pdf">Télécharger la présentation [PDF - 554Ko]</a>
+        <a href="http://www.youtube.com/watch?v=tpose7DM2aA&context=C484791fADvjVQa1PpcFPMNCOGbyfsPe9Wog9XJfcNZ6hAR8GnEdU=">Voir la vidéo</a></p>
+
+    <div class="resume"><h5>David Larlet - <a href="https://twitter.com/davidbgk">@davidbgk</a></h5>
+        <img src="images/speakers/david_larlet.jpg" alt="david larlet">
+
+        <p><a href="https://larlet.fr/david/">David</a> est un geek.</p></div>
+
+</li>
+<li id="c10"><h4>Python for Humans (en Anglais, non traduit)</h4>
+
+
+    <p class="abstract">Unfortunately, solving simple problems with Python isn't always 'import antigravity'.
+        Best practices are sometimes far from obvious. This talk will analyze the high barriers of entry that
+        clutter the Python landscape. We'll discuss ways to make Python more accessible for newcomers and less
+        of a headache for seasoned veterans.</p>
+
+    <p class="dl">
+        <a href="presentations/python-for-humans.pdf">Télécharger la présentation [PDF - 205Ko]</a>
+                <a href="http://www.youtube.com/watch?v=Q1pe6lHZeNs&context=C42cd3e0ADvjVQa1PpcFPMNCOGbyfsPe9Wog9XJfcNZ6hAR8GnEdU=">Voir la vidéo</a>
+
+        </p>
+
+    <div class="resume"><h5>Kenneth Reitz - <a href="https://twitter.com/kennethreitz">@kennethreitz</a></h5>
+        <img src="images/speakers/kenneth_reitz.jpg" alt="kenneth reitz">
+
+        <p>Kenneth Reitz is an open source software architect that loves to streamline the mundane. His passions
+            include software minimalism, development workflow, and pretending to be a digital photographer. He's
+            the developer behind Requests, Tablib, Clint, Legit, HTTPBin, and much more.</p></div>
+
+</li>
+<li id="c11"><h4>Formset &amp; Widget</h4>
+
+
+    <p class="abstract">Panorama de différentes situations rencontrées lors de l'utilisation conjointe de
+        formset et de ""rich"" widget (en opposition aux champs input standards) pour l'édition de ce formset.
+
+        Etudes de cas depuis la concordance 1 widget pour 1 champ de formulaire, à 1 widget pour l'édition de
+        l'ensemble du formset.
+
+        Exemple d'un cas pratique non trivial : Vous voulez qu'un utilisateur puisse créer, mettre à jour,
+        supprimer un ensemble de 'point of interests' sur une carte dans une même et unique interface, tout en
+        utilisant au maximum les briques fonctionnelles mises à disposition par Django ; comment vous faites ?
+        L'objectif de cette mini-conférence est de donner des piste pour cela.</p>
+
+    <p class="dl">
+        <a href="presentations/formset-widgets/">Voir la présentation</a>
+        <a href="http://www.youtube.com/watch?v=GaPYFTZhEps&context=C45e6010ADvjVQa1PpcFPMNCOGbyfsPasYXdFm6XnufXUtJIGIrKM=">Voir la vidéo</a>
+
+        </p>
+
+    <div class="resume"><h5>Samuel Goldszmidt <a href="https://twitter.com/ouhouhsami">@ouhouhsami</a></h5>
+        <img src="images/speakers/samuel_goldszmidt.jpg" alt="samuel goldszmidt">
+
+        <p>Ingénieur informatique/multimédia à l'Ircam - Institut de Coordination et de Recherche Acoustique /
+            Musique, j'ai conçu et développé de nombreux outils pour la musique et la musicologie : depuis des
+            CD-ROM en Flash et PHP ("ouhhh...") au début des années 2000, jusqu'à des systèmes d'informations /
+            bases de données et outils d'analyses et d'éditions de flux temporels à destinations de publics plus
+            large mais aussi de chercheurs (développé en Django et HTML5, "ahhhh...") ces dernières années. </p>
+    </div>
+</li>
+<li id="c12"><h4>Retour sur le développement d'un site à gros volume de données</h4>
+
+
+    <p class="abstract">La gestion de millions d'objets au sein d'un projet Django n'est pas forcément
+        beaucoup plus compliquée qu'à une échelle plus réduite.
+        Ce qui l'est plus, c'est quand ces objets sont tirés de sites distants, mis à jour plus ou moins
+        régulièrement, et qu'il en apparaît ou disparaît en permanence.
+        Cette mini-conférence présentera les choix effectués pour mener à bien un tel projet :
+        récupération des données, stockage, recherche, cache...</p>
+
+    <p class="dl">
+        <a href="presentations/retour-dev-site-big-data.pdf">Télécharger la présentation [PDF - 201Ko]</a>
+        <a href="http://www.youtube.com/watch?v=fv_VPVaU9YY&list=PLADB4C31B364E4B22&index=2&feature=plpp_video">Voir la vidéo</a>
+
+        </p>
+
+    <div class="resume"><h5>Stéphane Angel - <a href="https://twitter.com/twidi">@twidi</a></h5>
+        <img src="images/speakers/stephane_angel.jpg" alt="Stephane angel">
+
+        <p> Développeur web depuis 98, Django depuis 2007, déborde d'idées en tout sens. Freelance,
+            actuellement chez Libération. Auteur, entre autres, de <a href="http://repos.io">repos.io</a>
+        </p></div>
+</li>
+<li id="c13"><h4>Présentation de l’architecture Autolib’</h4>
+
+
+    <p class="abstract">Comment organiser une application Django de plus 120k lignes de code ?
+        Pour le projet Autolib’, la pierre angulaire est le modèle de données qui est à la fois utilisé par le site Web,
+        les utilisateurs du service, le sytème d'information qui intégre un centre d'appel ainsi que par des
+        applications externes (bornes de locations et smartphones).
+        Cette présentation évoquera :<br>
+        - l'architecture matérielle<br>
+        - l'organisation du code<br>
+        - la séparation des environnements<br>
+        - l'écriture de la logique métier<br>
+        - les vues de contrôles<br>
+        - les outils essentiels aux tests et au déploiement.</p>
+
+    <p class="dl">
+        <a href="presentations/autolib/">Voir la présentation</a>
+        <a href="http://www.youtube.com/watch?v=gcP-jMt3gGQ&context=C415b20dADvjVQa1PpcFPMNCOGbyfsPSwy40UlU3YNi5CcDVHBajg=">Voir la vidéo</a></p>
+
+    <div class="resume"><h5>Stéphane Raimbault - <a href="https://twitter.com/sraimbault">@sraimbault</a></h5>
+        <img src="images/speakers/stephane_raimbault.jpeg" alt="stephane raimbault">
+
+        <p>Développeur pour le Web et l'embarqué.
+            Projet Autolib’, Polyconseil
+
+            Mainteneur de <a href="http://libmodbus.org">libmodbus</a>
+            Contributeur du projet GNOME</p></div>
+</li>
+
+
+</ul>
+
+</div>
+
+<div class="small center span-24 bottom last" id="footer">
+    <p>
+        Événement organisé par l'association <a href="http://django-fr.org/">Django-fr</a>. <a
+            href="mentionslegales.html">Mentions légales</a> Pour les nostalgiques, les sites des rencontres <a
+            href="../2010/">2010</a> et <a href="../2011/">2011</a>.
+        Logo par <a href="http://apluggedinlife.com/fr/">@thoas
+        &amp; @noreljin</a>.
+    </p>
+</div>
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+</body>
+</html>

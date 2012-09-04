@@ -1,0 +1,10 @@
+.author {
+    text-align: right;
+}
+.center {
+    text-align: center;
+}
+#map {width: 450px; height: 430px; border: 1px solid black;}
+.olPopupCloseBox {background-image: url("map/img/close.png") !important;}
+.olPopup {border: 2px solid #777 !important;}
+.olPopupContent {padding: 5px !important;}

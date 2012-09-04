@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Andada);
+
+body {padding-top: 2em;}
+
+.hero-unit {
+  font-family: 'Andada', serif;
+  background-color: #ffffff;
+  padding: 0px;
+}
+.hero-unit h1 {
+    font-size: 48px;
+}
+.hero-unit h1 small {
+  margin: 0 0 0 10px;
+}
+.main h3 {
+  color: #999999;
+  font-family: 'Andada', serif;
+  font-size: 22.5px;
+  line-height: 36px;
+  padding: 0 0px 5px 0;
+  margin-top: 0;
+}
+.main h4 {
+  color: #666;
+  font-family: 'Andada', serif;
+  line-height: 22px;
+  padding: 0 0px 5px 0;
+  margin-top: 0;
+}
+#btn-conf {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

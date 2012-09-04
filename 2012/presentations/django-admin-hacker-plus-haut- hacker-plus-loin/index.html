@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Admin: hacker plus haut, hacker plus loin</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="theme/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="theme/css/screen.css">
+    
+    
+      
+      <link rel="stylesheet" href="custom.css">
+      
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="theme/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide frontpage">
+          <div class="inner">
+            
+            <header><h1>Admin: hacker plus haut, hacker plus loin</h1></header>
+            
+            
+            <section><p>(un back-office complexe mais convivial à partir de l'admin django pour Libération)</p>
+<ul class="simple">
+<li>Rencontres django-fr, Montpellier, 14-15 avril 2012</li>
+</ul>
+<img alt="img/logo-liberation.png" src="img/logo-liberation.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>A propos</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>Bonjour!</li>
+<li>Souen Boniface &#64;youpitagada</li>
+<li>dev web depuis 4 ans (à Libération.fr)</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>Introduction</h1></header>
+            
+            
+            <section><ul>
+<li><p class="first">Disclaimer</p>
+</li>
+<li><p class="first">Migration de Libération.fr de PHP vers django: &quot;front&quot; puis &quot;back&quot;</p>
+</li>
+<li><p class="first">Avant: un CMS proprio en PHP, très customisé</p>
+</li>
+<li><dl class="first docutils">
+<dt>Objectifs:</dt>
+<dd><ul class="first last simple">
+<li>Faire un vrai back-office en django</li>
+<li>Rendre les gens heureux</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="notes">front en août 2011, back le 8 avril 2012 (oui la semaine dernière)</p>
+<p class="notes">vieux back à base de copier-coller</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide admin-native-index">
+          <div class="inner">
+            
+            <header><h1>L'admin django (index)</h1></header>
+            
+            
+            <section><img alt="img/admin-native-index.png" src="img/admin-native-index.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>L'admin django (article)</h1></header>
+            
+            
+            <section><img alt="img/admin-native-article-lol.png" src="img/admin-native-article-lol.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>L'admin django après 6 mois (article)</h1></header>
+            
+            
+            <section><img alt="img/quai-article-change.png" src="img/quai-article-change.png" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Comment ?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Tiens oui, comment ?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>Le &quot;back&quot; de Libé en deux mots</h1></header>
+            
+            
+            <section><ul>
+<li><dl class="first docutils">
+<dt>Deux missions:</dt>
+<dd><ul class="first last simple">
+<li>site web Libération.fr</li>
+<li>archives (800 000 articles depuis 1994)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Utilisateurs <em>très</em> différents</p>
+</li>
+</ul>
+<p class="notes">Gestion des homepages, Rédaction des articles, Catégorisation des articles, Consultation des archives</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>Ce qui nous manquait de base dans l'admin</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>Interface qui s'adapte aux différents métiers</li>
+<li>Recherche multi-objets et multi-critères</li>
+<li>Gestion du concurrency control (&quot;Qui a écrasé mes modifs ?!&quot;)</li>
+<li>Gestion ergonomique des relations entre objets (chasse aux clics!)</li>
+</ul>
+<p class="notes">inlines: 1. empty form 2. popup changelist puis raw id fields</p>
+<p class="notes">réactivité, bonheur</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>Stratégie</h1></header>
+            
+            
+            <section><ul>
+<li><p class="first">Admin non utilisable telle quelle pour nos besoins</p>
+</li>
+<li><p class="first">On refait tout de zéro ou on part de l'admin ?</p>
+</li>
+<li><p class="first">Sprint de 15 jours à 4 devs pour tenter un proto à partir de l'admin</p>
+</li>
+<li><dl class="first docutils">
+<dt>A la fin du sprint:</dt>
+<dd><ul class="first last simple">
+<li>On passe en Rails (ça va on peut plaisanter)</li>
+<li>On part de l'admin (ouf!)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="notes">refaire tout avec des ModelForms</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Pourquoi garder l'admin</h1></header>
+            
+            
+            <section><ul>
+<li><p class="first">Beaucoup de choses déjà codées (actions de masse, register, etc.)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Prévue pour être étendue (lire le code!)</dt>
+<dd><ul class="first last">
+<li><p class="first">Possibilité d'avoir un ou plusieurs AdminSite custom</p>
+</li>
+<li><dl class="first docutils">
+<dt>Nombreuses possibilités d'extension</dt>
+<dd><ul class="first last simple">
+<li>ModelAdmin.get_changelist()</li>
+<li>ChangeList.get_query_set()</li>
+<li>ModelAdmin.get_fieldsets()</li>
+<li>ModelAdmin.change|add_view()</li>
+<li>ModelAdmin.save_model()</li>
+<li>ModelAdmin.get_urls()</li>
+<li>etc.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Rester standard</p>
+</li>
+<li><p class="first">Compatibilité avec applis/snippets (dans les deux sens!)</p>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>En résumé</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>2 AdminSite</li>
+<li>1 ChangeList custom</li>
+<li>31 ModelAdmin</li>
+<li>39 ModelForm</li>
+<li>13 InlineModelAdmin</li>
+<li>5 InlineFormset</li>
+<li>11 widgets</li>
+<li>12 kms de JS, 7 kms de CSS, 119 templates</li>
+<li>1 bonne idée ergonomique: popin!</li>
+<li>6 applis fonctionnelles spécifiques</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide thanks-applis">
+          <div class="inner">
+            
+            <header><h1>Merci les applis</h1></header>
+            
+            
+            <section><ul class="simple">
+<li>(check chrono, 7 minutes 47)</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>django-admin-tools</h1></header>
+            
+            
+            <section><img alt="img/quai-menu.png" src="img/quai-menu.png" />
+<p class="notes">très pratique/flexible</p>
+<p class="notes">menu/page accueil dédiée pour chaque groupes d'utilisateurs</p>
+<p class="notes">un peu de refactorisation à faire (DRYification, récupérer l'AdminSite dans le context, pas dans l'URL)</p>
+<ul class="simple">
+<li><a class="reference external" href="https://bitbucket.org/izi/django-admin-tools/">https://bitbucket.org/izi/django-admin-tools/</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>django-admin-tabs</h1></header>
+            
+            
+            <section><img alt="img/quai-article-change.png" src="img/quai-article-change.png" />
+<p class="notes">Organiser son change form en colonne + tabs, Change form != par groupe d'utilisateurs</p>
+<p class="notes">Appli presque plug'n'play</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/liberation/django-admin-tabs">https://github.com/liberation/django-admin-tabs</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide has_notes">
+          <div class="inner">
+            
+            <header><h1>django-locking</h1></header>
+            
+            
+            <section><img alt="img/quai-locked.png" src="img/quai-locked.png" />
+<p class="notes">django-locking: concurrency control</p>
+<p class="notes">Plusieurs forks</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/RobCombs/django-locking">https://github.com/RobCombs/django-locking</a> (fork le plus abouti)</li>
+<li><a class="reference external" href="https://github.com/liberation/django-locking">https://github.com/liberation/django-locking</a> (plus intrusif, moins de requêtes HTTP)</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>D'autres applis</h1></header>
+            
+            
+            <section><ul>
+<li><dl class="first docutils">
+<dt>django-tinymce</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://github.com/aljosa/django-tinymce">http://github.com/aljosa/django-tinymce</a></li>
+<li>attention si STATIC sur un domaine à part: crossdomain problem!</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>django-massadmin</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/liberation/django-massadmin">https://github.com/liberation/django-massadmin</a></li>
+<li>édition multiple, very dangerous!</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>django-ajax-select</dt>
+<dd><ul class="first last simple">
+<li>autocompletion pour les foreign key</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>sesql</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://bitbucket.org/liberation/sesql/">https://bitbucket.org/liberation/sesql/</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>django-admin-basket</dt>
+<dd><ul class="first last simple">
+<li>pas encore libéré</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Limites de l'admin</h1></header>
+            
+            
+            <section><blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt>ModelAdmin: quelques points d'entrées manquants</dt>
+<dd><ul class="first last simple">
+<li>change_view =&gt; un seul gros block</li>
+<li>propriétés statiques =&gt; mieux avec la 1.4</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>JS</dt>
+<dd><ul class="first last simple">
+<li>intrusif (onclick=&quot;&quot;)</li>
+<li>vieux JS spaghetti fait alla mano</li>
+<li>jquery pas à jour</li>
+<li>manque d'API pour les widgets fournis</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>templates:</dt>
+<dd><ul class="first last simple">
+<li>pas assez de points d'entrées {% block %}</li>
+<li>obliger de redéclarer les inclusion_tag qu'on veut spécifique à un AdminSite (ex: {% submit_row %})</li>
+<li>indentation</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">A nos patchs!</p>
+</li>
+</ul>
+</blockquote></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: hack-the-admin-live.rst -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Questions ?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="hack-the-admin-live.rst">hack-the-admin-live.rst</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/20
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Admin: hacker plus haut, hacker plus loin</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">A propos</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Introduction</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">L'admin django (index)</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">L'admin django (article)</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">L'admin django après 6 mois (article)</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Comment ?</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Tiens oui, comment ?</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Le &quot;back&quot; de Libé en deux mots</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Ce qui nous manquait de base dans l'admin</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Stratégie</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Pourquoi garder l'admin</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">En résumé</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Merci les applis</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">django-admin-tools</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">django-admin-tabs</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">django-locking</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">D'autres applis</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Limites de l'admin</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Questions ?</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
