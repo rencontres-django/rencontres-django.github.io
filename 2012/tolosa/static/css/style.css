@@ -33,3 +33,10 @@ body {padding-top: 2em;}
     bottom: 0;
     right: 0;
 }
+
+ul.thumbnails li a.thumbnail {
+  height: 100px;
+  width: 300px;
+  display: table-cell; 
+  vertical-align: middle;
+}
