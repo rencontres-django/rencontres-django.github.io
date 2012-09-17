@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DjangoCon Toulouse, 24 et 25 novembre 2012</title>
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span9 hero-unit">
+                <h1>
+                    DjangoCon Toulouse
+                    <small>24 et 25 novembre 2012</small>
+                </h1>
+                <p>La conf django du Sud-Ouest, au pays du cassoulet !</p>
+                <img src="static/img/Toulouse_by_night_with_Basilique_Saint-Sernin.jpg" alt="Basilique Saint-Sernin" />
+                <img src="static/img/Rue_de_Toulouse.jpg" alt="Rue de Toulouse" />
+                <img src="static/img/Violette_de_Toulouse.jpg" alt="Violette de Toulouse" />
+                <img src="static/img/Cathedrale_St_Etienne_Toulouse.jpg" alt="Cathédrale et place Saint-Étienne" />
+                <img src="static/img/Toulouse_jardin_royale_05191.jpg" alt="Jardin royal de Toulouse" />
+            </div>
+            <div class="span3">
+                <br />
+                <img src="static/img/django-pony-220x176.png"  alt="Whee!" />
+            </div>
+        </div>
+    </div>
+    <div class="container main">
+        <div class="row">
+
+            <ul class="breadcrumb">
+                <li><a href="http://www.django-fr.org">Django-fr</a> <span class="divider">›</span></li>
+                <li><a href="http://rencontres.django-fr.org">Rencontres</a> <span class="divider">›</span></li>
+                <li><a href="http://rencontres.django-fr.org/2012">2012</a> <span class="divider">›</span></li>
+                <li><a href="../">DjangoCon Toulouse</a> <span class="divider">›</span></li>
+                <li class="active">Conférences</li>
+            </ul>
+
+            <div class="span12">
+                <h2>Programme des conférences</h2>
+            </div>
+            
+            <div class="span8">
+                <p>8 conférences&nbsp;: 20 minutes pour écouter, 5 minutes pour questionner.</p>
+                <p>Les horaires sont fournis à titre indicatif.</p>
+                
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Samedi 24 novembre</th>
+                        </tr>
+                        <tr>
+                            <td>13h30</td>
+                            <td>
+                                <a href="#c1">L'infatigable poney, par Nicolas Ferrari</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13h55</td>
+                            <td>
+                                <a href="#c2">Retour d'expérience Django à Météo-France, par Fabien Marty</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14h20</td>
+                            <td>
+                                <a href="#c3">Une introduction à Circus, un process watcher en python, par Alexis Métaireau</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14h45</td>
+                            <td>
+                                <a href="#c4">Hacker la démocratie avec le mémoire politique de la Quadrature du Net, par Laurent Peuch</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15h10</td>
+                            <td>
+                                Pause café
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15h35</td>
+                            <td>
+                                <a href="#c5">Conférence surprise ! par Julien Phalip</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16h00</td>
+                            <td>
+                                <a href="#c6">Et votre back-office ? par Timothée Peignier</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16h25</td>
+                            <td>
+                                <a href="#c7">Django pour les fainéants, le retour, par Mathieu Agopian</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16h50</td>
+                            <td>
+                                <a href="#c8">Pourquoi je ne veux plus utiliser Django, par David Larlet</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="conference" id="c1">
+                    <h3>L'infatigable poney</h3>
+                    <div class="description">
+<p>Depuis le passage à Django, nous avons trituré, malmené le framework mais il n'a jamais flanché. Nous souhaitons revenir et partager les challenges rencontrés durant ces dernières années, nous ayant menés à des développements parfois élégants, souvent acrobatiques, mais toujours preuve que l'outil choisi ne peut être regretté.</p>
+<p>Tranches de code d'un projet Django dont voici quelques chiffres :</p>
+<ul>
+    <li>bientôt 6 ans</li>
+    <li>près de 30K LOC</li>
+    <li>des milliers d'utilisateurs</li>
+    <li>10 applications Django</li>
+    <li>apprécié de 100 aines de djangonautes...</li>
+</ul>
+                    </div>
+                    <h4 class="speaker">Nicolas Ferrari</h4>
+                    <p class="bio">
+Co-fondateur d'<a href="https://www.alwaysdata.com/">@alwaysdata</a>.
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c2">
+                    <h3>Retour d'expérience Django à Météo-France</h3>
+                    <div class="description">
+<p>Cette présentation détaillera l'utilisation de Django dans un gros projet de Météo-France.</p>
+<p>Entré par la petite porte de manière opportuniste, Django a finit par prendre une place prépondérante dans ce projet, malgré une infrastructure maison pré-existante.</p>
+<p>Nous détaillerons les éléments qui ont rendu cela possible, ceux qui nous ont posé des problèmes et les contournements mis en place.</p>
+                    </div>
+                    <h4 class="speaker">Fabien Marty</h4>
+                    <p class="bio">
+Gravite autour de l'informatique de Météo-France depuis 2002, officie en tant qu'architecte depuis 6 ans.
+Contributeur PHP/Zend à titre personnel pendant quelques années, a découvert Django sur le tard mais avec beaucoup de bonheur !
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c3">
+                    <h3>Une introduction à Circus, un process watcher en python</h3>
+                    <div class="description">
+<p>Circus est un programme capable de gérer la vie et la mort des processus et des sockets sur votre machine. L'idée est de pouvoir gérer ceux-cis facilement, depuis une interface python, et de recevoir des informations sur leur état: consommation mémoire, processeur, etc, pour choisir de faire quelque chose à partir de là (par exemple ajouter de nouveaux process web si les existants sont déjà tous utilisés et occupés).</p>
+<p>Il est possible de contrôler Circus depuis python, depuis des sockets zeromq ou depuis une interface web, selon vos besoin. Cette présentation est une introduction au projet: comment vous pouvez l'utiliser et comment celui-ci est conçu pour être facilement extensible pour vos propres besoins.</p>
+<p>Plus d'informations sur le site du projet: <a href="http://circus.io">http://circus.io</a></p>
+                    </div>
+                    <h4 class="speaker">Alexis Métaireau</h4>
+                    <p class="bio">
+Alexis est un bidouilleur python, il travaille sur la mise en place et le passage à l'échelle des services web de Mozilla depuis fin 2011.
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c4">
+                    <h3>Hacker la démocratie avec le mémoire politique de la Quadrature du Net</h3>
+                    <div class="description">
+<p>Outil de campagne et outil d'information pour le citoyen est d'une pièce majeur de la boite à outil citoyenne qu'est la Quadrature du Net.</p>
+<p>Son principe est simple: il permet à un groupe (ici la Quadrature du Net) de mettre en ligne les recommandations de votes qu'elle a envoyé à nos élues (eg: voter non sur ACTA) et d'en afficher une comparaison avec les votes des élues. Cela permet d'augmenter le coup des décisions politique et d'être la référence pour les citoyens cherchant à savoir quels élues les représente le mieux sur les questions liés aux sujets traités par la Quadrature du Net.</p>
+<p>C'est également un outil de campagne servant à la fois les gens sur le terrain comme les campagnes en lignes en appelant aux citoyens.</p>
+<p>Cette conférence présentera ce projet, ses spécificités, son architecture technique et son futur.</p>
+                    </p>
+                    </div>
+                    <h4 class="speaker">Laurent Peuch</h4>
+                    <p class="bio">
+Datalove and chocolate.
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c5">
+                    <h3>Conférence surprise !</h3>
+                    <div class="description">
+Carte blanche à Julien Phalip pour cette conférence.
+                    </div>
+                    <h4 class="speaker">Julien Phalip</h4>
+                    <p class="bio">
+Core-développeur Django
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c6">
+                    <h3>Et votre back-office ?</h3>
+                    <div class="description">
+<p>Retour sur le développement du nouveau back-office de 20 Minutes, construit comme une application javascript au dessus d'une API REST.</p>
+<p>Comment utiliser Django pour créer une application qui utilises le javascript abondamment ? Pourquoi traiter son backoffice comme un citoyen de première classe de votre application ?</p>
+                    </div>
+                    <h4 class="speaker">Timothée Peignier</h4>
+                    <p class="bio">
+Je vis à Paris et travaille avec un tas de gens biens avec lesquels je code sur Croisé dans le Métro, 20 Minutes et bien d'autres encore !
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c7">
+                    <h3>Django pour les fainéants, le retour</h3>
+                    <div class="description">
+<p>D'autres astuces pour les fainéants (et non les feignants) fans de Django.</p>
+<p>Entre autres :</p>
+<ul>
+    <li>réutiliser le javascript de l'admin</li>
+    <li>utiliser les "project template" et "app template" de django1.4</li>
+    <li>réutiliser des applications</li>
+    <li>utiliser des "commit hook"</li>
+    <li>des tests (validation templates, de fixtures...)</li>
+</ul>
+                    </div>
+                    <h4 class="speaker">Mathieu Agopian</h4>
+                    <p class="bio">
+Développeur passionné et curieux, j'utilise Python et le poney magique depuis plusieurs années, pour le loisir et professionnellement.
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="conference" id="c8">
+                    <h3>Pourquoi je ne veux plus utiliser Django</h3>
+                    <div class="description">
+<p>Lassitude ? Mauvaises pratiques ? Inertie de la communauté ? Temps-réel ? Pourquoi avoir envie d'aller voir ce qui se fait ailleurs ? Limites conceptuelles et humaines de Django.</p>
+                    </div>
+                    <h4 class="speaker">David Larlet</h4>
+                    <p class="bio">
+Utilise et promeut Django depuis 6 ans. Initiateur de django-fr.org et co-organisateur des rencontres Django 2010, 2011 et 2012.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="span4">
+                <h3>Où&nbsp;? Quand&nbsp;? Comment&nbsp;?</h3>
+                <p><a href="./index.html">Toutes les informations pratiques sont ici.</a></p>
+                
+                <h3>Sponsors</h3>
+                <ul class="thumbnails">
+                    <li class="span4"><a href="http://makinacorpus.com/" target="_blank" class="thumbnail">
+                        <img width="220" src="http://www.capitoledulibre.org/2012/static/logos/makina-corpus.png"/>
+                    </a>
+                    <li class="span4"><a href="https://alwaysdata.com/" target="_blank" class="thumbnail">
+                        <img src="http://www.capitoledulibre.org/2012/static/logos/alwaysdata.png"/>
+                    </a>
+                    <li class="span4"><a href="http://free-electrons.com/" target="_blank" class="thumbnail">
+                        <img src="http://www.capitoledulibre.org/2012/static/logos/free-electrons.png"/>
+                    </a>
+                    <li class="span4"><a href="http://www.solulibre.com" target="_blank" class="thumbnail">
+                        <img src="http://www.capitoledulibre.org/2012/static/logos/solulibre.png"/>
+                    </a>
+                    <li class="span4"><a href="https://www.c-s.com/" target="_blank" class="thumbnail">
+                        <img src="http://www.capitoledulibre.org/2012/static/logos/c-s.png">
+                    </a>
+                    <li class="span4"><a href="https://www.objectif-libre.com/" target="_blank" class="thumbnail">
+                        <img src="http://www.capitoledulibre.org/2012/static/logos/objectif-libre.png" alt="Logo Objectif Libre">
+                    </a>    
+                    <li class="span4"><a href="http://www.sierrawireless.com/" target="_blank" class="thumbnail">
+                        <img src="http://www.capitoledulibre.org/2012/static/logos/sierra-wireless.gif" alt="Logo Sierra Wireless">
+                    </a>
+                </ul>
+                
+                <p>Pour sponsoriser l'événement, rendez-vous sur le site du <a href="http://www.capitoledulibre.org/2012/">Capitole du Libre</a>.</p>
+
+                <h3>Participer à l'orga</h3>
+                <p>Retrouvez-nous sur le chan <a href="irc://irc.freenode.net/djangocon-toulouse">#djangocon-toulouse (freenode)</a>.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container footer">
+        <hr />
+        <p><small>Crédits photos : Wikipedia • Logo par <a href="http://www.forveillejeremy.com/">Jérémy Forveille</a></small></p>
+    </div>
+</body>
