@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Andada);
 /* change locally the bootstrap variables */
+h5 {
+  font-size: 1.2em;
+  margin-top: 1em;
+}
 dd {
   margin-left: 0px;
 }
@@ -99,6 +103,18 @@ dd {
   /* the bottom margin is the negative value of the footer's height */
 
 }
+.conferences {
+  border-collapse: collapse;
+  margin: 1em 0 1em 0;
+  width: 100%;
+}
+
+.conferences td {
+  border: 0;
+    border-bottom: 1px dotted #333;
+  padding: 3px 1em;
+}
+
 /*
 
 Sticky Footer by Ryan Fait
