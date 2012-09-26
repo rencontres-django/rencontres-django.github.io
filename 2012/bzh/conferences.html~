@@ -11,7 +11,8 @@
         <li><a href="http://www.django-fr.org">Django-fr</a> <span class="divider">›</span></li>
         <li><a href="http://rencontres.django-fr.org">Rencontres</a> <span class="divider">›</span></li>
         <li><a href="http://rencontres.django-fr.org/2012">2012</a> <span class="divider">›</span></li>
-        <li class="active">DjangoBreizh Rennes</li>
+        <li><a href="./index.html">DjangoBreizh Rennes</a> <span class="divider">›</span></li>
+        <li class="active">Conférences</li>
     </ul>
     <div class="wrapper">
         <div class="hero-unit">
@@ -29,26 +30,7 @@
         <div class="container main">
             <div class="row">
                 <div class="span8">
-                    <h3>Un événement collaboratif</h3>
-                    <p>DjangoBreizh est un événement collaboratif orienté vers
-                        les retours d'expérience, avec des conférences de 15
-                        minutes le matin, un atelier débutant et des barcamps
-                        l'après-midi.
-                    </p>
-                    <p>Nous parlerons de Django et de développement web, et de python bien sûr !</p>
-                    <p>L'inscription <strong>n'est pas obligatoire</strong>
-                        pour la journée (conférences, barcamps et ateliers débutants),
-                        qui est gratuite. N'hésitez pas à vous signaler sur le <a href="http://lanyrd.com/2012/djangobreizh/">lanyrd de Django Breizh</a> !<br />
-                        La soirée, en fonction des options disponibles, sera
-                        payantes et sur inscriptions (nous vous tiendrons au courant
-                        le plus rapidement possible).</p>
-
                     <h3>Le programme</h3>
-                    <p>L'idée est de reprendre les points forts du programme des
-                        djangocongs, mais en l'adaptant pour une seule journée.</p>
-                    <p>Si vous êtes intéressés par l'atelier découverte et installation
-                        pour débutant, n'hésitez pas à venir.</p>
-
                     <ul>
                         <li>9h00 : petit déjeuner et ouverture</li>
                         <li>9h30 : conférences</li>
@@ -60,8 +42,8 @@
                             (programmation à venir).</li>
                     </ul>
 
-                    <h4>Les conférences</h4>
-                     <table class="conferences">
+                    <h3>Les conférences</h3>
+                    <table class="conferences">
                         <tr>
                             <th>Heure</th>
                             <th>Titre</th>
@@ -112,44 +94,118 @@
                         </tr>
                     </table>
 
-                    <h3>Tarifs et inscriptions</h3>
-                    <h4>Journée</h4>
-                    <p>La journée, comprenant les conférences du matin, et les
-                    barcamp de l'après-midi, ainsi que l'atelier est <strong>gratuite</strong>
-                    et sans inscription (mais n'hésitez pas à vous signaler sur le
-                    <a href="http://lanyrd.com/2012/djangobreizh/">Lanyrd de Django Breizh</a>).</p>
-                    <p>Ce qui veut dire que vous pouvez venir le matin et/ou l'après-midi,
-                    sans engagement de votre part. Cela permettra à tous ceux d'entre vous
-                    pour qui il peut être difficile d'engager sa journée entière, tout
-                    en profitant de l'essentiel.</p>
-                    <h4>Soirée communautaire</h4>
-                    <p>Pour le moment, nous cherchons encore une salle pour nous
-                    accueillir, avec deux options de recherche : une salle avec buffet
-                    et de quoi se poser, ou bien un restaurant qui pourrait accueillir
-                    une trentaine de personnes.</p>
-                    <p>La soirée sera sur inscription, et nous espérons pouvoir proposer
-                    un tarif inférieur à 30€ par personne.</p>
+                    <h4>Les détails des conférences</h4>
 
-                    <h3>Sponsors</h3>
-                    <p>Nous proposons à toutes entreprises ou association souhaitant
-                    soutenir l'événement le programme de sponsoring suivant :</p>
+                    <h5><a name="infatigable"></a>L'infatigable poney</h5>
+                    <p>Par Nicolas "<a href="https://twitter.com/ferrouzzz">@ferrouzzz</a>"
+                    Ferrari, Co-fondateur d'<a href="https://twitter.com/alwaysdata">@alwaysdata</a></p>
+                    <p>Depuis le passage à Django, nous avons trituré, malmené
+                    le framework mais il n'a jamais flanché. Nous souhaitons
+                    revenir et partager les challenges rencontrés durant ces
+                    dernières années, nous ayant menés à des développements
+                    parfois élégants, souvent acrobatiques, mais toujours
+                    preuve que l'outil choisi ne peut être regretté.</p>
+
+                    <p>Tranches de code d'un projet Django dont voici quelques
+                    chiffres :</p>
                     <ul>
-                        <li>100€ "Poney motivé" : logos sur le site (250x100px max), tous nos
-                           remerciements lors de l'ouverture</li>
-                        <li>200€ "Poney généreux" : comme le poney motivé, avec
-                            la minute de présentation au début des conférences
-                            le matin avec un slide de support.</li>
+                        <li>bientôt 6 ans</li>
+                        <li>près de 30K LOC</li>
+                        <li>des milliers d'utilisateurs</li>
+                        <li>10 applications Django</li>
+                        <li>apprécié de 100 aines de djangonautes...</li>
                     </ul>
-                    <p>Vous voulez devenir sponsor ? Vous pouvez écrire à
-                    <span class="email">&lt;facturation@django-fr.org&gt;</span></p>
-                    <p>Merci à tous de votre soutien !</p>
+
+                    <h5><a name="ionyweb"></a>IonyWeb le CMS Django basé sur une API et une IHM Ajax</h5>
+                    <p>Par Rémy Hubscher, Ionyse</p>
+                    <p>Après trois années de travail, Ionyse décide de libérer
+                    Ionyweb, un CMS en Django basé sur une API REST et une IHM
+                    javascript. Je vous propose de faire un petit tours du
+                    propriétaire.</p>
+                    <ul>
+                        <li>Gestion des thèmes,</li>
+                        <li>création d'une application,</li>
+                        <li>création d'un plugin,</li>
+                        <li>Organisation de l'API,</li>
+                        <li>démo de l'interface Ajax.</li>
+                    </ul>
+
+                    <p>Rémy Hubscher est développeur Django depuis 2007.
+                    En 2009 il créé Ionyse avec deux amis Sébastien Barbier et
+                    Amaury Pernette. Depuis Django est son quotidien.</p>
+
+                    <h5><a name="circus"></a>Circus, process watcher en python</h5>
+                    <p>Par <a href="http://notmyidea.org">Alexis Métaireau</a>, Mozilla Services
+                    - alexis@notmyidea.org</p>
+
+                    <p>Circus est un "process watcher" écrit en python, qui est
+                    construit à la fois pour être réutilisé en tant que
+                    bibliothèque et en tant qu'outil système. Nous l'avons
+                    d'abord créé pour nos besoin à Mozilla Services mais il
+                    peut être utile dans bien d'autres cas.</p>
+
+                    <p>Circus vous permet de gérer et surveiller les processus
+                    que vous avez besoin de lancer sur vos serveurs. Il est
+                    aussi capable de s'inscrire à une socket et d'ainsi gérer
+                    dynamiquement la charge que vous envoyez aux différents
+                    programmes.</p>
+
+                    <p>La conférence sera rapidement une présentation de circus,
+                    de son implémentation et des cas ou il peut être utile.</p>
+
+                    <h5><a name="cherrypy"></a>Surprise à base de CherryPy</h5>
+                    <p>Par <a href="https://twitter.com/lawouach ">Sylvain Hellegouarch</a>.</p>
+                    <p>Pour sortir un peu du contexte Django, Sylvain aura la lourde
+                    responsabilité de nous faire rêver avec
+                    <a href="http://www.cherrypy.org/">CherryPy</a>.</p>
+
+                    <h5><a name="a-la-queue-leu-leu"></a>A la queue leu leu</a></h5>
+                    <p>Par <a href="https://twitter.com/nautilebleu">Goulwen Reboux</a>, lead developer chez
+                    <a href="http://greenbureau.fr">greenbureau.fr</a></p>
+                    <p>Pour traiter les forts volumes de données, pour assurer
+                    un traitement en temps réel... de nombreuses
+                    infrastructures font appel à des gestionnaires de queues
+                    qui permettent de déporter les calculs hors du site web.</p>
+
+                    <p>Dans l'environnement Python, celery domine et est perçu
+                    comme l'outil incontournable. Il y a pourtant beaucoup à
+                    (re)dire sur Celery et il existe des alternatives.</p>
+
+                    <p>Et si vous construisez votre propre gestionnaire de queue ?</p>
+
+                    <h5><a name="migration-south"></a>Migration de Poneys vers le Sud</h5>
+                    <p>Par <a href="https://twitter.com/linovia_net">Ordoquy Xavier</a>,
+                    développeur python et django freelance.</p>
+                    <p>South est un utilitaire de migration de schéma et données.<br />
+                    L'objectif de cet conférence est de montrer comment l'utiliser pour se facilité la vie."</p>
+
+                    <h5><a name="tastypie"></a>Exposer des services TastyPie</h5>
+                    <p>Par <a href="https://twitter.com/sraimbault">Stéphane Raimbault</a>,
+                    Gérant de <a href="http://webstack.fr">Webstack</a><br />
+                    Intervenant sur le projet Autolib’ pour Polyconseil, et Djangonaute de longue date</p>
+                    <p>Pour découpler vos vues et votre backend ou faciliter la
+                    conception d'interfaces hétérogènes (iOS, Android et Web)
+                    sur la même base métier, il est pertinent d'offrir une API.</p>
+
+                    <p>Nous verrons ensemble comment exporter une API de
+                    services en Django avec Tastypie.</p>
+
+                    <h5><a name="factory_boy"></a><a href="https://github.com/rbarrois/factory_boy">factory_boy</a>, les fixtures du futur</h5>
+                    <p>Par Raphaël Barrois :<br />
+                    "Geek, développeur Python / Django. Je fais tourner le SI Autolib’."</p>
+
+                    <p>Les tests ont souvent besoin qu'un certain nombre
+                    d'objets soient présents en base.</p>
+
+                    <p>factory_boy est une nouvelle approche sur ce sujet, plus
+                    efficace et lisible que les fichiers de fixtures ou les
+                    appels massifs à MyModel.objects.create().</p>
+
+                    <p>Cette conférence présentera le fonctionnement global de
+                    factory_boy, ainsi que quelques scénarios d'usage typiques.</p>
+
                 </div>
                 <div class="span4">
-                    <div class="btn-group">
-                        <div class="btn btn-large btn-primary">
-                            <a href="conferences.html">Découvrez le programme</a>
-                        </div>
-                    </div>
                     <dl>
                         <dt>Où ?</dt>
                         <dd>&Agrave; la <a href="http://www.lacantine-rennes.net/">Cantine numérique rennaise</a>
@@ -171,13 +227,6 @@
                         <dd><img src="http://www.django-fr.org/site_media/theme/logo.png" alt="Django-Fr" title="Association Django-Fr" /></dd>
                         <dd><img src="static/images/sponsors/afpy.png" alt="AFPy" title="Association Francophone de Python" /></dd>
                     </dl>
-                    <dl>
-                        <dt>Sponsors :<br />Poney Généreux</dt>
-                        <dd><a href="http://www.linobject.com/"><img src="static/images/sponsors/linobject.png" alt="LinObject" title="LinObject" /></a><br /><br /></dd>
-                        <dd><a href="https://www.alwaysdata.com/"><img src="static/images/sponsors/alwaysdata.png" alt="Always Data" title="Always Data" /></a><br /><br /></dd>
-                        <dd><a href="http://www.polyconseil.fr/"><img src="static/images/sponsors/polyconseil.png" alt="Polyconseil" title="Polyconseil" /></a><br /><br /></dd>
-                    </dl>
-
                 </div>
             </div>
         </div>
