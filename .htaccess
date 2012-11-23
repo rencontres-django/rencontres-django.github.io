@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^rencontres.django-fr.org$ [NC]
+RewriteRule ^$ http://rencontres.django-fr.org/2012/ [R=301,L]
