@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>DjangoCon Toulouse 2012 • Django et Magento sont dans un bateau</title>
+
+		<meta name="description" content="De l'utilisation des solutions e-commerce Django dans un contexte Agence">
+		<meta name="author" content="Julien Maupetit">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/comsource.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-markdown>
+					<img src="images/logo_djangauvergne.png" alt="Django Poney Auvergne" class="right no-border"/>
+					#Django &amp; Magento
+					<img src="images/meet-magento-logo-150x150.png" alt="Logo Magento" class="left no-border"/>
+					##sont dans un bateau ...
+					####DjangoCon Toulouse 2012
+
+					<small>[Julien Maupetit](http://julien.maupetit.me) / [@julienmaupetit](http://twitter.com/julienmaupetit)</small>
+
+				</section>
+
+				<section>
+					<section data-markdown>
+						##P0wned you are...
+						<img src="images/01-Mandrake-by-Gabriel-Hardman.png" alt="Mandrake" />
+
+						Vous n'êtes plus aveuglé par votre amour pour Python, Django et les choses bien faites.
+					</section>
+					<section data-markdown>
+						####Vous êtes une
+						##Super Agence Web
+						<img src="images/ComSource_Super.jpg" alt="Super ComSource" />
+
+						<small>(... mais une super petite Agence Web)</small>
+					</section>
+				</section>
+
+				<section data-markdown>
+					#Django
+					##est-il approprié pour développer un site
+					#e-commerce ?
+					<small>ou pas.</small>
+				</section>
+
+				<section>
+					<section data-markdown>
+						### Solution e-commerce
+
+						<ul>
+							<li class="fragment roll-in"> Adaptabilité ? </li>
+							<li class="fragment roll-in"> Performances ? </li>
+							<li class="fragment roll-in"> Quelle(s) solution(s) de paiement ? </li>
+							<li class="fragment roll-in"> Quelle(s) solution(s) de transport ? </li>
+							<li class="fragment roll-in"> Back-office ⇌ ERP </li>
+							<li class="fragment roll-in"> Délais ? </li>
+						</ul>
+					</section>
+
+					<section data-markdown>
+						## Sur le ring
+
+						Une segmentation par budget/CA
+
+						<strong>PHP</strong> pour les pauvres
+
+						<small>Budget &lt; 500k€ : PrestaShop, Magento, Drupal commerce, etc.</small>
+
+						<strong>Java</strong> pour la world company
+
+						<small>(Intershop, Hybris, etc.)</small>
+
+						<small>Source: <a href="http://www.ecommerce-squad.com/solutions/livre-blanc-des-solutions-e-commerce.html">Livre blanc ecommerce-squad</a></small>
+
+						<img src="images/slappin_batman_troll.jpg" alt="Slappin Batman troll" class="no-border" />
+
+					</section>
+
+					<section data-markdown>
+						### et
+						#python ?
+					</section>
+
+					<section>
+						<h1>VS</h1>
+						<div style="width:32%; float:left" class="fragment roll-in" data-markdown >
+							## Satchmo
+
+							* Adaptabilite: <br/>
+											<span class="icon green">N</span>
+											<span class="icon green">N</span>
+											<span class="icon green">N</span>
+											<span class="icon green">O</span>
+											<span class="icon green">O</span>
+							* Performances: <br/>
+											<span class="icon green">N</span>
+											<span class="icon green">O</span>
+											<span class="icon green">O</span>
+											<span class="icon green">O</span>
+											<span class="icon green">O</span>
+							* Paiement: <br/>
+										<span class="icon green">N</span>
+										<span class="icon green">N</span>
+										<span class="icon green">N</span>
+										<span class="icon green">O</span>
+										<span class="icon green">O</span>
+							* Transport: <br/>
+										 <span class="icon green">N</span>
+										 <span class="icon green">N</span>
+										 <span class="icon green">O</span>
+										 <span class="icon green">O</span>
+										 <span class="icon green">O</span>
+							* Back-office: <br/>
+										   <span class="icon green">O</span>
+										   <span class="icon green">O</span>
+										   <span class="icon green">O</span>
+										   <span class="icon green">O</span>
+										   <span class="icon green">O</span>
+							* Délais: <br/>
+									  <span class="icon green">N</span>
+									  <span class="icon green">O</span>
+									  <span class="icon green">O</span>
+									  <span class="icon green">O</span>
+									  <span class="icon green">O</span>
+						</div>
+						<div style="width:32%; float:left;" class="fragment roll-in" data-markdown>
+							## Oscar
+
+							* Adaptabilite: <br/>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+							* Performances: <br/>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+											<span class="icon orange">N</span>
+											<span class="icon orange">O</span>
+							* Paiement: <br/>
+										<span class="icon orange">N</span>
+										<span class="icon orange">N</span>
+										<span class="icon orange">O</span>
+										<span class="icon orange">O</span>
+										<span class="icon orange">O</span>
+							* Transport: <br/>
+										 <span class="icon orange">N</span>
+										 <span class="icon orange">N</span>
+										 <span class="icon orange">O</span>
+										 <span class="icon orange">O</span>
+										 <span class="icon orange">O</span>
+							* Back-office: <br/>
+										   <span class="icon orange">N</span>
+										   <span class="icon orange">N</span>
+										   <span class="icon orange">N</span>
+										   <span class="icon orange">N</span>
+										   <span class="icon orange">O</span>
+							* Délais: <br/>
+									  <span class="icon orange">N</span>
+									  <span class="icon orange">N</span>
+									  <span class="icon orange">N</span>
+									  <span class="icon orange">O</span>
+									  <span class="icon orange">O</span>
+						</div>
+						<div style="width:32%; float:left" class="fragment roll-in" data-markdown>
+							## PrestaShop
+
+							* Adaptabilite: <br/>
+											<span class="icon blue">N</span>
+											<span class="icon blue">N</span>
+											<span class="icon blue">O</span>
+											<span class="icon blue">O</span>
+											<span class="icon blue">O</span>
+							* Performances: <br/>
+											<span class="icon blue">N</span>
+											<span class="icon blue">N</span>
+											<span class="icon blue">O</span>
+											<span class="icon blue">O</span>
+											<span class="icon blue">O</span>
+							* Paiement: <br/>
+										<span class="icon blue">N</span>
+										<span class="icon blue">N</span>
+										<span class="icon blue">N</span>
+										<span class="icon blue">N</span>
+										<span class="icon blue">N</span>
+							* Transport: <br/>
+										 <span class="icon blue">N</span>
+										 <span class="icon blue">N</span>
+										 <span class="icon blue">N</span>
+										 <span class="icon blue">N</span>
+										 <span class="icon blue">N</span>
+							* Back-office: <br/>
+										   <span class="icon blue">N</span>
+										   <span class="icon blue">N</span>
+										   <span class="icon blue">N</span>
+										   <span class="icon blue">N</span>
+										   <span class="icon blue">O</span>
+							* Délais: <br/>
+									  <span class="icon blue">N</span>
+									  <span class="icon blue">N</span>
+									  <span class="icon blue">N</span>
+									  <span class="icon blue">N</span>
+									  <span class="icon blue">N</span>
+						</div>
+					</section>
+
+				</section>
+
+				<section data-markdown>
+					Choisissez vos
+					#armes
+					en fonction du
+					#budget
+					de votre
+					#client
+				</section>
+
+				<section data-markdown>
+					<img src="images/ComSource_Super_Jul.png" alt="ComSource Super Jul" class="no-border right" />
+					#Super Thx!
+					######Julien Maupetit / [@julienmaupetit](https://twitter.com/julienmaupetit)
+				</section>
+
+				<section data-markdown>
+					<img src="images/ComSource_Super_Arno.png" alt="ComSource Super Arno" class="no-border right" />
+					### Crédits images
+
+					Mandrake
+					:	[Gabriel Hardman](http://comicartcommunity.com/2012/07/mandrake-the-magician-the-revised-edition/)
+
+					Poney DjangAuvergne &amp; les Supers ComSource
+					:	[Arnaud Joly](http://www.arnaudjoly.com/)
+
+					Slappin Batman meme
+					: [quickmeme.com](http://www.quickmeme.com/make/caption/#id=225515832&name=Batman Slapping Robin)
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				keyboard: true,
+
+				theme: 'comsource', // available themes are in /css/theme
+				transition: 'concave', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

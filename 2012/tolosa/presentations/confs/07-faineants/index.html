@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Django pour les fainéants</title>
+
+		<meta name="description" content="Présentation pour Djangocon Toulouse 2012">
+		<meta name="author" content="Mathieu Agopian">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+    <section>
+        <h1>Django pour les fainéants</h1>
+        <br>
+        <p>@magopian</p>
+        <p>mathieu.agopian@gmail.com</p>
+        <br>
+        <p>Employé chez Novapost depuis un an<br>Développeur passionné, curieux</p>
+    </section>
+    <section>
+        <h2>Petit rappel</h2>
+        <br>
+        <h4><font color="#009900">Fainéant : OUI</font></h4>
+        <p><font color="#009900">Fait néant : aime ne rien faire.</font></p>
+        <br>
+        <h4><font color="#FF3300">Feignant : NON</font></h4>
+        <p><font color="#FF3300">Art de feindre : feindre ... pour échapper à une tâche.</font></p>
+    </section>
+    <section>
+        <section>
+            <h2>Makefile</h2>
+            <br>
+            <ul>
+                <li>Mieux que des alias ou des scripts</li>
+                <li>Tout le monde partage la même méthode</li>
+                <li>A utiliser dans la documentation</li>
+            </ul>
+            <br>
+            <br>
+            <p>Exemple : "pour les contributeurs : make &amp;&amp; make test"</p>
+        </section>
+        <section>
+            <h2>Makefile</h2>
+            <br>
+            <pre>
+.PHONY: develop test clean update
+
+SETTINGS = myproject.settings
+TEST_SETTINGS = myproject.test_settings
+
+develop:
+    virtualenv .
+    bin/python setup.py develop
+
+test:
+    bin/django-admin.py test --settings=$(TEST_SETTINGS)
+
+clean:
+    bin/django-admin.py clean_pyc --settings=$(SETTINGS)
+
+update:
+    bin/pip install -U -r requirements.pip
+            </pre>
+        </section>
+        <section>
+            <h2>Makefile</h2>
+            <br>
+            <p>Un exemple plus complet :</p>
+            <br>
+            <p><a href="https://gist.github.com/4077998">Makefile de fainéant</a></p>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Project Template</h2>
+            <br>
+            <h4>L'ancienne méthode</h4>
+            <ol>
+                <li>cloner le dépôt</li>
+                <li>modifier tous les fichiers</li>
+                <li>contenant le nom du projet</li>
+            </ol>
+            <br>
+            <br>
+            <h4>La nouvelle méthode</h4>
+            <pre>
+django-admin.py startproject --template=TEMPLATE
+                             --extension=py,rst,template
+                             --name Makefile
+                             PROJECT_NAME
+            </pre>
+        </section>
+        <section>
+            <h2>Project template</h2>
+            <br>
+            <br>
+            <p>TEMPLATE est un chemin ou une URL</p>
+            <p>vers un dossier ou un fichier compressé.</p>
+            <p>Plus d'information dans les <a href="https://docs.djangoproject.com/en/1.4/releases/1.4/#custom-project-and-app-templates">release notes</a>.</p>
+        </section>
+        <section>
+            <h2>Project template</h2>
+            <br>
+            <p>Trop fainéant pour faire ton propre template ?</p>
+            <br>
+            <p><a href="https://github.com/brutasse/django-project-template#readme">Moi aussi</a> (merci @brutasse)</p>
+            <br>
+            <p>Encore plus fort, le <a href="https://github.com/brutasse/fab-bundle#readme">fab-bundle</a> (merci @brutasse)</p>
+            <p class="fragment">(et celui qui l'essaie et me fait un retour dessus ;)</p>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Diverses astuces</h2>
+            <br>
+            <p>En vrac</p>
+        </section>
+        <section>
+            <h2>Utiliser les librairies Python</h2>
+            <br>
+            <ul>
+                <li>itertools (permutations, groupby, cycle, repeat, ...)<br>
+                </li>
+                <li>functools (partial, total_ordering)<br>
+                </li>
+                <li>collections (namedtuple, OrderedDict, defaultdict)</li>
+                <li>dateutil</li>
+                <li>sh</li>
+                <li>requests<br>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Réutiliser des app django</h2>
+            <br>
+            <p>Trouvez votre bonheur sur <a href="http://www.djangopackages.com/grids/">django packages</a></p>
+            <ul>
+                <li>django-floppyforms</li>
+                <li>django-le-social</li>
+                <li>django-ratelimit-backend</li>
+                <li>django-discover-runner</li>
+                <li>django-nose</li>
+                <li>django-pipeline</li>
+                <li>django-secure</li>
+                <li>django-debug-toolbar</li>
+                <li>django_extensions<br>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Réutiliser le javascript de l'admin</h2>
+            <br>
+            <p>Voir l'exemple de <a href="https://gist.github.com/4078269">prepopulated_field.js</a></p>
+            <br>
+            <pre>
+&lt;script src="{% static "admin/js/jquery.js" %}"&gt;&lt;/script&gt;
+&lt;script src="{% static "admin/js/jquery.init.js" %}"&gt;&lt;/script&gt;
+&lt;script src="{% static "admin/js/urlify.js" %}"&gt;&lt;/script&gt;
+&lt;script src="{% static "admin/js/prepopulate.js" %}"&gt;&lt;/script&gt;
+&lt;script&gt;
+  (function($) {
+    #### CUSTOM CODE ####
+  })(django.jQuery);
+&lt;/script&gt;
+            </pre>
+        </section>
+        <section>
+            <h2>Flake8</h2>
+            <br>
+            <p>Du bonheur en barre : pep8 + pyflakes (+ mccabe)</p>
+            <br>
+            <pre>$ flake8 .</pre>
+            <br>
+            <p>Pour les vrais (les utilisateurs de VIM)</p>
+            <p><a href="https://github.com/scrooloose/syntastic">syntastic</a> (du mégabonheur en mégabarres)</p>
+        </section>
+        <section>
+            <h2>SYNTASTIC</h2>
+            <br>
+            <img src="syntastic.png">
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Pre-commit hooks</h2>
+            <p>Parce que personne n'est parfait (même pas moi !)</p>
+            <br>
+            <ul>
+                <li>exécuté avant chaque commit</li>
+                <li>valide que le commit est "propre"</li>
+                <li>parfait contre les oublis de "print", "import ipdb" ...</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Le basique</h2>
+            <br>
+            <p>Il est fourni directement en exemple</p>
+            <p>dans chaque dépôt git</p>
+            <br>
+            <p><font face="courier new">.git/hooks/pre-commit.sample</font></p>
+            <br>
+            <p>À renommer ou symlink vers</p>
+            <p><font face="courier new">.git/hooks/pre-commit</font></p>
+        </section>
+        <section>
+            <h2>Le basique</h2>
+            <br>
+            <p>Il empêche le commit si :</p>
+            <ul>
+                <li>noms de fichier avec caractères non ASCII</li>
+                <li>erreurs de whitespace (espaces en fin de ligne)</li>
+            </ul>
+            <br>
+            <p>Pour forcer le commit :</p>
+            <br>
+            <pre>$ git commit -n</pre>
+        </section>
+        <section>
+            <h2>Le basique, amélioré</h2>
+            <br>
+            <p>Fini les oublis de debug dans le code commité</p>
+            <br>
+            <pre>
+# make sure there's no TODO, debugging... left
+errors=0
+for bad in 'import pdb' 'import ipdb' 'TODO' 'print' 'assert False'; do
+    echo "&gt;&gt; checking for '$bad'"
+    res=$(git diff-index --name-only --cached $against -S"$bad" --)
+    if test -n "$res"; then  # if not empty, found some guilty files
+        echo "ERROR, found '$bad' in files commited:"
+        echo $res
+        errors=$(($errors + 1))
+    fi
+done
+exit $errors  # if errors, return an error: commit aborted
+            </pre>
+        </section>
+        <section>
+            <h2>Une autre possibilité</h2>
+            <br>
+            <p>Pour tout faire en Python (parce que c'est bon) :</p>
+            <br>
+            <p><a href="http://https://gist.github.com/1376856">https://gist.github.com/1376856</a></p>
+            <br>
+            <p>Inconvénient : teste tous les fichiers du dépôt, pas seulement les modifications à commiter</p>
+        </section>
+        <section>
+            <h2>Le spécifique à la doc</h2>
+            <br>
+            <p><a href="https://gist.github.com/4086323">https://gist.github.com/4086323</a></p>
+            <br>
+            <p>Compile la documentation Sphinx,</p>
+            <p>bloque le commit si il y a une erreur</p>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Fainéant++</h2>
+            <br>
+            <p>Automatiser tout ce qui peut l'être</p>
+            <ol>
+                <li>force à avoir un système propre</li>
+                <li>reproductible</li>
+                <li>facile à prendre en main pour un nouveau</li>
+                <li>pas d'erreur de manipulation/typo</li>
+                <li>j'ai dit "automatiser", ça suffit pas ?</li>
+            </ol>
+            <br>
+            <br>
+            <p>BANDE DE FAUX FAINÉANTS !</p>
+        </section>
+        <section>
+            <h2>GORUN</h2>
+            <p>Lancer des commandes lors du changements de fichiers :</p>
+            <p><a href="https://github.com/peterbe/python-gorun">Gorun de Peter Bengtsson</a></p>
+            <br>
+            <p>Créer un fichier <font face="courier new">gorun_settings.py</font></p>
+            <br>
+            <pre>
+DIRECTORIES = (
+    ('vecc', 'make test'),
+    ('docs', 'make doc'),
+)
+IGNORE_EXTENSIONS = ('swp',)
+            </pre>
+            <p>Profit</p>
+            <pre>$ gorun.py gorun_settings</pre>
+        </section>
+        <section>
+            <h2>Foreman</h2>
+            <p>Lancer tous les daemons en une seule fois :</p>
+            <p><a href="http://ddollar.github.com/foreman/">Foreman de David Dollar</a></p>
+            <br>
+            <p>Créer un fichier <font face="courier new">Procfile</font></p>
+            <pre>
+web: django-admin.py runserver --settings=$PROJ.settings 0.0.0.0:8000
+compass: compass watch
+tests: ./gorun.py gorun_settings.py
+            </pre>
+            <br>
+            <p>Profit</p>
+            <pre>$ foreman start</pre>
+            <br>
+            <p>Et pour les allergiques à ruby : <a href="http://gaffer.readthedocs.org/en/latest/">gaffer de Benoît Chesneau</a></p>
+        </section>
+        <section>
+            <h2>Foreman et Gorun</h2>
+            <br>
+            <p>Merci qui ? <a href="http://bruno.im/2011/sep/29/streamline-your-django-workflow/">@brutasse bien sûr !</a></p>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Tests</h2>
+            <br>
+            <p>I N D I S P E N S A B L E S</p>
+            <br>
+            <ul>
+                <li>le meilleur cadeau à vous offrir</li>
+                <li>ou au nouveau venu sur le projet</li>
+                <li>ou à votre futur vous</li>
+                <li>je sais même pas pourquoi on en discute</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Valider les templates</h2>
+            <br>
+            <p><a href="https://gist.github.com/4086398">https://gist.github.com/4086398</a></p>
+            <br>
+            <ol>
+                <li>récupérer tous les répertoires de templates</li>
+                <li>faire la liste de tous les templates (*.html et *.txt)</li>
+                <li>vérifier que le template "compile" (<font face="courier new">Template(t)</font>)</li>
+                <li>vérifier qu'il y a autant de <font face="courier new">{%</font> que de <font face="courier new">%}</font></li>
+                <li>vérifier qu'il y a autant de <font face="courier new">{{</font> que de <font face="courier new">}}</font></li>
+            </ol>
+        </section>
+        <section>
+            <h2>Valider les fixtures</h2>
+            <br>
+            <p><a href="https://gist.github.com/4086449">https://gist.github.com/4086449</a></p>
+            <br>
+            <br>
+            <ol>
+                <li>récupérer tous les répertoires "fixtures"</li>
+                <li>faire la liste de toutes les fixtures (*.json)</li>
+                <li>vérifier que le nombre de fixtures n'a pas bougé</li>
+                <li>vérifier que chaque fixture est chargée sans erreur</li>
+            </ol>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h2>Le top de l'automatisation</h2>
+            <br>
+            <p><a href="http://jenkins-ci.org/">Jenkins</a></p>
+            <p>a déployer et configurer soi-même</p>
+            <br>
+            <p><a href="https://travis-ci.org/">Travis</a>&nbsp;</p>
+            <p>magique !</p>
+            <p>gratuit</p>
+            <p>automatique sur les projets github publics</p>
+            <p>donne le statut des branches et des PRs !</p>
+        </section>
+        <section>
+            <h2>Exemple de configuration Travis</h2>
+            <p>Ajouter un fichier <font face="courier new">.travis.yml</font></p>
+            <br>
+            <pre>
+language: python
+python:
+    - "2.6"
+    - "2.7"
+install:
+    - pip install -r test-requirements.txt --use-mirrors
+    - python setup.py develop
+script: unit2 discover -v &amp;&amp; flake8 circus
+notifications:
+    email: tarek@mozilla.com
+    irc: "irc.freenode.org#mozilla-circus"
+    on_success: change
+            </pre>
+            <p>Créer son compte Travis</p>
+            <p>Activer travis sur le dépôt</p>
+        </section>
+        <section>
+            <h2>Travis en local : Tox</h2>
+            <p>Installer tox : <font face="courier new">pip install tox</font></p>
+            <br>
+            <p>Ajouter un fichier <font face="courier new">tox.ini</font></p>
+            <pre>
+[tox]
+envlist = py26,py27,docs,flake8
+
+[testenv]
+deps = -r{toxinidir}/test-requirements.txt
+commands =
+    python setup.py develop
+    unit2 discover -v
+
+[testenv:docs]
+commands = /usr/bin/make docs
+
+[testenv:flake8]
+commands = flake8 circus
+            </pre>
+        </section>
+    </section>
+    <section>
+        <h2>Des questions ?</h2>
+        <br>
+        <p><a href="http://mathieu.agopian.info/presentations/2012_djangocon_toulouse/">http://mathieu.agopian.info/presentations/2012_djangocon_toulouse/</a></p>
+    </section>
+</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

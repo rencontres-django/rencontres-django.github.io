@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+
+  Adaptation: Nicolas Ferrari (alwaysdata)
+-->
+
+<html>
+  <head>
+    <title>Django @alwaysdata</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='slides.js'></script>
+  </head>
+
+  <style>
+    /* alwaysdata custom style */
+    .slides.template-default > article:not(.nobackground):not(.biglogo) {
+      background: url(images/alwaysdata.png) bottom right no-repeat !important;
+      background-color: white !important;
+    }
+    .purple {
+      color: #A72277;
+    }
+    pre.ad {
+      font-size: 18px;
+      margin-bottom: 10px;
+      line-height: 18px;
+    }
+    pre.fs {
+      width: 340px;
+      line-height: 20px;
+    }
+    pre.fs2 {
+      margin-right: 20px;
+    }
+    pre.shell {
+      background-color: #111;
+      color: #eee;
+      font-size: 14px;
+      line-height: 16px;
+    }
+    p.dates {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    p.legend {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+
+      <article>
+        <h1>
+          Using Django <span class="purple">@alwaysdata</span>
+        </h1>
+        <br /><br />
+        <p>Nicolas Ferrari</p>
+        <p class="dates">
+          Nov. 5, 2012 (Paris, France)
+          <br />
+          Nov. 17, 2012 (Rennes, France)
+          <br />
+          Nov. 24, 2012 (Toulouse, France)
+        </p>
+      </article>
+
+      <article>
+        <h3>About alwaysdata.com</h3>
+        <p>Hosting platform. Support Django.
+          <br /><br />
+          <img class="centered" src="images/awful_wiring.jpg" width="400px"/>
+        </p>
+      </article>
+
+      <article>
+        <h3>Transitioning to Django</h3>
+        <p>Why?
+          <br /><br />
+          <img class="centered" src="images/boulet.jpg" width="400px"/>
+        </p>
+      </article>
+
+      <article class='fill'>
+        <h3>Awesomeness</h3>
+        <p>
+          <img src='images/superpowers.gif'>
+        </p>
+      </article>
+
+      <article class='fill'>
+        <h3>File structure</h3>
+        <p>
+          <img src='images/inception.jpg'>
+        </p>
+      </article>
+
+      <article>
+        <h3>Initial file structure</h3>
+        <pre class="ad fs" style="float:left;">
+.
+├── administration_
+│   ├── settings.py
+│   ├── urls.py
+│   ├── administration
+│   │   ├── models.py
+│   │   ├── templates
+│   │   └── views.py
+├── website_
+│   ├── settings.py
+│   ├── urls.py
+│   └── website
+│       ├── models.py
+│       ├── templates
+│       └── views.py
+├── etc.
+.
+        </pre>
+        <img style="float:right;margin-top:40px;" src="images/noob.jpg" />
+      </article>
+
+      <article>
+        <h3>Current file structure</h3>
+        <pre class="ad fs fs2" style="float:left;">
+.
+├── administration
+│   ├── templates
+│   │   ├── alerts
+│   │   └── invoice
+│   ├── templatetags
+│   └── views
+├── fixtures
+├── overlord
+│   └── templates
+│       └── admin
+├── phpmyadmin
+│   └── templates
+├── phppgadmin
+│   └── templates
+├── reseller
+│   ├── templates
+│   ├── templatetags
+│   └── views
+├── status
+│   └── templates
+├── webmail
+│   ├── templates
+│   └── views
+└── website
+    └── templates
+        </pre>
+        <pre class="ad fs" style="float:left;">
+├── common
+│   ├── billing
+│   │   ├── payment
+│   │   └── wallets
+│   ├── cruds
+│   ├── domains
+│   ├── mails
+│   ├── models
+│   ├── scripts
+│   ├── services
+│   ├── sites
+│   │   ├── httpd
+│   │   └── type
+│   ├── templates
+│   │   └── common
+│   ├── templatetags
+│   ├── utils
+│   └── vendors
+│       ├── domains
+│       ├── sms
+│       └── telephone
+        </pre>
+      </article>
+
+      <article class='fill'>
+        <h3>Signals</h3>
+        <p>
+          <img src='images/charlot.jpg'>
+        </p>
+      </article>
+
+      <article>
+        <h3>Signals (example)</h3>
+        <pre>
+def database_user_delete(sender, instance, **kwargs):
+    if settings.ENABLE_ARCHITECTURE_OPERATIONS:
+        alwaysdata.common.scripts.database.delete_user(instance)
+
+pre_delete.connect(database_user_delete, sender=DatabaseUser)
+        </pre>
+        <p>
+          <img class="centered" src='images/scarecrow.jpg' height="300px">
+        </p>
+      </article>
+
+      <article id="crud" class='fill'>
+        <p>
+          <img src='images/crud.jpg' height="700px">
+        </p>
+      </article>
+
+
+      <article>
+        <h3>Custom CRUD library (simple example)</h3>
+        <pre class="ad" style="font-size:15px;">
+class FtpUserCrud(django_crud.ModelCrud):
+
+    model = FtpUser
+    form_class = FtpUserForm
+    operations = 'CRUDL'
+    url_prefix = 'ftp'
+    decorators = [permission_required('account_ftp')]
+
+    def get_success_url(self):
+        return reverse('domain_read', args=(self.domain.id,))
+
+    def get_created_message(self):
+        return mark_safe(_(u"L'utilisateur FTP <b>%s</b> a été créé.") % self.object.name)
+
+django_crud.handler.TemplateHandler.register(FtpUserCrud)
+        </pre>
+        <p class="legend">get_object(), get_queryset(), get_context_data(), get_form(), get_form_kwargs() and more...</p>
+      </article>
+
+
+      <article>
+        <h3>Custom CRUD library (api example)</h3>
+        <pre class="ad" style="font-size:15px;">
+class ApiModelCrud(django_crud.handler.api.ApiModelCrud):
+
+    excludes = set(('password',))
+    url_prefix = 'v1/'
+
+class DatabaseCrud(ApiModelCrud):
+
+    model = Database
+    form_class = DatabaseForm
+    operations = 'RUL'
+    decorators = [permission_required('account_database')]
+    url_prefix = ApiModelCrud.url_prefix + 'database'
+    excludes = ApiModelCrud.excludes | set(('account', ))
+    container_fields = ['options',]
+
+django_crud.handler.ApiHandler.register(DatabaseCrud)
+        </pre>
+        <pre class="ad shell" style="margin-top:0px;">
+$ curl https://api.alwaysdata.com/v1/database/12345/ -u /batman:apikeyapikeyapikeyapikeyapikey
+HTTP/1.1 200 OK
+{
+    "id": 12345,
+    "href": "/v1/database/12345/",
+    "name": "batman_joker",
+    "type": "postgresql"
+    "is_postgis": false,
+    "encoding": "LATIN1",
+}
+        </pre>
+      </article>
+
+
+      <article>
+        <h3>Thank you!</h3>
+        <p>
+          <img width="50px" style="vertical-align:middle" src="images/twitter.png"/> @alwaysdata
+          <br />
+          <img width="50px" style="vertical-align:middle" src="images/twitter.png"/> @ferrouzzz
+          <br /><br />
+          <img class="centered" src="images/question.jpg" />
+        </p>
+      </article>
+
+    </section>
+
+  </body>
+</html>

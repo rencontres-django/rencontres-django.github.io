@@ -1,0 +1,103 @@
+/**
+ * Beige theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@font-face {
+	font-family: 'League Gothic';
+	src: url('../../lib/font/league_gothic-webfont.eot');
+	src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../../lib/font/league_gothic-webfont.woff') format('woff'),
+		 url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
+		 url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+// ComSource colors
+$cs_green: #c5d87e;
+$cs_orange: #f8b216;
+$cs_grey: #8e8e8e;
+$cs_blue: #6fc6d9;
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+$mainColor: #333;
+$headingFont: georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+$headingColor: $mainColor;
+$headingTextShadow: $cs_blue;
+$headingTextTransform: none;
+$backgroundColor: $cs_grey;
+$linkColor: darken($cs_blue, 20%);
+$linkColorHover: $cs_orange;
+$selectionBackgroundColor: rgba($cs_orange, 0.8);
+$heading1TextShadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+
+// Background generator
+@mixin bodyBackground() {
+    background-image:url('../../lib/images/vintage_speckles.png');
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+// Custom styles
+@import "compass/css3";
+
+// Add ComSource Logo to all slides
+.reveal {
+    background: {
+        image:url('../../lib/images/ComSource_Logo.png');
+        repeat:no-repeat;
+        position: 10px 10px;
+    }
+}
+
+// Positioning
+.left { float:left }
+.right { float:right }
+
+// Images
+img {
+    &.no-border {
+        box-shadow:0 0 0 rgba(#fff, 1) !important;
+        border:0 !important;
+    }
+}
+
+// Fonts
+@font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('../../lib/font/websymbols-regular-webfont.eot');
+    src: url('../../lib/font/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../lib/font/websymbols-regular-webfont.woff') format('woff'),
+         url('../../lib/font/websymbols-regular-webfont.ttf') format('truetype'),
+         url('../../lib/font/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.icon {
+    font-family:'WebSymbolsRegular' !important;
+    &.green { color:$cs_green }
+    &.orange { color:$cs_orange }
+    &.grey { color:$cs_grey }
+    &.blue { color:$cs_blue }
+}
+

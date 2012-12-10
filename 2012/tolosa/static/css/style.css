@@ -21,6 +21,9 @@ body {padding-top: 2em;}
   padding: 0 0px 5px 0;
   margin-top: 0;
 }
+.main h3 a.badge {
+  font-family: Helvetica,Arial,sans-serif;
+}
 .main h4 {
   color: #666;
   font-family: 'Andada', serif;

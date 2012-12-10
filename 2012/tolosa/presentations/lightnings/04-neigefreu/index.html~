@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Neige Freu - Rencontres Django Toulouse 2012</title>
+
+        <meta name="description" content="Neige FR: #neigefr -> neigefr.org">
+        <meta name="author" content="Bruno Bord">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <!-- <link rel="stylesheet" href="css/theme/default.css" id="theme"> -->
+        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+        <link rel="stylesheet" href="css/neigefr.css">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section>
+                    <h1>Neige Freu</h1>
+                    <img src="img/neige_en_tempete.jpg" alt="Neige en tempête">
+                    <p></p>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Bruno Bord</h1>
+                        <img src="img/avatar.jpg" alt="Moi" />
+                        <ul>
+                            <li>Développeur Web</li>
+                            <li>Clown Computing</li>
+                            <li>Je hais le printemps</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1>Bayonne</h1>
+                        <img src="img/bayonne.png" alt="Carte / Bayonne">
+                    </section>
+
+                    <section>
+                        <h2>#vraisud</h2>
+                        <h3>In Chocolatine We Trust</h3>
+                        <img src="img/chocolatine-france.png" alt="In Chocolatine We Trus">
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h2>Novembre 2010</h2>
+                        <img src="img/techrunch-2010-11.png" alt="Techrunch" />
+                    </section>
+
+                    <section>
+                        <h2>Principe de base</h2>
+                        <ul>
+                            <li>Un hashtag <tt>#uksnow</tt></li>
+                            <li>un code postal</li>
+                            <li>(éventuellement une intensité "/10")</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1>Confession :</h1>
+                        <h2>Oui, j'ai des copains Bifs</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Je me dis...</h2>
+                    <p><object data="img/noun_project_7292.svg" type="image/svg+xml"><span /></object></p>
+                </section>
+
+                <section>
+                    <h1>Go-Go-Gadgeto Django</h1>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>Mécanisme</h1>
+                        <h1>↓</h1>
+                    </section>
+                    <section>
+                        <h1>#neigefr</h1>
+                    </section>
+                    <section>
+                        <h1>crontab</h1>
+                    </section>
+                    <section>
+                        <h1>Twitter API Search</h1>
+                        <p><pre><code class="python">url = 'http://search.twitter.com/search.json?q=%23neigefr'</code></pre></p>
+                    </section>
+
+                    <section>
+                        <h1>Parsing</h1>
+                        <h2>message</h2>
+                        <p><code> LOL il neige #neigefr 75008 3/10 MDR </code></p>
+                    </section>
+
+                    <section>
+                        <h1>Parsing</h1>
+                        <h2>Code postal</h2>
+                        <p><code> LOL il neige #neigefr <strong>75008</strong> 3/10 MDR </code></p>
+                    </section>
+
+                    <section>
+                        <h1>Parsing</h1>
+                        <h2>(Intensité)</h2>
+                        <p><code> LOL il neige #neigefr 75008 <strong>3/10</strong> MDR </code></p>
+                    </section>
+
+                    <section>
+                        <h1>Code postal -> LatLong</h1>
+                        <pre><code class="python">url = 'http://maps.google.com/maps/geo?q="+zipcode+",France...'</code></pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h1>Rendu des cartes</h1>
+                    <h2>Google Maps</h2>
+                </section>
+
+                <section>
+                    <h1>Début du codage</h1>
+                    <h2>2 février 2012</h2>
+                </section>
+
+                <section data-state="alert">
+                    <h1>Presque</h1>
+                    <h2>3 février 2012</h2>
+                    <blockquote class="twitter-tweet tw-align-center" lang="fr"><p>bon. j'ai craqué : <a href="https://t.co/RXjIoXlf" title="https://github.com/brunobord/neigefr">github.com/brunobord/neig…</a> - pas encore prêt à l'emploi, mais j'y travaille</p>&mdash; Bruno Bord (@brunobord) <a href="https://twitter.com/brunobord/status/165547486419763200" data-datetime="2012-02-03T21:29:31+00:00">Février 3, 2012</a></blockquote>
+                </section>
+
+                <section data-state="soothe">
+                    <h1>Go !</h1>
+                    <h2>4 février 2012</h2>
+                    <blockquote class="twitter-tweet tw-align-center" lang="fr"><p>it's vivant! vivant! <a href="http://t.co/iuepfYXc" title="http://neigefr.org">neigefr.org</a> - <a href="https://twitter.com/search/%23neigefr">#neigefr</a></p>&mdash; Bruno Bord (@brunobord) <a href="https://twitter.com/brunobord/status/165587703734353921" data-datetime="2012-02-04T00:09:19+00:00">Février 4, 2012</a></blockquote>
+                </section>
+
+                <section>
+                    <section>
+                        <h1><span class="blur"> ❄ </span> Attendre <span class="blur"> ❄ </span></h1>
+                        <h3 class="fragment"><span class="blur"> ❄ </span> la prochaine averse <span class="blur"> ❄ </span></h3>
+                        <h3 class="fragment"><span class="blur"> ❄ </span> (y'en a eu peu) <span class="blur"> ❄ </span></h3>
+                    </section>
+                    <section>
+                        <h1>hiver 2012</h1>
+                        <h2>86 Flocons</h2>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Comment ?</h2>
+                    <h1>"faire le buzz"</h1>
+                </section>
+
+                <section>
+                    <h1>Effet</h1>
+                    <h2>“Boule de Neige”</h2>
+                    <p><small>(hin hin)</small></p>
+                </section>
+
+                <section data-state="blackout">
+                    <h1>Pause</h1>
+                    <p><small>je hais le printemps...</small></p>
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>2012-2013</h1>
+                        <h2>Reboot</h2>
+                        <ul>
+                            <li class="fragment">Twitter Bootstrap</li>
+                            <li class="fragment">#switch2osm</li>
+                            <li class="fragment">Geonames</li>
+                        </ul>
+                        <h1>↓</h1>
+                    </section>
+
+                    <section>
+                        <h1>Bootstrap</h1>
+                        <h3>Responsive</h3>
+                        <h3>± standard</h3>
+                        <h3 class="fragment">Faire mumuse</h3>
+                    </section>
+
+                    <section>
+                        <h1>OpenStreetMap</h1>
+                        <h3>Licence <em>CC-BY-SA</em></h3>
+                        <h3>Plus joli (discutable)</h3>
+                        <h3 class="fragment">Faire mumuse</h3>
+                    </section>
+
+                    <section>
+                        <h1>Geonames</h1>
+                        <h3>Ne plus dépendre de Google</h3>
+                        <h3>Pas de clé d'API</h3>
+                        <h3 class="fragment">Faire mumuse <small>(mouais)</small></h3>
+                    </section>
+
+                </section>
+
+                <section>
+
+                    <section>
+                        <h1>Et maintenant ?</h1>
+                        <h1>↓</h1>
+                    </section>
+
+                    <section>
+                        <h1>À vous de jouer</h1>
+                    </section>
+
+                    <section>
+                        <h1>il neige chez toi ?</h1>
+                        <img src="img/twitter-bird-light-bgs.png" alt="Logo Twitter">
+                    </section>
+
+                    <section>
+                        <h1>#neigefr</h1>
+                        <ul>
+                            <li class="fragment">+ Code postal</li>
+                            <li class="fragment">+ intensité / 10</li>
+                            <li class="fragment">+ un p'tit mot gentil (?)</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h1>The End</h1>
+                    <div class="fragment">
+                    <p><small><small>(ou pas)</small></small></p>
+                    <p><a href="http://github.com/brunobord/neigefr/"><img src="img/snowoctocat.jpg" alt="Snow Octocat"></a></p>
+                    <p>Merci</p>
+                </section>
+
+                <section>
+                    <h1>Colophon</h1>
+                    <h3>Images</h3>
+                    <p>Cartes par <a href="http://openstreetmap.org">OpenStreetMap</a> + <a href="http://mapbox.com">MapBox</a></p>
+                    <p><a href="http://www.flickr.com/photos/deniscollette/6902126173/in/photostream/">"Neige en tempête"</a> : Par <a href="http://www.flickr.com/photos/deniscollette/">Denis Collette</a></p>
+                    <p><a href="http://thenounproject.com/noun/light-bulb/#icon-No7292" target="_blank">Light Bulb</a> designed by <a href="http://thenounproject.com/aLf" target="_blank">aLf</a> from The Noun Project</p>
+                    <p><a href="http://octodex.github.com/snowoctocat/">Snow Octocat</a> par <a href="https://github.com/cameronmcefee">Cameron McEfee</a></p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                //theme: 'beige', //Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: "zoom", //Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+        <script src="js/widgets.js" charset="utf-8"></script>
+    </body>
+</html>
