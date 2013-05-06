@@ -1,0 +1,78 @@
+/* Polyconseil theme for landslide. All rights reserved */
+
+div.presentation {
+    background-color: #555753;
+    background: -webkit-gradient(linear, left bottom, left top, from(#2e3436), to(#555753));
+    background: -moz-linear-gradient(bottom, #555753, #2e3436);
+}
+
+
+/* Footer styles */
+
+div.slide {
+    background: #fff url('polyconseil-small.png') 3% 98% no-repeat;
+}
+
+div.slide:after {
+  content: "Conseil en stratégie, télécom et média";
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 15px;
+  left: 150px;
+  color: #b80818;
+  font-size: 12px;
+}
+
+aside.page_number {
+    bottom: 15px;
+    right: 25px;
+    color: #b80818;
+    font-size: 15px;
+}
+
+/* Slide styles */
+
+div.slide p {
+    font-size: 28px;            /* increase by 40% the font size */
+}
+
+pre {
+    font-size: 20px;            /* increase by 25% the font size */
+    white-space: pre-wrap;      /* wrap code */
+}
+
+li {
+    font-size: 28px;            /* increase by 40% the font size */
+    margin: 15px 0;             /* don't depend on user agent stylesheets */
+    padding: 0;                 /* don't depend on user agent stylesheets */
+}
+
+div.slide p, div.slide ul {
+    margin: 15px 0;            /* don't depend on user agent stylesheets */
+}
+
+/* Content styles */
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+    font-family: sans-serif !important;
+}
+
+header {
+    border-bottom: 2px solid #b80818; 
+    width: 840px;
+    padding-bottom: 10px !important;
+}
+
+header h1, header h2, header h3, header h4, header h5, header h6 {
+    font-size: 70%;
+    color: #b80818 !important;
+    font-family: Verdana !important;
+}
+
+section h1, section h2, section h3, section h4, section h5, section h6 {
+    color: #b80818 !important;
+}
+
+p, li {
+    color: #555753 !important;
+}
