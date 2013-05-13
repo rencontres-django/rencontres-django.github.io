@@ -124,3 +124,11 @@ p.dl {
         text-indent: 0;
         margin-bottom: 1.5em;
     }
+
+
+.container p {
+    margin: 5px 0;
+    text-indent: 5px;
+}
+
+
