@@ -27,6 +27,16 @@ hgroup h4 { float: left; width: 50%; text-align: right; }
 .countdown_amount { font-size: 200%; }
 .countdown_descr { display: block; margin-top: 100px; width: 100%; }
 /* */
+#tagline{
+
+text-align: right;
+}
+#tagline h1{
+    font-size: 2.2rem;
+}
+#tagline p{
+    font-size: 1.8rem;
+}
 #box, .box { background: transparent url(../images/bg-pony.png) no-repeat center center;
 border:1px solid #DDDDDD;
 padding: 15px 0;
@@ -114,8 +124,3 @@ p.dl {
         text-indent: 0;
         margin-bottom: 1.5em;
     }
-
-.container p {
-    margin: 5px 0;
-    text-indent: 5px;
-}
