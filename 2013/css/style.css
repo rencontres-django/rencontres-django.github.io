@@ -131,4 +131,10 @@ p.dl {
     text-indent: 5px;
 }
 
-
+a.button{
+    background: none repeat scroll 0 0  #d97aad;;
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+    color: #FFFFFF;
+    padding: 0.4em 0.8em;
+    text-decoration: none;
+}
