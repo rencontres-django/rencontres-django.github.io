@@ -1,0 +1,588 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="robots" content="index, follow"/>
+    <title>Rencontres Django 2013 : 10 commandements, les mêmes qu'en 2012 ! </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="only screen and (max-width: 959px)">
+    <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+    <link rel="stylesheet" href="css/blueprint/plugins/fancy-type/screen.css" type="text/css"
+          media="screen, projection">
+    <link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="js/fancybox/jquery.coutdown.css" type="text/css" media="screen, projection">
+</head>
+<body>
+<div class="container">
+<div id="header">
+    <div class="countdown span-24 last ">
+        <div id="countdown"></div>
+        <p class="alt center">… avant l'arrivée des poneys au pays du Lion !</p>
+    </div>
+    <hr/>
+    <div class="span-16 logo-zone">
+        <a href="./"><img src="images/djangocong-logo.png" alt="Logo des rencontres django djangocong 2013 à Belfort"
+                          class="logo"/></a>
+    </div>
+    <div class="span-8 last" id="tagline">
+        <h1>Rencontres Django</h1>
+
+        <p>a.k.a #djangocong</p>
+    </div>
+    <div class="span-24 last" id="intro">
+        <h2 class="alt">L'événement annuel regroupant les amateurs francophones de <a
+                href="http://www.djangoproject.com/">Django</a>, en toute simplicité.</h2>
+
+        <h3 class="alt">Le weekend du 28-29 septembre 2013 à Belfort</h3>
+    </div>
+</div>
+<hr/>
+
+<p class="alt introduction">Le programme - conférences </p>
+
+
+<div class="box">
+<p class="intro">16 conférences: 15 minutes pour écouter - 3 minutes pour questionner</p>
+
+<p class="intro">6 lightning talks: 5 minutes pour écouter</p>
+
+<ol class="summary">
+    <li><a href="#c1">La refonte de Greenbureau, retour d'expérience - Goulwenn Reboux</a></li>
+    <li><a href="#c2">Comment s'assurer d'avoir un code de qualité et des petits dej' à l’oeil ? - Sabrina Demagny</a>
+    </li>
+    <li><a href="#c3">Apprenez le Russe à votre Poney - Rémy Hubscher</a></li>
+    <li><a href="#l1">Formsets imbriqués - Samuel Goldszmidt (LT) </a></li>
+    <li>REMPLACÉ : <strike><a href="#l2">Utiliser son propre dépôt git/mercurial - Mathieu Agopian (LT) </a></strike></li>
+    <li><a href="#l3">Mises à jours sans interruption de service - Raphaël Barrois (LT) </a></li>
+    <li><a href="#l8">Développement dirigé par les incendies - Bruno Renié (LT) </a></li>
+    <li><a href="#c4">Etendre son application avec les swappable models - Xavier Ordoquy</a></li>
+    <li><a href="#c5">MicroGeno, une plate-forme ouverte et innovante pour le génotypage bactérien - Julien Maupetit</a>
+    </li>
+    <li>ANNULÉ : <strike><a href="#c6">C'est Django qui pilote : interfaçage avec une application locale - Anthony Delaby</a></strike></li>
+    <li><a href="#c7">Les transactions, c'est de la bombe ! - Aymeric Augustin</a></li>
+    <li><a href="#c12">Breaking Django MVC for a better scalability - Charles Vallantin Dulac</a></li>
+    <li>ANNULÉ : <strike><a href="#c8">Déploiement : du rêve à la réalité - Benoît Bryon</a></strike></li>
+    <li><a href="#c9">Le copier-coller maudit, ou l'art de la modularisation - Raphaël Barrois</a></li>
+    <li><a href="#c10">Une logique métier bien placée - Eve Le Cellier</a></li>
+    <li><a href="#c11">Django et l'inventaire des plantes cultivées en Suisse - Claude Paroz</a></li>
+    <li><a href="#l4">Sécuriser les données - Mathieu Agopian (LT) </a></li>
+    <li><a href="#l5">Django mérite bien un Oscar - Julien Maupetit (LT) </a></li>
+    <li><a href="#l6">Packager ses libs : je t'aime, moi non plus - Raphaël Barrois (LT) </a></li>
+    <li><a href="#l7">LT Mystère ! - Mathieu Pillard (LT) </a></li>
+    <li><a href="#l9">Organisez votre propre DjangoCong – Jean-Michel ARMAND (LT) </a></li>
+    <li><a href="#c13">Forgeron de l'extrême - Boris Feld</a></li>
+    <li><a href="#c17">py.test et WebTest - Mathieu Agopian </a></li>
+    <li><a href="#c15">Comment faire du web temps-réel avec Django ? - Aymeric Augustin</a></li>
+    <li><a href="#c14">Allez plus loin avec django - Benoit Calvez</a></li>
+    <li><a href="#c16">Django est-il toujours l'outil pour débuter ? - Florian Le Goff</a></li>
+</ol>
+<ul class="talk">
+<li id="c1"><h4>La refonte de Greenbureau, retour d'expérience</h4>
+
+
+    <p class="abstract">Retour sur la refonte de Greenbureau, un service de centralisation de
+        factures et de relevés, avec l'objectif d'être capable de traiter plus
+        d'un million de comptes utilisateur tous les mois.</p>
+
+
+    <div class="resume"><h5>Goulwen Reboux - <a href="https://twitter.com/nautilebleu">@nautilebleu</a></h5>
+        <img src="images/speakers/goulwen_reboux.jpg" alt="Goulwen Reboux">
+
+        <p>J'ai un parcours centripète: en 15 ans je suis passé de l'infographie au
+            développement backend. En fait, ce qui m'a toujours intéressé, c'est
+            exposer les données de la meilleure façon pour l'utilisateur, d'où le
+            besoin de comprendre et maîtriser les problématiques des différentes
+            couches mises en œuvres, et leurs technologies associées.
+        </p></div>
+
+
+</li>
+<li id="c2"><h4>Comment s'assurer d'avoir un code de qualité et des petits dej' à l’œil ?</h4>
+
+    <p class="abstract">Présentation de la démarche qualité utilisée au sein du projet Autolib' dont le système
+        d'information est écrit en Django ou comment faire du joli code robuste dans la bonne humeur ?
+
+        "Présentation de la méthodologie utilisée sur le projet qui permet de maintenir un code robuste, un rythme
+        soutenu de mise en production et la bonne humeur des développeurs via quelques rituels amusants comme :<br>
+        - celui qui casse le build ramène les croissants,<br>
+        - la désignation d'un build master toutes les semaines au sein de l'équipe de dév (préalablement armé) qui doit
+        s'assurer entre autre que les builds Jenkins restent verts, la pile des tickets d'assistance reste vide et les
+        logs Sentry restent rassurants.
+        Présentation des outils utilisés sur le projet comme : Unittest, Lettuce, Pylint, Jenkins, Sentry, Trac..."</p>
+
+
+    <div class="resume"><h5>Sabrina Demagny</h5>
+        <img src="images/speakers/sabrina_demagny.jpg" alt="Sabrina Demagny"/>
+
+        <p>Bio-informaticienne de formation, elle ne jure que par Python depuis des
+            années.
+            Développeuse ploneuse à son compte, elle a enfin arrêté de travailler en
+            pyjama pour rejoindre l'équipe projet Autolib'.
+            Maniaque du joli code, extrémiste du pep8 et groupie du Scrum. <br>
+            N'aime pas&nbsp;: qu'on lui demande (parce que c'est une fille) 
+            comment elle en est arrivée à faire du dév, le code sale, la coriandre. <br>
+            Elle soutient ne pas être une Geekette et quand elle casse le build,
+            elle ramène des muffins faits maison pas des croissants ;)</p>
+    </div>
+</li>
+<li id="c3"><h4>Apprenez le Russe à votre Poney</h4>
+
+    <p class="abstract">Tous les trucs et astuces nécessaires au développement d'une application multilingue en
+        Django. Depuis le contenu en passant par les modèles, les URLs et les mails.</p>
+
+
+    <div class="resume"><h5>Rémy Hubscher- <a href="https://twitter.com/natim">@natim</a></h5>
+        <img src="images/speakers/remy_hubscher.jpg" alt="Rémy Hubscher">
+
+        <p>Après avoir été chef d'entreprise d'une boite de développement d'application Web en Django, Rémy
+            travaille maintenant chez Novapost SAS où il dématérialise les bulletins de salaires et les courriers de
+            nombreux employés partout dans le monde.
+            <br>
+            Perfectionniste avéré, Rémy aime aussi contribuer autant que possible à l'OpenSource et à l'écosystème
+            Django.</p></div>
+</li>
+
+<li id="l1"><h4>Formsets imbriqués (LT)</h4>
+
+    <p class="abstract">Retour sur l'utilisation des formsets et sur la possibilité de les imbriquer en utilisant la
+        mécanique de validation des formulaires proposée par Django. Nous verrons aussi comment intégrer ces formsets
+        imbriqués dans l'admin Django.</p>
+
+
+    <div class="resume"><h5>Samuel Goldszmidt - <a href="https://twitter.com/ouhouhsami">@ouhouhsami</a></h5>
+        <img src="images/speakers/samuel_goldszmidt.jpg" alt="Samuel Goldszmidt">
+
+        <p>Samuel Goldszmidt est responsable technique des applicatifs web de l'Ircam, Institut de Recherche et de
+            Coordination Acoustique Musique. Il utilise très souvent Django et Python pour développer des systèmes
+            d'information ou de gestion de contenu, et JavaScript pour enrichir les interfaces utilisateurs.</p></div>
+</li>
+
+<li id="l2">REMPLACÉ : <strike><h4>Utiliser son propre dépôt git/mercurial (LT)</strike></h4>
+
+    <p class="abstract">Github/Bitbucket sont vraiment super, mais utiliser un serveur centralisé pour un DVCS, c'est
+        un peu dommage.
+        Utiliser les hooks permet d'avoir les avantages de Github/Bitbucket, mais aussi de ses propres dépôts.</p>
+
+
+    <div class="resume"><h5>Mathieu Agopian - <a href="https://twitter.com/magopian">@magopian</a></h5>
+        <img src="images/speakers/mathieu_agopian.jpg" alt="Mathieu Agopian ">
+
+        <p>Freelance depuis peu, insatiable curieux, sait une chose pour sûr : il ne sait rien.</p></div>
+</li>
+
+<li id="l3"><h4>Mises à jours sans interruption de service (LT)</h4>
+
+    <p class="abstract">Lorsqu'une nouvelle version du projet est prête, vient l'instant tant redouté du passage en
+        production. <br>
+        Comment faire pour gérer ces opérations sans aucune coupure de service ?
+        Rapide tour d'horizon de quelques recettes testées pour vous.</p>
+
+
+    <div class="resume"><h5>Raphaël Barrois - <a href="https://twitter.com/raphaelbarrois">@raphaelbarrois</a></h5>
+        <img src="images/speakers/raphael_barrois.jpg" alt="Raphaël Barrois">
+
+        <p>Geek.<br />
+        Je conçois le SI d'Autolib´, et je maintiens factory_boy à mes heures perdues.
+</p></div>
+</li>
+
+<li id="l8"><h4>Développement dirigé par les incendies (LT)</h4>
+
+    <p class="abstract">C'est l'histoire d'un petit projet vivotant tranquillement sur son petit serveur qui un
+        beau matin se fait assaillir par une horde d'utilisateurs <strike>en furie</strike>. Petit retour sur le leçons
+        tirées des quelques mois d'extinction d'incendie qui ont suivi l'assaut de FeedHQ par
+        d'anciens utilisateurs de Google Reader.</p>
+
+
+    <div class="resume"><h5>Bruno Renié - <a href="https://twitter.com/brutasse">@brutasse</a></h5>
+        <img src="images/speakers/bruno_renie.png" alt="Bruno Renié">
+
+                    <p>Bruno Renié vit en Suisse.<br>
+                    Il publie dans son blog comme une brutasse.<br>
+                    Il code comme une brutasse sur Github.<br>
+                    Il twitte parfois comme une brutasse.<br>
+                    Il mange les pizzas comme une brutasse.<br>
+                    Tu m'étonnes que son pseudo, ça soit brutasse.<br><br>
+
+                    En revanche, quand on le rencontre, on le trouve d'une charmante délicatesse.</p></div>
+
+
+</li>
+
+<li id="c4"><h4>Etendre son application avec les swappable models</h4>
+
+
+    <p class="abstract">L'une des fonctionnalités attendue par de nombreux utilisateurs est l'introduction du modèle
+        d'utilisateur modifiable.
+        Grâce à cette fonctionnalité, les librairies peuvent désormais permettre plus de souplesse aux développeurs en
+        leur offrant des modèles adaptables.
+        <br>
+        - Utiliser un modèle adaptable,<br>
+        - Le mettre en place dans une librairie,<br>
+        - Bonnes pratiques, pièges à éviter et questions en suspens.</p>
+
+
+    <div class="resume">
+        <h5>
+            Xavier Ordoquy -
+            <a href="https://twitter.com/linovia_net">@linovia_net</a>
+        </h5>
+        <img alt="xavier ordoquy" src="images/speakers/xavier_ordoquy.jpg">
+
+        <p>Je suis Xavier Ordoquy, Freelance depuis 2004. J'ai découvert Python en 2002 grâce au projet Gnome et Django
+            en 2008. Convaincu par ces technologies, je me suis spécialisé dans le développement Web avec Django et
+            d'outils avec Python.</p>
+    </div>
+
+
+</li>
+<li id="c5"><h4>MicroGeno, une plate-forme ouverte et innovante pour le génotypage bactérien</h4>
+
+    <p class="abstract">La production de cartes d'identité génétique de souches bactériennes responsables d'une
+        épidémie permet de tracer l'apparition et/ou l'évolution d'une population bactérienne, et ainsi d'endiguer plus
+        rapidement cette épidémie.
+
+        Il existe à l'heure actuelle plusieurs techniques de génotypage pour caractériser des souches bactériennes. Ces
+        techniques génèrent des données qu'il convient de pouvoir facilement stocker et interroger. Plusieurs bases de
+        données publiques existent, mais sont très souvent dédiées à une seule espèce bactérienne en particulier, et
+        peuvent difficilement être alimentées par une source externe ou interrogées dans une interface homogène en
+        ligne.
+
+        La plate-forme <a href="http://microgeno.org">MicroGeno</a> — boostée par Django et un soupçon de d3.js — a été
+        développée
+        en partenariat avec l'université Paris Sud pour palier ce manque. Notre objectif est de fournir une boite à
+        outils collaborative pour stocker, interroger et analyser des collections de données issues d'études
+        épidémiologiques. Cette solution en ligne — accessible gratuitement aux centres de recherche académique — est
+        une opportunité pour les petits laboratoires avec peu de moyens techniques et financiers.</p>
+
+
+    <div class="resume"><h5> Julien Maupetit - <a href="https://twitter.com/julienmaupetit">@julienmaupetit</a></h5>
+        <img src="images/speakers/julien_maupetit.jpg" alt="Julien Maupetit">
+
+        <p> Bio-informaticien structuraliste, en 2011, j'ai mis de côté mes legos
+            aminés d'universitaire parisien pour venir construire le web en Auvergne
+            et dans la ville rose. Passionné par la science et les technologies du
+            web, je m'efforce de réaliser de belles choses pour satisfaire mes
+            collaborateurs.</p>
+    </div>
+</li>
+<li id="c6"><h4>ANNULÉ : <strike>C'est Django qui pilote : interfaçage avec une application locale</strike></h4>
+
+    <p class="abstract">Il n'y a pas que les bases de données dans la vie, il y a les applications aussi. Comment
+        piloter une application locale en ligne de commande via une application web django ? Passage de paramètres,
+        récupération de résultats... Tout, tout, vous saurez tout sur ... l'interfaçage.</p>
+
+    <div class="resume"><h5>Anthony Delaby</h5>
+        <img src="images/speakers/anthony_delaby.jpg" alt="Anthony Delaby">
+
+        <p>Actuellement en stage de développement à l'INRIA Rhone-Alpes, je développe une interface web de pilotage
+            d'application locale asynchrone avec Django. Je propose dans cette conférence un retour d'expérience
+            technique sur ce sujet.</p></div>
+</li>
+<li id="c7"><h4>Les transactions, c'est de la bombe !</h4>
+
+    <p class="abstract">En général, le premier contact d'un djangonaute avec les transactions est une terrifiante
+        DatabaseError: "current transaction is aborted, commands ignored until end of transaction block". Et c'est
+        souvent le dernier.
+        Heureusement, Django 1.6 propose une nouvelle gestion des transactions, plus puissante et plus pythonique. C'est
+        le
+        moment d'apprendre quand et comment utiliser des transactions !</p>
+
+    <div class="resume"><h5>Aymeric Augustin - <a href="https://twitter.com/aymericaugustin">@aymericaugustin</a></h5>
+        <img src="images/speakers/aymeric_augustin.jpg" alt="Aymeric Augustin">
+
+
+        <p> Ingénieur dans l'âme, j'aime les logiciels qui n'ont pas de bugs et les méthodes qui permettent de les
+            développer. Je suis convaincu que Django peut être un bon choix pour des logiciels d'entreprise et je le
+            prouve en réalisant les systèmes d'information d'Autolib'. Je suis core developer de Django depuis 2011.
+            Tout le monde me déteste maintenant qu'il faut faire attention à ne pas mélanger des date et des
+            datetime.</p></div>
+</li>
+
+<li id="c8">ANNULÉ : <strike><h4>Déploiement : du rêve à la réalité</strike></h4>
+
+
+    <p class="abstract">Aimeriez-vous déployer un projet en une commande ? Avez-vous entendu parler des bienfaits du
+        déploiement continu ? Si l'idée fait rêver, la mise en pratique est loin d'être une promenade de santé. Certains
+        hésitent, d'autres s'y cassent les dents. Le but de cette présentation est d'aider ceux qui voudraient se jeter
+        à l'eau ou améliorer des procédures déjà en place : un peu de culture pour nourrir l'esprit critique et des
+        techniques concrètes pour démarrer.</p>
+
+    <div class="resume"><h5>Benoît Bryon </h5>
+        <img src="images/speakers/benoit_bryon.jpg" alt="Benoît Bryon">
+
+        <p>Benoît n'est pas rapide, mais il s'applique.</p>
+    </div>
+
+
+</li>
+
+<li id="c9"><h4>Le copier-coller maudit, ou l'art de la modularisation</h4>
+
+
+    <p class="abstract">Le soft est enfin stabilisé, le service tourne sans ratés.
+        Soudain, la nouvelle tombe : on lance un deuxième site. Ou un nouveau service, proche mais pas totalement.
+        Bref, comme dirait le marketing, "C'est facile, on reprend les neuf dixièmes du système et on change juste un
+        petit bout là-bas !".
+        <br>
+        Comment procéder pour découper et modulariser un soft mûr pour réutiliser certains composants ?<br>
+        Réutiliser les bibliothèques ou mettre en place des services distants partagés ?<br>
+        Comment gérer une transition dans la douceur ?</p>
+
+    <div class="resume"><h5>Raphael Barrois </h5>
+    </div>
+</li>
+
+
+<li id="c10"><h4>Une logique métier bien placée</h4>
+
+
+    <p class="abstract">Avec la généralisation des APIs et la facilité d'utilisation des ORM, on a tendance à oublier
+        qu'utiliser les queries de l'ORM directement dans les vues ou les parties de code haut niveau est bien souvent
+        une très mauvaise idée.
+        Je rappellerai pourquoi du point de vue de la théorie, et suggérerai une autre façon de faire avec Django en
+        pratique.
+        Histoire de se remettre en tête qu'il y a une distinction sémantique entre "API" et "interface objet", et
+        que "écrire une API RESTful" n'est pas synonyme de "exposer le modèle de base de données sur internet"
+        ;)</p>
+
+
+    <div class="resume"><h5>Eve Le Cellier - <a href="https://twitter.com/Evlf">@Evlf</a></h5>
+        <img src="images/speakers/eve_lecellier.jpg" alt="Eve Le Cellier">
+
+        <p>Eve Le Cellier est une informaticienne qui préfère écrire du code que sa bio.
+            Elle aime les algo complexes, les architectures élégantes et le tricot. Elle est
+            actuellement dresseuse web chez l'hebergeur Online où elle présente, dans le
+            même numéro, des éléphants <strong>et</strong> des poneys roses.</p>
+    </div>
+
+</li>
+
+<li id="c11"><h4>Django et l'inventaire des plantes cultivées en Suisse</h4>
+
+
+    <p class="abstract">Expérience de la gestion du site de conservation des ressources phyto-génétiques en Suisse
+        (<a href="www.bdn.ch">www.bdn.ch</a>). Historique (de Plone à Django). Choix de la structuration des données
+        (modèles dynamiques vs EAV).
+        Recherche mixte indexation/base de données.</p>
+
+
+    <div class="resume"><h5>Claude Paroz </h5>
+        <img src="images/speakers/claude_paroz.jpg" alt="Claude Paroz">
+
+        <p>Claude Paroz est un ancien enseignant reconverti dans l'informatique et ardent défenseur des logiciels
+            libres. Il travaille maintenant comme développeur Web indépendant dans sa Suisse natale. Il fait partie de
+            l'équipe des commiteurs de Django depuis mars 2012. </p>
+    </div>
+</li>
+<li id="c12"><h4>Breaking Django MVC for a better scalability</h4>
+
+
+    <p class="abstract">SportEasy a cassé le fonctionnement intrinsèque de Django afin de forcer
+        la factorisation du code métier et servir à la fois un site web, une API
+        REST et bientôt un site mobile aux périmètres fonctionnels différents.
+        Les vues n'ont plus accès aux modèles de données, mais seulement à des
+        API internes. Cerise sur le gâteau, cela permet d'avoir une scalabilité
+        fonctionnelle: chaque serveurs peuvent se spécialiser sur une tâche précise.
+    </p>
+
+
+    <div class="resume"><h5>Charles Vallantin Dulac </h5>
+        <img src="images/speakers/charles_vallantin_dulac.jpg" alt="Charles Vallantin Dulac">
+
+
+        <p> Actuellement développeur chez SportEasy depuis bientôt 2 ans, premier
+            projet Django en 2007. Mordu par un python il y a quelques années.
+        </p></div>
+</li>
+
+<li id="l4"><h4>Sécuriser les données (LT)</h4>
+
+
+    <p class="abstract">On pense souvent à sécuriser son site internet, son serveur de production, ses locaux... mais
+        une chaine est aussi faible que le plus faible de ses maillons.
+        <br>
+        Quelques rappels de bonnes habitudes à prendre, et mauvaises habitudes à proscrire.</p>
+
+    <div class="resume"><h5>Mathieu Agopian</h5>
+
+    </div>
+</li>
+<li id="l5"><h4>Django mérite bien un Oscar (LT)</h4>
+
+
+    <p class="abstract"><a href="http://oscarcommerce.com">Oscar</a> est une application e-commerce pour
+        django pensée métier (ou <em>domain driven</em>). Lors de cette présentation,
+        je vous montrerai par l'exemple pourquoi vous devez l'utiliser dans
+        votre prochain projet e-commerce complexe.</p>
+
+    <div class="resume"><h5>Julien Maupetit</h5>
+
+    </div>
+
+</li>
+<li id="l6"><h4>Packager ses libs : je t'aime, moi non plus (LT)</h4>
+
+
+    <p class="abstract">On code une lib, puis une autre, et soudain on se retrouve avec 20 paquets sur les bras, avec
+        chacun leur rythme de livraison, leurs dépendances, …
+
+        Comment traverser les terres maudites du packaging Python sans sombrer dans la folie ?
+        Rapide tour d'horizon de quelques bonnes pratiques qui sauveront votre santé mentale — et vos projets.</p>
+
+    <div class="resume"><h5>Raphaël Barrois</h5>
+
+    </div>
+</li>
+<li id="l7"><h4>LT Mystère ! - Mathieu Pillard (LT)</h4>
+
+
+    <p class="abstract"></p>
+    <div class="resume"><h5> Mathieu Pillard - <a href="https://twitter.com/dioxmat">@dioxmat</a></h5>
+        <img src="images/speakers/mathieu_pillard.jpg" alt="mathieu pillard">
+
+        <p>Couteau-suisse du web, Mathieu est développeur Django à Mozilla. Trolleur sans
+            pitié, touche à tout mais particulièrement intéressé par les problématiques de performance et de
+            sécurité web, il a aussi été développeur PHP pendant quelques années avant de réaliser que
+            c'était parfaitement possible d'être payé à faire du Python toute la journée.</p></div>
+
+</li>
+
+<li id="l9"><h4>Organisez votre propre DjangoCong – Jean-Michel ARMAND (LT)</h4>
+
+
+    <p class="abstract"></p>
+    <div class="resume"><h5> Jean-Michel Armand - <a href="https://twitter.com/mrjmad">@mrjmad</a></h5>
+        <img src="images/speakers/jeanmichel_armand.jpg" alt="jean-michel armand">
+
+        <p>Djangonaute multiclassé commercial et chef d'entreprise, Jean-Michel est un geek
+            orchestre qui lorsque qu'il ne peste après les retards de son TGV, aide à l'organisation de
+            conférence, disserte sur les jeux vidéos ou achète des nom de domaines qu'il n'utilisera jamais.
+            <br /><br />Grand amoureux des bières belges et du cassoulet, son tour de taille lui permet pour l'instant de
+            ne pas se vêtir uniquement de braies à rayures et de profiter de sa collection de tee-shirts aux
+            références cryptiques. Il paraîtrait qu'il est tombé dans un chaudron de potion magique étant petit
+            et que grâce à cela, il a un talent rare pour lancer D20 et D100 (mais pas les menhirs). </p></div>
+
+</li>
+
+
+<li id="c13"><h4>Forgeron de l'extrême</h4>
+
+
+    <p class="abstract">Testons en python.Quoi tester ? Quand tester ? Comment tester ?</p>
+
+
+    <div class="resume"><h5> Boris Feld - <a href="https://twitter.com/lothiraldan">@lothiraldan</a></h5>
+        <img src="images/speakers/boris_feld.jpg" alt=" Boris Feld">
+
+        <p>"Perfectionniste avéré, il n'a de cesse de
+            forger les meilleurs outils possibles pour résoudre ses problème et
+            celui de ses congénères, Boris est surnommé le Forgeron Stakhanov.
+
+            À grand coup de Python, sur une base de MongoDB, saupoudré d'un peu de
+            ZeroMQ, il n'a de cesse de réinventer la roue, avec un résultat le
+            plus souvent carré, mais dès fois presque rond."</p></div>
+</li>
+
+<li id="c17"><h4>py.test et WebTest</h4>
+
+
+    <p class="abstract">Présentation de py.test qui remplace avantageusement unittest pour les tests
+        unitaires, et de WebTest, un équivalent au test client de Django pour les tests fonctionnels.</p>
+
+
+    <div class="resume"><h5>Mathieu Agopian</h5>
+</li>
+
+</li>
+<li id="c14"><h4>Allez plus loin avec django</h4>
+
+
+    <p class="abstract">Utiliser des vues sql avec l'orm pourquoi, comment. <br>
+        - comment on a utilisé django & websocket <br>
+
+        - des infos dénormalisées dans postgres</p>
+
+
+    <div class="resume"><h5>Benoit Calvez - <a href="https://twitter.com/dzen">@dzen</a></h5>
+        <img src="images/speakers/benoit_calvez.jpg" alt="Benoit Calvez">
+
+        <p>Aigri, twitteur fou, Benoît s'est réfugié depuis un an dans une team où le mantra "t'as écris des tests&nbsp;?"
+            sonne régulièrement. <br>
+            Depuis il va mieux. <br>
+            Souvent qualifié d'hipster, il s'efforce de maitriser à la fois le développement et la partie
+            système d'un projet. <br>
+            Il travaille actuellement sur des projets liés aux énergies renouvelables, à haute teneur éthique.</p>
+    </div>
+</li>
+<li id="c15"><h4>Comment faire du web temps-réel avec Django ?</h4>
+
+
+    <p class="abstract">Le web de demain sera temps-réel ou ne sera pas. Mais pour l'instant, il n'est pas possible de
+        faire du temps-réel avec Django.
+        <br>Alors, faut-il apprendre Twisted ou Node.js ?
+        <br>
+        Tout d'abord, que signifie "temps-réel" sur le web ?
+        <br>
+        Pourquoi est-ce compliqué à intégrer à un framework comme
+        Django ?
+        <br>Quelles sont les possibilités aujourd'hui ? Et demain ?</p>
+
+
+    <div class="resume"><h5>Aymeric Augustin</h5>
+
+    </div>
+</li>
+
+<li id="c16"><h4>Django est-il toujours l'outil pour débuter ?</h4>
+
+
+    <p class="abstract">J'ai longtemps considéré Django comme le meilleur compromis pour
+        développer rapidement de petits projets. Puis, j'ai découvert
+        Sinatra et
+        sa syntaxe minimaliste. En trois lignes, Sinatra permet d'avoir une vue
+        et un système de routage. Aussi, je vous propose de passer en revue
+        plusieurs frameworks dans différents langages. Nous déciderons ensemble
+        si Django reste la solution optimale pour développer rapidement vos
+        projets du dimanche..</p>
+
+
+    <div class="resume"><h5>Florian Le Goff - <a href="https://twitter.com/madflo">@madflo</a></h5>
+        <img src="images/speakers/florian_legoff.jpg" alt="Florian Le Goff">
+
+        <p>Florian Le Goff est en charge des relations avec les développeurs chez
+            Mailjet. Il réside à Lille dans le Nord, où il co-organise la conférence
+            TakeOff, un des principaux évènements techniques et anglophones au nord
+            de Paris. Florian est également le co-fondateur d'ubinect, le pionnier
+            de la gestion de cabinet médical libéral en mode web.</p></div>
+</li>
+
+
+</ul>
+
+</div>
+<div class="small center span-24 bottom last" id="footer">
+    <p>
+        Événement organisé par l'association <a href="http://django-fr.org/">Django-fr</a>. <a
+            href="mentionslegales.html">Mentions légales</a> Pour les nostalgiques, les sites des rencontres <a
+            href="../2010/">2010</a>, <a href="../2011/">2011</a> et <a href="../2012/">2012</a>
+        • Logo par <a href="https://twitter.com/nautilebleu">Nautilebleu</a></p>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="js/jquery.countdown-fr.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var CongDay = new Date(2013, 8, 27);
+        $('#countdown').countdown({until: CongDay});
+    });
+</script>
+</body>
+</html>

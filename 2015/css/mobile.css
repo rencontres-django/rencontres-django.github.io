@@ -1,0 +1,42 @@
+body { min-width: 250px; }
+
+@media only screen and (max-width: 479px) {
+    .span-12 { width: 100%; }
+    .logo-zone { text-align: center; }
+    .logo { width: 100%; max-width: 380px; }
+    #intro { text-align: center; margin-top: 10px; }
+}
+
+@media only screen and (max-width: 709px) {
+    #intro h1 { display: none; }
+    .container { width: 100%; margin: 0 auto; }
+    .span-11 { width: 100%; margin-right: 0; }
+    .append-1 { margin: 0; padding: 0; }
+    .span-24 { width: 100%; margin-right: 0; }
+    #side { width: 100%; margin-right: 0; }
+    #content h2 { border-top: 8px solid #ccc; padding-top: 10px; margin-top: 10px; }
+}
+
+@media only screen and (min-width: 710px) and (max-width: 959px) {
+    .container { width: 100%; margin: 0 auto; }
+    #header .span-12 { width: 48%; }
+    .span-24 { width: 100%; margin-right: 0; }
+    .span-12 { width: 47%; }
+    .span-11 { width: 47%; margin-right: 0; }
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 959px) {
+    #header .span-12 { width: 48%; }
+    .logo { width: 100%; max-width: 423px; margin-bottom: 10px; }
+    #intro { text-align: center; }
+}
+
+body { padding: 0 10px; }
+#header { font-size: 80%; }
+
+
+#map, #map iframe { height: 250px; }
+
+ul.gallery { text-align: center; }
+ul.gallery li { display: inline; }

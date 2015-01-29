@@ -1,0 +1,140 @@
+body { font-size: 14px; }
+.author { text-align: right; }
+.center { text-align: center; }
+#footer { border-top: 1px solid #ccc; padding-top: 10px; }
+hgroup h3 { float: left; width: 50%; }
+hgroup h4 { float: left; width: 50%; text-align: right; }
+#map { width: 100%; height: 430px; border: 1px solid black; margin-bottom: 1em; }
+#map iframe { width: 100%; }
+.mapinfo { text-align: center; }
+.gallery { margin: 0; padding: 0;}
+.gallery li { float: left; width: 70px; list-style: none; margin: 0 1px;}
+/* countdown */
+.countdown {margin: 0;}
+.countdown p.alt { display: block; clear: both; font-size: 150%; line-height: 2em; margin-bottom: 0;}
+.hasCountdown { font-family: Georgia; font-size: 180%; }
+.countdown_rtl { direction: rtl; }
+.countdown_holding span { background-color: #ccc; }
+.countdown_row { clear: both; width: 100%; padding: 0px 2px; text-align: center; }
+.countdown_show1 .countdown_section { width: 98%; }
+.countdown_show2 .countdown_section { width: 48%; }
+.countdown_show3 .countdown_section { width: 32.5%; }
+.countdown_show4 .countdown_section { width: 24.5%; }
+.countdown_show5 .countdown_section { width: 19.5%; }
+.countdown_show6 .countdown_section { width: 16.25%; }
+.countdown_show7 .countdown_section { width: 14%; }
+.countdown_section { display: block; float: left; font-size: 75%; text-align: center; }
+.countdown_amount { font-size: 200%; }
+.countdown_descr { display: block; margin-top: 100px; width: 100%; }
+/* */
+#tagline{
+
+text-align: right;
+}
+#tagline h1{
+    font-size: 2.2rem;
+}
+#tagline p{
+    font-size: 1.8rem;
+}
+#box, .box { background: transparent url(../images/bg-pony.png) no-repeat center center;
+border:1px solid #DDDDDD;
+padding: 15px 0;
+margin-bottom: 20px;
+-moz-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
+box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;}
+.box{
+    background: none
+}
+#box h4 { font-weight: bold;}
+.box h4 { font-weight: bold;}
+.introduction {font-size:2em; margin-bottom: 1em;}
+.talk li{list-style: none;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #dddddd;
+    background: transparent url(../images/bg-pony.png) no-repeat right center;
+}
+.resume,.abstract{    vertical-align: top;
+}
+.resume img, .resume p{
+    display: inline-block;
+    vertical-align: top;
+}
+.resume p{
+    width: 70%;
+    font-style: italic;
+}
+.abstract{
+    width: 70%;
+    font-size: 16px;
+
+}
+.talk img{
+    padding: 15px;
+    border: 1px solid #DDDDDD;
+    margin-right: 20px;
+    margin-left: 20px;
+    -moz-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+    0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+    0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
+    box-shadow:0px 2px 2px 0px rgba(0, 0, 0, 0.5),
+    0px 2px 2px 0px rgba(255, 255, 255, 0.5) inset;
+}
+.summary {
+    margin-left: 10px;
+}
+.summary li{
+    list-style-position: inside;
+}
+p.intro{
+    margin-left: 1.5em;
+}
+p.dl {
+    display: block;
+    width: 70%;
+    text-align: right;
+    text-indent: 0;
+    margin-top: .5em;
+}
+    p.dl a {
+        background: green;
+        color: #fff;
+        text-decoration: none;
+        padding: .4em .8em;
+        border-radius: .2em;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    p.dl a:hover {
+        background: #0a0;
+    }
+
+#end {
+    display: block;
+    clear: both;
+    margin-top: 2em;
+}
+    #end p {
+        text-indent: 0;
+        margin-bottom: 1.5em;
+    }
+
+
+.container p {
+    margin: 5px 0;
+    text-indent: 5px;
+}
+
+a.button{
+    background: none repeat scroll 0 0  #d97aad;;
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+    color: #FFFFFF;
+    padding: 0.4em 0.8em;
+    text-decoration: none;
+}
