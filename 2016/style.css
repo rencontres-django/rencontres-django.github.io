@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333333;
+    background: fffffe;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: #06c;
+}
+
+a:hover {
+    color: #09f;
+}
+
+/* Layout things. */
+
+.map-wrapper {
+    height: 320px;
+    margin: 1.3em auto;
+    max-width: 900px;
+    width: 90%;
+    background: #000000;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 1.3em auto;
+    padding: 0 1em;
+}
+
+.columns {
+    display: flex;
+    flex-flow: column;
+}
+
+/* Style header */
+
+header .title {
+    font-size: 3em;
+}
+header .subtitle {
+    font-size: 1.5em;
+}
+header {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Style footer */
+
+footer.content-wrapper {
+    font-size: 0.8em;
+}
+
+/* Style call for paper */
+.button {
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 2px;
+    color: #fff;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    text-decoration: none;
+    display: inline-block;
+    line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+ol li {
+    margin: 1em 0;
+}
+
+@media (min-width:640px) {
+    .columns {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .columns > * + * {
+        margin-left: 10px;
+    }
+}

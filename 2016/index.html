@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+        <title>DjangoCong 2016 - Rennes</title>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <h1 class="title">Rencontres Django<br />
+                a.k.a #djangocong</h1>
+                <p class="subtitle">L'événement annuel regroupant les amateurs
+                francophones de Django, en toute simplicité. Le Samedi 21 Mai à
+                <a href="http://metropole.rennes.fr/">Rennes</a>, en <a href="http://www.bretagne.bzh/">Bretagne</a></p>
+            </div>
+        </header>
+        <section class="main">
+            <div class="content-wrapper columns">
+                <div class="main-content">
+                    <h2>Programme</h2>
+                    <p>Le programme des conférences n'est pas encore défini,
+                        l'appel à orateur est toujours en cours !</p>
+                    <p>Quant au planning, nous restons sur une formule simples :</p>
+                    <ul>
+                        <li>Matin : petit déjeuner & conférences</li>
+                        <li>Midi : pause déjeuner</li>
+                        <li>Après-midi : conférences, lightning-talk, barcamps</li>
+                        <li>Soir : repas communautaire</li>
+                    </ul>
+                    <p>Nous te recommandons chaudement la lecture des
+                        <a href="commandements.html">judicieux conseils</a>
+                        que nous avons rédigé avec amour spécialement
+                        à ton intention.</p>
+                </div>
+
+                <aside>
+                    <div class="call-for-paper">
+                        <h2><a class="button" href="https://docs.google.com/forms/d/1ZxRCpt0d29ALCC_3BbZBUgaN-CCR2aP1od5AynkueuM/viewform">Appel à orateur</a></h2>
+                        <p>
+                            Que vous soyez débutant ou expert, vous pouvez
+                            proposer une intervention&nbsp;:
+                        </p>
+                        <ul>
+                            <li>Conférence de 15min + 5min de questions</li>
+                            <li>Lightning-talk de 5min sans question</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="content-wrapper">
+                <h2>Les lieux</h2>
+                <p>Cette année, vous êtes invités à venir à Rennes, en Bretagne,
+                pour assister aux conférences
+                <a href="http://www.lemabilay.com/">au Mabilay</a>, le
+                "lieu totem" de la
+                <a href="http://lafrenchtech-rennes.fr/language/fr/accueil/">
+                French Tech Rennes & St. Malo</a>.
+                </p>
+            </div>
+            <div id="map-la-mabilais" class="map-wrapper"></div>
+            <div class="content-wrapper columns">
+                <div class="main-content">
+                    <h2>Sponsors</h2>
+                    <h3>Méthode de sponsor pour 2016</h3>
+                    <p>Pour 2016, nous faisons comme en 2015 à Clermont-Ferrand :
+                    vous <strong>choisissez le montant de votre sponsoring</strong>.
+                    À partir de 200 euros vous aurez une place offerte pour les Congs.</p>
+
+                    <p>En devenant (gentil) sponsor, vous serez mentionné dans
+                       toutes les communications autour de l'événement, ainsi qu'en
+                       début et fin d'événement. Votre logo (ou votre nom si vous
+                       êtes une personne physique) sera également affiché sur ce
+                       site, avec un lien vers le votre. Il n'y aura aucune
+                       différence de traitement en fonction de la somme versée.</p>
+                </div>
+                <aside>
+                    <p><a class="button" href="mailto:djangocong@django-fr.org">Contactez-nous</a></p>
+                    <p>Pour devenir sponsor, envoyez-nous un mail en précisant
+                    le montant que vous souhaitez donner.</p>
+                    <p>Vous n'arrivez pas à vous décider sur une somme ? Les pallier
+                    habituels des autres années étaient 200 et 400 euros, vous pouvez
+                    vous y tenir, ou entre les deux, c'est à vous de voir !</p>
+                    <p>Nous restons également totalement ouvert à toute forme de
+                    donation permettant de faire vivre l'évènement (goodies,
+                    coups de main, communication, etc.).</p>
+                </aside>
+            </div>
+        </section>
+        <footer class="content-wrapper">
+            <p>Événement organisé par l'association <a href="http://django-fr.org/">Django-fr</a>.
+                <a href="mentionslegales.html">Mentions légales</a>
+                Pour les nostalgiques, les sites des rencontres <a href="../2010/">2010</a>, <a href="../2011/">2011</a>, <a href="../2012/">2012</a>, <a href="../2013/">2013</a>
+                et <a href="../2015/">2015</a></p>
+        </footer>
+        <script type="text/javascript">
+        var map = L.map('map-la-mabilais').setView([48.10669,-1.69419], 13);
+
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([48.10669,-1.69419]).addTo(map)
+            .bindPopup('Le Mabilay')
+            .openPopup();
+        </script>
+    </body>
+</html>
