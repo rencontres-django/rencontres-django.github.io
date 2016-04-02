@@ -3,5 +3,6 @@ syntax:glob
 *.pyc
 *.sublime-*
 .DS_Store
-
+.project
+.settings/
 
