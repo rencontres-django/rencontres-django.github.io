@@ -110,4 +110,8 @@ ol li {
     .columns > * + * {
         margin-left: 10px;
     }
+
+    .register {
+        max-width: 400px
+    }
 }
