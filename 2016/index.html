@@ -36,10 +36,11 @@
                         l'appel à orateur est toujours en cours !</p>
                     <p>Quant au planning, nous restons sur une formule simple :</p>
                     <ul>
-                        <li>Matin : petit déjeuner & conférences</li>
-                        <li>Midi : pause déjeuner</li>
-                        <li>Après-midi : conférences, lightning-talk, barcamps</li>
-                        <li>Soir : repas communautaire</li>
+                        <li>9h30 : petit déjeuner & ouverture</li>
+                        <li>10h : conférences
+                        <li>12h30 : déjeuner au restaurant du Mabilay</li>
+                        <li>14h : conférences, lightning-talk, barcamps</li>
+                        <li>19h30 : buffet dînatoire au Mabilay, dans la salle des conférences</li>
                     </ul>
                     <p>Nous te recommandons chaudement la lecture des
                         <a href="commandements.html">judicieux conseils</a>
@@ -74,6 +75,42 @@
                 </p>
             </div>
             <div id="map-la-mabilais" class="map-wrapper"></div>
+
+            <div class="content-wrapper columns">
+                <div class="main-content">
+                    <h2>Les repas du samedi</h2>
+                    <p>Le bâtiment du Mabilay nous offre la possibilité de tout
+                        faire sur place :</p>
+                    <ul>
+                        <li><strong>Petit-déjeuner</strong> : avant les conférences, du café et des
+                            boissons fraîches accueilleront les participants.</li>
+                        <li><strong>Midi</strong> : le déjeuner sera pris au restaurant du Mabilay,
+                            tout en bas du bâtiment. Ce sera un repas assis
+                            dans une grande salle réservée pour la DjangoCong uniquement.</li>
+                        <li><strong>Soir</strong> : un buffet dînatoire par un traiteur permettra de
+                            clore la journée sur un moment convivial. Il sera servi
+                            dans la salle des conférences, après une petite pause
+                            logistique.</li>
+                    </ul>
+                </div>
+
+                <aside>
+                    <h3>Régimes &amp; contraintes alimentaires</h3>
+                    <p>Pour faciliter la logistique et l'organisation des repas,
+                        lors de l'inscription nous te demanderons de préciser
+                        si tu es végératien, ou si tu as des contraintes
+                        alimentaires.</p>
+
+                    <h3>Après les conférences : et le dimanche ?</h3>
+                    <p>Les conférences ne durent qu'une journée, le samedi 21 Mai.
+                        Cependant, vous êtes nombreux à vouloir profiter de ce
+                        moment unique un peu plus longtemps.</p>
+                    <p>C'est pourquoi un brunch est organisé le dimanche 22 Mai, à
+                        partir de 11h30, à <a href="http://www.lheuredujeu.fr/">l'Heure du Jeu</a>.</p>
+                    <p><strong>Attention : limité à 50 places uniquement</strong>.</p>
+                </aside>
+            </div>
+
             <div class="content-wrapper columns">
                 <div class="main-content">
                     <h2>Sponsors</h2>
@@ -115,15 +152,17 @@
                 et <a href="../2015/">2015</a></p>
         </footer>
         <script type="text/javascript">
-        var map = L.map('map-la-mabilais').setView([48.10669,-1.69419], 13);
+        (function() {
+            var map = L.map('map-la-mabilais').setView([48.10669,-1.69419], 13);
 
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
 
-        L.marker([48.10669,-1.69419]).addTo(map)
-            .bindPopup('Le Mabilay')
-            .openPopup();
+            L.marker([48.10669,-1.69419]).addTo(map)
+                .bindPopup('Le Mabilay')
+                .openPopup();
+        })();
         </script>
     </body>
 </html>
