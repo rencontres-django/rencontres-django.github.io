@@ -41,6 +41,20 @@ a:hover {
     flex-flow: column;
 }
 
+.warning-box {
+    background-color: #eee;
+    border: 3px dashed #333;
+    padding: 1em;
+}
+
+.warning-box *:first-child {
+    margin-top: 0;
+}
+
+.warning-box *:last-child {
+    margin-bottom: 0;
+}
+
 /* Style header */
 
 header .title {
