@@ -74,6 +74,24 @@ footer.content-wrapper {
     font-size: 0.8em;
 }
 
+/* Style for program */
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border-bottom: 1px solid #333;
+    padding: 5px;
+}
+
+td.hours {
+    text-align: right;
+}
+
+.break td {
+    background-color: #efefef;
+}
+
 /* Style call for paper */
 .button {
     background-color: #000;
