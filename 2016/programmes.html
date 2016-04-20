@@ -17,11 +17,12 @@
                 francophones de Django, en toute simplicité. Le Samedi 21 Mai à
                 <a href="http://metropole.rennes.fr/">Rennes</a>, en <a href="http://www.bretagne.bzh/">Bretagne</a></p>
             </div>
+            <div class="content-wrapper"><a href="index.html">Retour à l'accueil</a></div>
         </header>
         <section class="main">
             <div class="content-wrapper columns">
                 <div class="main-content">
-                    <h2>Programme du Samedi</h2>
+                    <h2 id="program">Programme du Samedi</h2>
                     <table>
                         <thead>
                             <tr>
@@ -31,17 +32,17 @@
                         </thead>
                         <tbody>
                             <tr class="break"><td class="hours">9h30</td> <td>Petit-déjeuner &amp; ouverture</td></tr>
-                            <tr><td class="hours">10h00</td> <td>Statics et Django : quand collectstatic ne suffit plus
-                            <tr><td class="hours">10h25</td> <td>Comment utiliser Jinja 2 avec Django ?</td></tr>
-                            <tr><td class="hours">10h50</td> <td>L'état de l'art des apps de traductions de modèles</td></tr>
+                            <tr><td class="hours">10h00</td> <td><a href="#django-statics">Statics et Django : quand collectstatic ne suffit plus</a></td></tr>
+                            <tr><td class="hours">10h25</td> <td><a href="#django-jinja">Comment utiliser Jinja 2 avec Django ?</a></td></tr>
+                            <tr><td class="hours">10h50</td> <td><a href="#django-translate">L'état de l'art des apps de traductions de modèles</a></td></tr>
                             <tr class="break"><td class="hours">11h10</td> <td>Break</td></tr>
-                            <tr><td class="hours">11h20</td> <td>Déploiement continu avec Travis et OpenShift</td></tr>
-                            <tr><td class="hours">11h45</td> <td>Retour d'expérience sur l'utilisation de Saltstack chez Cozy Cloud</td></tr>
-                            <tr><td class="hours">12h10</td> <td>Un Formidable constructeur de formulaire dynamique !</td></tr>
+                            <tr><td class="hours">11h20</td> <td><a href="#travis-openshift">Déploiement continu avec Travis et OpenShift</a></td></tr>
+                            <tr><td class="hours">11h45</td> <td><a href="#cozy-cloud-saltstack">Retour d'expérience sur l'utilisation de Saltstack chez Cozy Cloud</a></td></tr>
+                            <tr><td class="hours">12h10</td> <td><a href="#django-formidable">Un Formidable constructeur de formulaire dynamique&nbsp;!</a></td></tr>
                             <tr class="break"><td class="hours">12h30</td> <td>Déjeuner</td></tr>
-                            <tr><td class="hours">14h00</td> <td>Django et le frontend (React, Redux, Webpack)</td></tr>
-                            <tr><td class="hours">14h25</td> <td>Performances de Django REST framework</td></tr>
-                            <tr><td class="hours">14h50</td> <td>Django et les websockets (django-channel)</td></tr>
+                            <tr><td class="hours">14h00</td> <td><a href="#django-frontend">Django et le frontend (React, Redux, Webpack)</a></td></tr>
+                            <tr><td class="hours">14h25</td> <td><a href="#django-drf">Performances de Django REST framework</a></td></tr>
+                            <tr><td class="hours">14h50</td> <td><a href="#django-websocket">Django et les websockets (django-channel)</a></td></tr>
                             <tr><td class="hours">15h20</td> <td>LT (8 max)</td></tr>
                             <tr><td class="hours">16h00</td> <td>Sessions de Barcamps jusqu'à 18h30</td></tr>
                             <tr class="break"><td class="hours">19h30</td> <td>Buffet dinatoire</td></tr>
@@ -55,9 +56,9 @@
 
                         <ul>
                             <li><strong>La Journée des Conférences : 46 €</strong><br />
-                            Toute la journée du samedi (repas & conférences).</li>
+                            Toute la journée du samedi (repas &amp; conférences).</li>
                             <li><strong>La Journée + le Brunch du dimanche : 56 €</strong><br />
-                            Toute la journée du samedi (repas & conférences), et
+                            Toute la journée du samedi (repas &amp; conférences), et
                             un brunch dans un bar à jeu le dimanche midi.<br />
                             <em>Limité à 50 places</em></li>
                         </ul>
@@ -83,8 +84,178 @@
                         </table>
                     </div>
                 </aside>
+            </div>
 
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="django-statics" class="talk-link">10h00 - Statics et Django : quand collectstatic ne suffit plus</a></h2>
+                <p>Dans les cas simples, Django nous fournit avec <code>collectstatic</code>
+                un outil simple et performant pour intégrer nos images, JS et autres CSS
+                à nos applications.</p>
+
+                <p>Lorsque les projets grossissent, de nouvelles contraintes
+                apparaissent&nbsp;: statics déployés sur un CDN, compilation et
+                minification du JS, HTTP/2, etc.</p>
+
+                <p>Voyons donc comment Django peut s'adapter à ces nouveaux cas !</p>
+
+                <p>Par <b>Raphaël Barrois</b> (<a href="https://twitter.com/raphaelbarrois">@raphaelbarrois</a>)</p>
+
+                <p>Geek, pythoniste, djangonaute ; mainteneur de factory_boy, 
+                xworkflows, pyldap. Lead dév sur Autolib' &amp; co.<br />
+                Passions ? Construire des Lego pendant que Gentoo recompile ;)</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="django-jinja" class="talk-link">10h25 - Comment utiliser Jinja 2 avec Django ?</a></h2>
+
+                    <p>Django ≥ 1.8 propose une intégration native de Jinja 2,
+                    un moteur de templates inspiré de celui de Django mais plus
+                    souple et plus performant.</p>
+
+                    <p>Si les templates Django et Jinja 2 partagent une syntaxe
+                    similaire, leur configuration et leurs possibilités
+                    d’extension sont différentes.</p>
+
+                    <p>Nous illustrerons comment remplacer les "template tags”
+                    habituels et comment exploiter la puissance de Jinja 2.</p>
+
+                <p>Par <b><a href="https://myks.org/">Aymeric Augustin</a></b>
+                    (<a href="https://twitter.com/aymericaugustin">@aymericaugustin</a>)</p>
+                <p>Core développeur de Django, CTO chez Amalfi</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="django-translate" class="talk-link">10h50 - L'état de l'art des apps de traductions de modèles</a></h2>
+                <p><em>Description à venir...</em></p>
+                <p>Par <b>Evlf</b> (<a href="https://twitter.com/evlf">@Evlf</a>)</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="travis-openshift" class="talk-link">11h20 - Déploiement continu avec Travis et OpenShift</a></h2>
+
+                <p>Qu'est-ce-que le déploiement continu autrement connu sous le
+                nom de "push-to-deploy"&nbsp;? Pourquoi nous en avons besoin&nbsp;?
+                Comment l'implémenter gratos pour les projets Open Source avec
+                Travis et OpenShift&nbsp;?</p>
+
+                <p>Par <b><a href="http://yourlabs.org">James Pic</a></b> (<a href="https://twitter.com/jamespic">@jamespic</a>)</p>
+
+                <p>Fort de 8 ans d'experience en déploiement de sites internet
+                en Django de toute envergure, je suis devop et developpeur du
+                projet Memopol utilisé par La Quadrature depuis l'an dernier,
+                c'est le projet qui sera montré en example pour la présentation.</p>
+
+                <p>Le reste du temps je suis Software Test Engineer chez PeopleDoc,
+                mais il m'arrive de passer quelques soirées à maintenir les
+                apps sur @yourlabs ou encore de contribuer à Django.</p>
+
+                <p>J'aime beaucoup le test et les fruits de mer.</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="cozy-cloud-saltstack" class="talk-link">11h45 - Retour d'expérience sur l'utilisation de Saltstack chez Cozy Cloud</a></h2>
+
+                <p>Devops toussa tout le monde en parle. Les outils
+                d'automatisations comme Puppet, Chef vous vendent du rêve.
+                Mais concrètement qu'est ce que cela peut donner pour passer
+                d'une centaine d'instances à plusieurs milliers.</p>
+
+                <p>Plusieurs parties dans la session&nbsp;:</p>
+
+                <ul>
+                    <li>Comment c'est installé chez nous</li>
+                    <li>Ce sur quoi nous avons bloqué</li>
+                    <li>Comment nous avons résolu certains problèmes</li>
+                </ul>
+
+                <p>Et tout ça avec du code dedans :)</p>
+
+                <p>Par <b><a href="http://nicolas.ledez.net/">Nicolas Ledez</a></b> (<a href="https://twitter.com/nledez">@nledez</a>)</p>
+
+                <p>Nicolas Ledez a deux vies, le jour il travaille comme administrateur système pour Cozy Cloud et dans le passé d'autres sociétés plus grosses.</p>
+                <p>Après plusieurs années d'expérience, il est devenu architecte et consultant technique. Et la nuit, il aime écrire des applications et Ruby, Python ou d'autres langages. Et tout cela pour assouvir sa soif de curiosité et créer des choses.</p>
+                <p>Il aime bien définir son travail comme "ingénieur Lego", d'autres personnes appellent ça devops.</p>
+                <p>Il a aussi co-lancé une communauté devops à Rennes (ou il vit). Il contribue également à plusieurs communautés logicielles. Breizhcamp http://breizhcamp.org/, DevCamp Rennes http://devcamp.fr/, LabFab http://www.labfab.fr/, Devoxx4kids http://www.devoxx4kids.org/france/, etc.</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="django-formidable" class="talk-link">12h10 - Un Formidable constructeur de formulaire dynamique&nbsp;!</a></h2>
+
+                <p><code>django-formidable</code>, une bibliothèque (pas encore
+                tout à fait) libre qui permets de rider des poneys de toutes
+                les couleurs sans se soucier de son impact écologique&nbsp;!</p>
+
+                <p>Toi aussi intégre ton éditeur de formulaire dynamique fait
+                avec beaucoup d'amour et d'ember, de solides fondations basées
+                sur la paix, l'écoute de l'autre et surtout, Django&nbsp;!</p>
+
+                <p>Par <b><a href="http://www.people-doc.com/">Guillaume Camera</a></b> (<a href="https://twitter.com/moumoutt3">@moumoutt3</a>)</p>
+                <p>Diplomé de l'EPITA en 2011 Développeur chez PeopleDoc depuis
+                2014 Amateur de ping-pong, de bières belges, de vin rouge.</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="django-frontend" class="talk-link">14h00 - Django et le frontend (React, Redux, Webpack)</a></h2>
+                <p>Le frontend est de plus en plus compliqué, React, Redux,
+                Babel, etc. Comment utiliser au mieux ces outils avec Django&nbsp;?
+                C'est ce dont nous parlerons&nbsp;!</p>
+                <p>Par <b><a href="http://arnaud.limbourg.com/">Arnaud Limbourg</a></b> (<a href="https://twitter.com/arnaudlimbourg">@arnaudlimbourg</a>)</p>
+                <p>Arnaud a co-fondé une startup dans le domaine des tests
+                utilisateurs (https://ferpection.com) dans laquelle il officie
+                comme CTO/développeur.</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper">
+                <h2><a href="#program" id="django-drf" class="talk-link">14h25 - Performances de Django REST framework</a></h2>
+                <p>Django REST framework apporte beaucoup de fonctionnalités et
+                simplifie la création d'API REST.</p>
+                <p>Si les fonctionnalités sont décrites dans la documentation,
+                qu'en est-il des performances&nbsp;?</p>
+                <p>L'objectif est de voir comment optimiser au mieux et
+                comprendre ce qui peut ralentir l'API.</p>
+                <p>Par <b>Xavier Ordoquy</b> (<a href="https://twitter.com/linovia_net">@linovia_net</a>)</p>
+            </div>
+
+            <hr />
+
+            <div class="content-wrapper talk">
+                <h2><a href="#program" id="django-websocket" class="talk-link">14h50 - Django et les websockets (django-channel)</a></h2>
+                <p>Présentation du fonctionnement des Django Channels et de
+                pourquoi c'est une bonne nouvelle pour Django.</p>
+
+                <p>Par <b><a href="http://www.servicedenuages.fr/">Rémy Hubscher</a></b> (<a href="https://twitter.com/Natim">@Natim</a>)</p>
+                <p>Développeur Django depuis 2005 et développeur Python et
+                Javascript chez Mozilla depuis un peu plus de 2 ans, Rémy
+                travaille principalement à la gestion et au partage des données
+                des utilisateurs de Mozilla Firefox.</p>
+                <p>Rémy est également un des développeurs de la base de données
+                web Kinto permettant le stockage, la synchronisation et le
+                partage des données (backend) des applications web et mobile
+                via HTTP.</p>
             </div>
         </section>
+
+        <footer class="content-wrapper">
+            <p>Événement organisé par l'association <a href="http://django-fr.org/">Django-fr</a>.
+                <a href="mentionslegales.html">Mentions légales</a>
+                Pour les nostalgiques, les sites des rencontres <a href="../2010/">2010</a>, <a href="../2011/">2011</a>, <a href="../2012/">2012</a>, <a href="../2013/">2013</a>
+                et <a href="../2015/">2015</a></p>
+        </footer>
     </body>
 </html>
