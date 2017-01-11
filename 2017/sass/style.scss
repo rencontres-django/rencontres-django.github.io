@@ -1,0 +1,228 @@
+@import 'settings';
+@import 'foundation';
+@import 'util/util';
+@import 'global';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-menu;
+@include foundation-label;
+@include foundation-title-bar;
+@include foundation-top-bar;
+
+
+$color1: #f0eeec;
+$color2: rgba(215, 9, 33, 1);
+$color3: #75cbd2;
+$color4: #950427;
+$color5: #3d4448;
+$color6: #434b4f;
+
+body {
+  font-family: $body-font-family;
+  color: $color6;
+  border-top: 3px solid $color2;
+}
+
+.top-bar {
+  font-family: $font-title;
+  a {
+    text-transform: uppercase;
+  }
+  &-title {
+    color: $color2;
+    font-size: 24px;
+    font-weight: bold;
+
+  }
+}
+
+.hero {
+  background: radial-gradient(ellipse, transparent 60%, black), url('/imgs/toulon.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+  position: relative;
+  &__panel {
+    font-family: $font-title;
+    text-align: center;
+    font-weight: bold;
+    padding: 30px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+  }
+  &__logo {
+    font-size: 124px;
+    line-height: 96px;
+    font-weight: bold;
+  }
+  &__place {
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  &__date {
+    font-size: 36px;
+    font-weight: bold;
+  }
+}
+
+.about {
+  padding: 48px 0;
+  background-color: $color1;
+  font-size: 24px;
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+  }
+  &__tagline {
+    font-size: 32px;
+  }
+}
+
+.speakers {
+  background: linear-gradient(
+                  rgba(215, 9, 33, .5),
+                  rgba(215, 9, 33, .5)
+  ), radial-gradient(ellipse, transparent, black), url('/imgs/speaker.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+  color: #fff;
+
+  &__panel {
+    margin-top: 70px;
+  }
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+  }
+  &__text {
+    font-size: 24px;
+  }
+  &__action {
+    margin-top: 32px;
+  }
+  &__submit {
+    color: #FFF;
+    text-transform: uppercase;
+    border: 4px solid #fff;
+    padding: 6px 12px;
+    font-family: $font-title;
+    font-size: 24px;
+    &:hover {
+      color: #FFF;
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+}
+
+.schedule {
+  background-color: $color5;
+  color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-size: 24px;
+
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+    font-weight: bold;
+  }
+  &__subtitle {
+    font-size: 32px;
+    font-family: $font-title;
+  }
+}
+
+.place {
+  padding: 50px 0;
+  font-size: 24px;
+
+  &__panel {
+    background-color: $color1;
+    padding: 64px 0;
+    max-width: 79rem;
+    margin: 0 auto;
+  }
+  &__title {
+    font-family: $font-title;
+    font-size: 32px;
+  }
+}
+
+.sponsors {
+  background-color: $color3;
+  color: #fff;
+  min-height: 500px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+  }
+  &__text {
+    font-size: 24px;
+    line-height: 1.6;
+    font-weight: bold;
+  }
+
+}
+
+.finance {
+  padding-bottom: 32px;
+  &__panel {
+    background-color: $color4;
+    padding: 32px;
+    color: #fff;
+    font-size: 24px;
+    font-family: $font-title;
+  }
+}
+
+.footer {
+  padding: 128px 0 32px 0;
+  border-bottom: 6px solid $color3;
+  &__tagline {
+    font-family: $font-title;
+    font-size: 48px;
+    color: $color2;
+  }
+  &__panel {
+    background-color: $color1;
+    padding: 64px 0;
+    max-width: 79rem;
+    margin: 0 auto;
+    h4, a {
+      font-family: $font-title;
+    }
+
+  }
+  ul {
+    margin-left: 0;
+  }
+  li {
+    list-style: none;
+    margin-top: 18px;
+  }
+}
+
+.credits {
+  margin-top: 32px;
+}
+
+.coc, .mentions {
+  font-size: 24px;
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+    text-align: center;
+    color: $color5;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+}
