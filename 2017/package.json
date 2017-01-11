@@ -1,7 +1,7 @@
 {
-  "name": "Djangocong 2017",
+  "name": "Djangocong2017",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rencontres django Fr 2017",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,9 @@
   "dependencies": {
     "foundation-sites": "^6.2.4",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2"
   }
 }
