@@ -39,7 +39,7 @@ body {
 }
 
 .hero {
-  background: radial-gradient(ellipse, transparent 60%, black), url('/imgs/toulon.jpg') no-repeat;
+  background: radial-gradient(ellipse, transparent 60%, black), url('../imgs/toulon.jpg') no-repeat;
   background-size: cover;
   height: 800px;
   position: relative;
@@ -88,7 +88,7 @@ body {
   background: linear-gradient(
                   rgba(215, 9, 33, .5),
                   rgba(215, 9, 33, .5)
-  ), radial-gradient(ellipse, transparent, black), url('/imgs/speaker.jpg') no-repeat;
+  ), radial-gradient(ellipse, transparent, black), url('../imgs/speaker.jpg') no-repeat;
   background-size: cover;
   height: 800px;
   color: #fff;
