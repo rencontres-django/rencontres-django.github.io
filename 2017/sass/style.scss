@@ -170,9 +170,16 @@ body {
     line-height: 1.6;
     font-weight: bold;
   }
-
 }
-
+.sponsors-list{
+  padding: 64px 0;
+  background-color: $color1;
+    &__title {
+    font-family: $font-title;
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+}
 .finance {
   padding-bottom: 32px;
   &__panel {
