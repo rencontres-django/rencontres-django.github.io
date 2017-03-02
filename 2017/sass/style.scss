@@ -258,3 +258,37 @@ body {
     }
   }
 }
+
+.talks {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  &__panel {
+    background-color: $color4;
+    padding: 32px;
+    color: #fff;
+    font-size: 24px;
+    font-family: $font-title;
+  }
+    &__lnk {
+    display: block;
+    color: #FFF;
+    padding: 6px 12px;
+
+    font-family: $font-title;
+    font-size: 24px;
+    &:hover {
+      color: #FFF;
+      background-color: rgba(255, 255, 255, .4);
+    }
+  }
+}
+
+.talk{
+  padding: 24px 0;
+  &--muted{
+    background-color: $color1;
+  }
+  p, a, li{
+    font-size: 18px;
+  }
+}
