@@ -259,7 +259,7 @@ body {
   }
 }
 
-.talks {
+.talks, .disclaimer {
   padding-top: 32px;
   padding-bottom: 32px;
   &__panel {
@@ -283,12 +283,32 @@ body {
   }
 }
 
-.talk{
+.talk, .info{
   padding: 24px 0;
   &--muted{
     background-color: $color1;
   }
   p, a, li{
     font-size: 18px;
+  }
+}
+
+.info{
+  dl dd {
+    display: inline;
+    margin: 0;
+    font-size: 18px;
+  }
+  dl dd:after{
+    display: block;
+    content: '';
+  }
+  dl dt{
+    display: inline-block;
+    min-width: 100px;
+  }
+  dt{
+    font-weight: bold;
+    font-style: italic;
   }
 }

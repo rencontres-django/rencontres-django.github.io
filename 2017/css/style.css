@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * Foundation for Sites by ZURB
- * Version 6.3.0
+ * Version 6.3.1
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
@@ -458,6 +458,7 @@ textarea {
   border-radius: 0; }
 
 select {
+  box-sizing: border-box;
   width: 100%;
   border-radius: 0; }
 
@@ -480,6 +481,9 @@ button {
   line-height: 1; }
   [data-whatinput='mouse'] button {
     outline: 0; }
+
+pre {
+  overflow: auto; }
 
 .is-visible {
   display: block !important; }
@@ -518,6 +522,8 @@ button {
     .row.expanded .row {
       margin-right: auto;
       margin-left: auto; }
+  .row:not(.expanded) .row {
+    max-width: none; }
   .row.gutter-small > .column, .row.gutter-small > .columns {
     padding-right: 0.625rem;
     padding-left: 0.625rem; }
@@ -1627,10 +1633,16 @@ kbd {
       display: block; } }
   .menu.simple li {
     display: inline-block;
-    margin-right: 1rem;
+    vertical-align: top;
     line-height: 1; }
   .menu.simple a {
     padding: 0; }
+  .menu.simple li {
+    margin-left: 0;
+    margin-right: 1rem; }
+  .menu.simple.align-right li {
+    margin-right: 0;
+    margin-left: 1rem; }
   .menu.align-right::before, .menu.align-right::after {
     display: table;
     content: ' '; }
@@ -1670,7 +1682,8 @@ kbd {
 .menu-centered {
   text-align: center; }
   .menu-centered > .menu {
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: top; }
 
 .no-js [data-responsive-menu] ul {
   display: none; }
@@ -1960,28 +1973,45 @@ body {
       color: #FFF;
       background-color: rgba(255, 255, 255, 0.4); }
 
-.talks {
+.talks, .disclaimer {
   padding-top: 32px;
   padding-bottom: 32px; }
-  .talks__panel {
+  .talks__panel, .disclaimer__panel {
     background-color: #950427;
     padding: 32px;
     color: #fff;
     font-size: 24px;
     font-family: "Oswald", sans-serif; }
-  .talks__lnk {
+  .talks__lnk, .disclaimer__lnk {
     display: block;
     color: #FFF;
     padding: 6px 12px;
     font-family: "Oswald", sans-serif;
     font-size: 24px; }
-    .talks__lnk:hover {
+    .talks__lnk:hover, .disclaimer__lnk:hover {
       color: #FFF;
       background-color: rgba(255, 255, 255, 0.4); }
 
-.talk {
+.talk, .info {
   padding: 24px 0; }
-  .talk--muted {
+  .talk--muted, .info--muted {
     background-color: #f0eeec; }
-  .talk p, .talk a, .talk li {
+  .talk p, .talk a, .talk li, .info p, .info a, .info li {
     font-size: 18px; }
+
+.info dl dd {
+  display: inline;
+  margin: 0;
+  font-size: 18px; }
+
+.info dl dd:after {
+  display: block;
+  content: ''; }
+
+.info dl dt {
+  display: inline-block;
+  min-width: 100px; }
+
+.info dt {
+  font-weight: bold;
+  font-style: italic; }
