@@ -1905,6 +1905,8 @@ body {
 .sponsors-list {
   padding: 64px 0;
   background-color: #f0eeec; }
+  .sponsors-list .row {
+    margin-bottom: 24px; }
   .sponsors-list__title {
     font-family: "Oswald", sans-serif;
     font-size: 32px;
