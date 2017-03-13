@@ -323,3 +323,23 @@ body {
    font-size: 48px;
   }
 }
+
+.tut-hero {
+  background: linear-gradient(
+                  rgba(215, 9, 33, .3),
+                  rgba(215, 9, 33, .3)
+  ), url('../imgs/tutorial.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+  color: #fff;
+  &__panel {
+    margin-top: 70px;
+  }
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+  }
+  &__text {
+    font-size: 24px;
+  }
+ @ }

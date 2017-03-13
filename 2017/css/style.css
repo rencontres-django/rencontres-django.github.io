@@ -472,9 +472,7 @@ select {
 
 button {
   padding: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -2024,3 +2022,16 @@ body {
   font-size: 24px; }
   .tut-process__title {
     font-size: 48px; }
+
+.tut-hero {
+  background: linear-gradient(rgba(215, 9, 33, 0.3), rgba(215, 9, 33, 0.3)), url("../imgs/tutorial.jpg") no-repeat;
+  background-size: cover;
+  height: 800px;
+  color: #fff; }
+  .tut-hero__panel {
+    margin-top: 70px; }
+  .tut-hero__title {
+    font-family: "Oswald", sans-serif;
+    font-size: 48px; }
+  .tut-hero__text {
+    font-size: 24px; }
