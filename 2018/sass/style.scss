@@ -9,6 +9,12 @@ $nav-font-family: 'Montserrat';
 $header-font-family: 'Montserrat';
 $button-font-family: 'Montserrat';
 
+@media #{$medium-and-up} {
+  .container {
+    width: 95%;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-family;
 }
@@ -105,9 +111,10 @@ nav{
 .hero {
   padding-top: 1em;
 
-  h1,h5 {
+  h1, h5 {
     text-shadow: 0 0 20px black;
   }
+}
   
 .emphasized-panel {
   background-color: #d9f9f6;
