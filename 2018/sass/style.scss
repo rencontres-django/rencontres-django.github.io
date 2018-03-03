@@ -9,6 +9,10 @@ $nav-font-family: 'Montserrat';
 $header-font-family: 'Montserrat';
 $button-font-family: 'Montserrat';
 
+.container {
+  max-width: 1700px;
+}
+
 @media #{$medium-and-up} {
   .container {
     width: 95%;
