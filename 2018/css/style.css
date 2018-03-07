@@ -9014,7 +9014,9 @@ nav ul a {
   padding-top: 1em; }
 
 .parallax-container {
-  text-shadow: 0 0 20px black; }
+  text-shadow: 0 0 10px black; }
+  .parallax-container h5 {
+    text-shadow: 0 0 5px black; }
 
 .emphasized-panel {
   background-color: #d9f9f6; }
