@@ -114,12 +114,12 @@ nav{
 
 .hero {
   padding-top: 1em;
-
-  h1, h5 {
-    text-shadow: 0 0 20px black;
-  }
 }
-  
+
+.parallax-container {
+  text-shadow: 0 0 20px black;
+}
+
 .emphasized-panel {
   background-color: #d9f9f6;
 }
