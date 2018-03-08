@@ -40,12 +40,20 @@
             ]
         });
 
-        /*var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
+        var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
             n = 0;
         $(document).keydown(function (e) {
             if (e.keyCode === k[n++]) {
                 if (n === k.length) {
-                    $('.logo img').attr('src', '');
+                    var pony = $('<img class="pony" src="images/pony.png">');
+                    $("body").append(pony);
+                    pony.animate(
+                        {left: "-50%"},
+                        {
+                            easing: "linear",
+                            duration: 1000,
+                            complete: function(){pony.remove()}
+                        });
                     n = 0;
                     return false;
                 }
@@ -53,7 +61,7 @@
             else {
                 n = 0;
             }
-        });*/
+        });
 
         $(window).scroll(function () {
             if ($(this).scrollTop() >100) {

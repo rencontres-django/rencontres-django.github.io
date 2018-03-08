@@ -117,9 +117,19 @@ nav{
 }
 
 .parallax-container {
-  text-shadow: 0 0 20px black;
+  text-shadow: 0 0 10px black;
+  h5 {
+    text-shadow: 0 0 5px black;
+
+  }
 }
 
 .emphasized-panel {
   background-color: #d9f9f6;
+}
+
+.pony {
+  position: fixed;
+  top: 10%;
+  left: 100%;
 }
