@@ -81,8 +81,7 @@
     });
 
     function initialize() {
-        var coordinates = ['La Grappe', '50.6307514', '3.055959,17', '<h4>La Grappe</h4><p>75, rue Léon Gambetta<br>59000 Lille</p><p>Métro | Bus | V’Lille : République Beaux-Arts</p>'];
-        var grappe = new google.maps.LatLng(parseFloat(coordinates[1]), parseFloat(coordinates[2]));
+        var grappe = new google.maps.LatLng("50.6307514", "3.0581");
 
         var map = new google.maps.Map(
             document.getElementById('map_djangocong'), {
@@ -94,10 +93,10 @@
         var marker = new google.maps.Marker({
             position: grappe,
             map: map,
-            title: coordinates[0],
+            title: 'La Grappe',
         });
 
-        var content = coordinates[3];
+        var content = '<h4>La Grappe</h4><p>75, rue Léon Gambetta<br>59000 Lille</p><p>Métro | Bus | V’Lille : République Beaux-Arts</p>';
         var infowindow = new google.maps.InfoWindow();
 
         google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
