@@ -1,0 +1,135 @@
+@import '_color.scss';
+@import '../node_modules/materialize-css/sass/materialize.scss';
+
+$blue: #376F9E;
+$yellow: #FFD241;
+$green: #0F3E2E;
+
+$nav-font-family: 'Montserrat';
+$header-font-family: 'Montserrat';
+$button-font-family: 'Montserrat';
+
+.container {
+  max-width: 1700px;
+}
+
+@media #{$medium-and-up} {
+  .container {
+    width: 95%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $header-font-family;
+}
+
+[class*="btn"]{
+  font-family: $button-font-family;
+}
+
+.position-relative{
+  position: relative;
+}
+
+nav{
+  ul{
+    a{
+      font-family: $nav-font-family;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.parallax-container {
+  height: 380px;
+}
+
+.slick-dots {
+  text-align: center;
+  margin: 0 0 10px 0;
+  padding: 0;
+  li {
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 4px;
+    &.slick-active {
+      button {
+        background-color: black;
+      }
+    }
+    button {
+      font: 0/0 a;
+      text-shadow: none;
+      color: transparent;
+      background-color: #999;
+      border: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    :hover {
+      background-color: black;
+    }
+  }
+}
+
+/* Custom Arrow */
+.prev {
+  color: #999;
+  position: absolute;
+  top: 38%;
+  left: -2em;
+  font-size: 1.5em;
+  :hover {
+    cursor: pointer;
+    color: black;
+  }
+}
+.next {
+  color: #999;
+  position: absolute;
+  top: 38%;
+  right: -2em;
+  font-size: 1.5em;
+  :hover {
+    cursor: pointer;
+    color: black;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .next {
+    display: none !important;
+  }
+}
+
+[id="map_djangocong"]{
+  height: 400px;
+}
+
+.hidden-g {
+  color: #ffffff20;
+  font-size: 60%;
+}
+
+.hero {
+  padding-top: 1em;
+}
+
+.parallax-container {
+  text-shadow: 0 0 10px black;
+  h5 {
+    text-shadow: 0 0 5px black;
+
+  }
+}
+
+.emphasized-panel {
+  background-color: #d9f9f6;
+}
+
+.pony {
+  position: fixed;
+  top: 10%;
+  left: 100%;
+}
