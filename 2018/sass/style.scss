@@ -39,9 +39,16 @@ nav{
     }
   }
 }
-
 .parallax-container {
-  height: 380px;
+  h1{
+    font-size: 3rem;
+  }
+}
+
+@media #{$medium-and-up} {
+  .parallax-container {
+    height: 380px;
+  }
 }
 
 .slick-dots {
