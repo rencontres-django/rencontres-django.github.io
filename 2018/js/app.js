@@ -48,10 +48,10 @@
                     var pony = $('<img class="pony" src="images/pony.png">');
                     $("body").append(pony);
                     pony.animate(
-                        {left: "-50%"},
+                        {left: "100%", top: "10%"},
                         {
                             easing: "linear",
-                            duration: 1000,
+                            duration: 700,
                             complete: function(){pony.remove()}
                         });
                     n = 0;

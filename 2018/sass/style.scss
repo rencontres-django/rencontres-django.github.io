@@ -137,6 +137,9 @@ nav{
 
 .pony {
   position: fixed;
-  top: 10%;
-  left: 100%;
+  top: 25%;
+  width: 315px;
+  height: 191px;
+  left: -315px;
+  z-index: 10;
 }
