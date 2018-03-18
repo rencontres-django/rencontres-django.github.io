@@ -23,31 +23,76 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-family;
 }
 
-[class*="btn"]{
+[class*="btn"] {
   font-family: $button-font-family;
 }
 
-.position-relative{
+.position-relative {
   position: relative;
 }
 
-nav{
-  ul{
-    a{
+nav {
+  ul {
+    a {
       font-family: $nav-font-family;
       text-transform: uppercase;
     }
   }
 }
-.parallax-container {
-  h1{
-    font-size: 3rem;
+
+[id="index-banner"] {
+  overflow: hidden;
+
+  .row {
+    margin: 0;
   }
+  /*&:before {
+    content: "";
+    position: absolute;top:0;left: 0;right: 0;bottom: 173px;
+    background-image: url('../images/djangocong-poney.jpg');
+    background-size: cover;
+  }*/
 }
 
-@media #{$medium-and-up} {
-  .parallax-container {
-    height: 380px;
+.hero {
+  text-shadow: 0 0 10px black;
+  padding: 1em !important;
+  background-color: color('teal', 'base');
+
+  .header {
+    margin: 0;
+  }
+
+  h5 {
+    text-shadow: 0 0 5px black;
+  }
+
+  @media #{$medium-and-up} {
+    padding: 2.5em 1em !important;
+    position: absolute;
+    bottom: 0;left: 0;right: 0;
+    //background-color: rgba(255, 255, 255, 0.7);
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    [class*="btn-"] {
+      position: absolute;
+      top: 50%;
+      right: 50px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  @media #{$medium-and-down} {
+    h1 {
+      font-size: 2rem;
+    }
+
+    [class*="btn-"] {
+      margin-top: 10px;
+    }
   }
 }
 
@@ -92,6 +137,7 @@ nav{
     color: black;
   }
 }
+
 .next {
   color: #999;
   position: absolute;
@@ -110,7 +156,7 @@ nav{
   }
 }
 
-[id="map_djangocong"]{
+[id="map_djangocong"] {
   height: 400px;
 }
 
@@ -119,27 +165,12 @@ nav{
   font-size: 60%;
 }
 
-.hero {
-  padding-top: 1em;
-}
-
-.parallax-container {
-  text-shadow: 0 0 10px black;
-  h5 {
-    text-shadow: 0 0 5px black;
-
-  }
-}
-
 .emphasized-panel {
   background-color: #d9f9f6;
 }
 
 .pony {
-  position: fixed;
-  top: 25%;
-  width: 315px;
-  height: 191px;
-  left: -315px;
-  z-index: 10;
+  position: absolute;
+  bottom: 128px;left: -100%;
+  z-index: 1000;
 }

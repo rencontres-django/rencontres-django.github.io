@@ -46,7 +46,7 @@
             if (e.keyCode === k[n++]) {
                 if (n === k.length) {
                     var pony = $('<img class="pony" src="images/pony.png">');
-                    $("body").append(pony);
+                    $("#index-banner").append(pony);
                     pony.animate(
                         {left: "100%", top: "10%"},
                         {
