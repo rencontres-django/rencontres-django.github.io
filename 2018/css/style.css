@@ -4779,7 +4779,6 @@ nav {
     line-height: 56px; }
   nav .nav-wrapper {
     position: relative;
-    text-align: center;
     height: 100%; }
   @media only screen and (min-width: 993px) {
     nav a.button-collapse {
@@ -9065,5 +9064,4 @@ nav ul a {
 .text-container {
   max-width: 700px;
   margin-left: auto !important;
-  margin-right: auto !important;
-}
+  margin-right: auto !important; }
