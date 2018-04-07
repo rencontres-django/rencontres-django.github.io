@@ -79,41 +79,13 @@
             e.preventDefault();
         })
     });
-
-    function initialize() {
-        var grappe = new google.maps.LatLng("50.6307514", "3.0581");
-
-        var map = new google.maps.Map(
-            document.getElementById('map_djangocong'), {
-                center: grappe,
-                zoom: 11,
-            }
-        );
-
-        var marker = new google.maps.Marker({
-            position: grappe,
-            map: map,
-            title: 'La Grappe',
-        });
-
-        var content = '<h4>La Grappe</h4><p>75, rue Léon Gambetta<br>59000 Lille</p><p>Métro | Bus | V’Lille : République Beaux-Arts</p>';
-        var infowindow = new google.maps.InfoWindow();
-
-        google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
-            return function () {
-                infowindow.setContent(content);
-                infowindow.open(map, marker);
-            };
-        })(marker, content, infowindow));
-
-        google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
-            return function () {
-                infowindow.setContent(content);
-                infowindow.open(map, marker);
-            };
-        })(marker, content, infowindow));
-
-    }
-
-    google.maps.event.addDomListener(window, 'load', initialize);
 })(jQuery);
+
+
+// Leaflet
+var map = L.map('map_djangocong').setView([50.6307514, 3.0581], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+L.marker([50.6307514, 3.0581]).addTo(map)
+    .bindPopup('<h4>La Grappe</h4><p>75, rue Léon Gambetta<br>59000 Lille</p><p>Métro | Bus | V’Lille : République Beaux-Arts</p>')
