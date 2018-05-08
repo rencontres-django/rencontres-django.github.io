@@ -12080,7 +12080,8 @@ nav ul a {
   margin-right: auto !important; }
 
 .card .card-image .card-title, .card .card-image .card-content .card-subtitle, .card .card-content .card-image .card-subtitle {
-  text-shadow: 0 0 4px black; }
+  background: rgba(0, 0, 0, 0.5);
+  right: 0; }
 
 .card .card-content .card-subtitle {
   font-size: 18px;
