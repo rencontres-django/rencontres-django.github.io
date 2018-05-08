@@ -12057,6 +12057,11 @@ nav ul a {
 [id="map_djangocong"] {
   height: 400px; }
 
+.leaflet-top, .leaflet-bottom {
+  /* override default (1000) since the navbar is at 997 */
+  z-index: 996;
+}
+
 .hidden-g {
   color: #ffffff20;
   font-size: 60%; }
