@@ -194,6 +194,9 @@ nav {
   margin-right: auto !important;
 }
 
+.card .card-image .card-title {
+  text-shadow: 0 0 4px black;
+}
 
 .card .card-content .card-subtitle {
   @extend .card-title;

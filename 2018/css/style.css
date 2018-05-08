@@ -12079,6 +12079,9 @@ nav ul a {
   margin-left: auto !important;
   margin-right: auto !important; }
 
+.card .card-image .card-title, .card .card-image .card-content .card-subtitle, .card .card-content .card-image .card-subtitle {
+  text-shadow: 0 0 4px black; }
+
 .card .card-content .card-subtitle {
   font-size: 18px;
   font-style: italic;
