@@ -12059,8 +12059,7 @@ nav ul a {
 
 .leaflet-top, .leaflet-bottom {
   /* override default (1000) since the navbar is at 997 */
-  z-index: 996;
-}
+  z-index: 996; }
 
 .hidden-g {
   color: #ffffff20;
