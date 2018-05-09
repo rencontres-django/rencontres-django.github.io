@@ -1,11 +1,11 @@
 @import '_color.scss';
-@import '../node_modules/materialize-css/sass/materialize.scss';
-@import '../node_modules/materialize-social/materialize-social.css';
+@import '../vendor/materialize-css/sass/materialize.scss';
+@import '../vendor/materialize-social/materialize-social.css';
 
-$fa-font-path:   "/node_modules/fontawesome/webfonts";
-@import '../node_modules/fontawesome/scss/fontawesome.scss';
-@import '../node_modules/fontawesome/scss/fa-solid.scss';
-@import '../node_modules/fontawesome/scss/fa-brands.scss';
+$fa-font-path:   "/vendor/fontawesome/webfonts";
+@import '../vendor/fontawesome/scss/fontawesome.scss';
+@import '../vendor/fontawesome/scss/fa-solid.scss';
+@import '../vendor/fontawesome/scss/fa-brands.scss';
 
 $blue: #376F9E;
 $yellow: #FFD241;
