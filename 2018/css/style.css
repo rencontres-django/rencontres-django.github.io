@@ -12091,3 +12091,14 @@ nav ul a {
   font-size: 18px;
   font-style: italic;
   color: rgba(0, 0, 0, 0.5); }
+
+.sponsors div a {
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.sponsors div a img {
+  max-width: 250px;
+  max-height: 250px;
+  margin: auto; }

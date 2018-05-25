@@ -210,3 +210,14 @@ nav {
   font-style: italic;
   color: rgba(0, 0, 0, 0.5);
 }
+
+.sponsors div a {
+  height: 250px;
+  display: flex;
+}
+
+.sponsors div a img {
+  max-width: 250px;
+  max-height: 250px;
+  margin: auto;
+}
