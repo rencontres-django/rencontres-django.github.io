@@ -1,0 +1,17 @@
+{
+  "name": "2019-pelican",
+  "version": "1.0.0",
+  "description": "Rencontres Django 2019",
+  "main": "index.js",
+  "dependencies": {
+    "fontawesome": "4.7.2",
+    "materialize-css": "0.100.2",
+    "materialize-social": "1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

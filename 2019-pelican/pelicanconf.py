@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Rencontres Django'
-SITENAME = 'DjangoCong 2019'
-SITEURL = ''
+AUTHOR = "Rencontres Django"
+SITENAME = "DjangoCong 2019"
+SITEURL = ""
 
-PATH = 'content'
+PATH = "content"
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = "Europe/Paris"
 
-DEFAULT_LANG = 'fr'
+DEFAULT_LANG = "fr"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -23,8 +23,7 @@ AUTHOR_FEED_RSS = None
 LINKS = []
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (("You can add links in your config file", "#"), ("Another social link", "#"))
 
 DEFAULT_PAGINATION = False
 
@@ -32,3 +31,15 @@ DEFAULT_PAGINATION = False
 RELATIVE_URLS = True
 
 THEME = "theme"
+
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["assets"]
+
+
+ASSET_BUNDLES = (("scss", ["colors.scss", "main.scss"], {"filters": "pyscss"}),)
+
+# ASSET_CONFIG = (('closure_compressor_optimization', 'WHITESPACE_ONLY'),
+#                 ('less_bin', 'lessc.cmd'), )
+
+ASSET_SOURCE_PATHS = ["vendor/css", "scss"]
+

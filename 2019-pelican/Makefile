@@ -74,4 +74,8 @@ endif
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
+install:
+	pip install -r requirements.txt
+	npm instal
+
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish github
