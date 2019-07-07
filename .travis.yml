@@ -1,0 +1,16 @@
+jobs:
+  include:
+    - stage: compile
+      install:
+      - pip install -r 2019-pelican/requirements.txt
+      script:
+        - make -C 2019-pelican html
+    - stage: deploy
+      script:
+        - openssl aes-256-cbc -K $encrypted_0a86ef4af003_key -iv $encrypted_0a86ef4af003_iv -in ./travis/travis_key.enc -out .travis/travis_key -d
+        - .travis/push-to-github
+
+stages:
+  - compile
+  - name: deploy
+    if: branch = test-deploy
