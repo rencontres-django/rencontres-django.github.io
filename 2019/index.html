@@ -1,17 +1,68 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="fr">
 
-{% set page={} %}
+<head>
+  <title>DjangoCong 2019 à Marseille</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-{% block hero %}
+  <link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="apple-touch-icon" href="./apple_touch_icon.png" />
+  <link type="text/css" rel="stylesheet" href="./css/style.css" media="screen" />
+</head>
+
+<body id="top">
+  <div class="navbar-fixed">
+    <nav class="teal">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="./" class="brand-logo">
+          <img src="./images/logo.png" alt="DjangoCong 2019 à Marseille" height="55" />
+        </a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./code-de-conduite/">Code de conduite</a></li>
+          <li><a href="./pratique/">Pratique</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <ul id="nav-mobile" class="side-nav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="./images/office.jpg" alt="" />
+        </div>
+        <span class="white-text name">DjangoCong</span>
+        <span class="white-text email">Marseille 2019</span>
+      </div>
+    </li>
+    <li><a href="./">Accueil</a></li>
+    <li><a href="./code-de-conduite/">Code de conduite</a></li>
+    <li><a href="./pratique/">Pratique</a></li>
+  </ul>
+
+  <div id="index-banner" class="position-relative">
+    <div class="row">
+      <img src="./images/marseille.png" alt="Marseille" class="col s12 no-padding" />
+    </div>
+    <div class="section hero">
 <h1 class="header white-text">DjangoCong France 2019</h1>
 <h5 class="header white-text">Du 14 au 15 septembre, à Marseille,<span class="hide-on-large-only"><br></span><span>
     venez parler Django&nbsp;!</span></h5>
 <p class="center">
   <!-- <a href="https://twitch.tv/djangocong" target="_blank"
       class="btn-large waves-effect waves-light yellow pulse">Regarder le direct&nbsp;!</a> -->
-  {% endblock %}
+    </div>
+  </div>
+  <nav class="blue">
+    <div class="container nav-wrapper">
+      <div class="col s12">
+        <a href="./" class="breadcrumb">Accueil</a>
+      </div>
+    </div>
+  </nav>
 
-  {% block raw_content %}
   <div class="container">
     <div class="section">
       <div class="row">
@@ -129,19 +180,19 @@
           </p>
           <p class="left-align light">
             Si vous souhaitez venir mais que vous hésitez pour des questions
-            budgétaires, sachez que nous avons un <a href="mailto:{{ CONTACT_EMAIL }}">programme de bourse</a> ouvert
+            budgétaires, sachez que nous avons un <a href="mailto:j-mad@j-mad.com">programme de bourse</a> ouvert
             jusqu'à
             250€ (hébergement, transport ou tout autre frais nécessaire à votre venue).
           </p>
           <p class="left-align light">
-            N'hésitez donc pas à nous <a href="mailto:{{ CONTACT_EMAIL }}">contacter</a> pour demander une bourse. Le
+            N'hésitez donc pas à nous <a href="mailto:j-mad@j-mad.com">contacter</a> pour demander une bourse. Le
             nombre
             de bourse n'est pas limité et nous étudierons toutes les demandes.
           </p>
           <p class="left-align light">
             Le mode de fonctionnement prévu est un remboursement sur justificatif, mais
             dans l'éventualité où ce mode-là ne serait pas possible, nous pourrons trouver une solution
-            ensemble. <a href="mailto:{{ CONTACT_EMAIL }}">Contactez-nous !</a>
+            ensemble. <a href="mailto:j-mad@j-mad.com">Contactez-nous !</a>
 
           </p>
         </div>
@@ -165,7 +216,7 @@
             solution. Il y a beaucoup de possibilités pour aider l'évènement.
             Étant une toute petite équipe d'orga, nous ne pouvons
             anticiper toutes les demandes. Si vous avez une requête
-            particulière, <a href="mailto:{{ CONTACT_EMAIL }}">
+            particulière, <a href="mailto:j-mad@j-mad.com">
               contactez-nous</a>.
           </p>
 
@@ -202,7 +253,7 @@
               donation permettant de faire vivre l'événement (goodies, coups
               de main, communication, etc.).
             </p>
-            <h4><a href="mailto:{{ CONTACT_EMAIL }}">
+            <h4><a href="mailto:j-mad@j-mad.com">
                 Contactez-nous pour toute proposition</a></h4>
           </div>
         </div>
@@ -239,4 +290,97 @@
   </div>
 -->
 
-  {% endblock %}
+
+  <footer class="page-footer teal">
+    <div class="fixed-action-btn">
+      <a href="#top" class="totop btn-floating btn-large waves-effect waves-light yellow scale-transition scale-out">
+        <i class="large material-icons">arrow_upward</i>
+      </a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">DjangoCong 2019 à Marseille</h5>
+          <p class="grey-text text-lighten-4">Djangocong est une conférence communautaire et itinérante
+reconduite annuellement depuis 2010 autour du framework web Django.</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Éditions précédentes</h5>
+          <ul>
+            <li>
+              <a class="white-text" href="/2018/" target="_blank">Lille 2018</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2017/" target="_blank">Toulon 2017</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2016/" target="_blank">Rennes 2016</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2015/" target="_blank">Clermont-Ferrand 2015</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2013/" target="_blank">Belfort 2013</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2012/tolosa/" target="_blank">Toulouse 2012</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2012/" target="_blank">Montpellier 2012</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2011/" target="_blank">Marseille 2011</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2010/" target="_blank">Marseille 2010</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Liens utiles</h5>
+          <ul>
+            <li>
+              <a class="white-text" href="/2019/code-de-conduite" >Code de conduite</a>
+            </li>
+            <li>
+              <a class="white-text" href="/2019/mentions-legales" >Mentions légales</a>
+            </li>
+            <li>
+              <a class="white-text" href="https://www.django-fr.org/"  target="_blank"
+>Association django-fr</a>
+            </li>
+            <li>
+              <a class="white-text" href="https://twitter.com/djangocong"  target="_blank"
+>DjangoCong sur twitter</a>
+            </li>
+            <li>
+              <a class="white-text" href="https://djangoproject.com"  target="_blank"
+>Django</a>
+            </li>
+            <li>
+              <a class="white-text" href="https://afpy.org"  target="_blank"
+>Afpy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Design par <a class="yellow-text text-lighten-3" href="https://www.footlun.ch/" target="_blank">Piju</a>
+        |
+        Poney par <a href="https://www.facebook.com/nautilus.hyacinthum/" target="_blank">Nautilebleu</a> |
+        Généré via <a href="https://blog.getpelican.com/">Pelican</a> avec Python |
+        Copyright &copy; Tous droits réservés
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/leaflet.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/materialize.min.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+</body>
+
+</html>

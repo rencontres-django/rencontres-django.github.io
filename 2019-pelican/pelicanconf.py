@@ -2,9 +2,21 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import os
+import sys
+from pathlib import Path
+
+sys.path.append(os.curdir)
+from djangocong_data import *
+
+
 AUTHOR = "Rencontres Django"
-SITENAME = "DjangoCong 2019"
-SITEURL = ""
+SITENAME = "DjangoCong 2019 à Marseille"
+SITEDESCRIPTION = """Djangocong est une conférence communautaire et itinérante
+reconduite annuellement depuis 2010 autour du framework web Django."""
+SITEURL = "/2019"
+
+MOBILE_MENU_BANNER = "images/office.jpg"
 
 PATH = "content"
 
@@ -19,9 +31,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = []
-
 # Social widget
 SOCIAL = (("You can add links in your config file", "#"), ("Another social link", "#"))
 
@@ -30,16 +39,18 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+PAGE_URL = "{slug}/"
+PAGE_SAVE_AS = "{slug}/index.html"
+
 THEME = "theme"
+THEME_STATIC_DIR = ""
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["assets"]
+PLUGINS = []
 
+# STATIC_PATHS = ["extra"]
 
-ASSET_BUNDLES = (("scss", ["colors.scss", "main.scss"], {"filters": "pyscss"}),)
-
-# ASSET_CONFIG = (('closure_compressor_optimization', 'WHITESPACE_ONLY'),
-#                 ('less_bin', 'lessc.cmd'), )
-
-ASSET_SOURCE_PATHS = ["vendor/css", "scss"]
-
+# EXTRA_PATH_METADATA = {
+#     "extra/favicon.ico": {"path": "favicon.ico"},
+#     "extra/apple_touch_icon.png": {"path": "apple_touch_icon.png"},
+# }

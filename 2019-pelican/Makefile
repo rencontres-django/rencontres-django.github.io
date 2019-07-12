@@ -21,6 +21,8 @@ ifeq ($(RELATIVE), 1)
 	PELICANOPTS += --relative-urls
 endif
 
+.PHONY: help theme/static/css/style.css html
+
 help:
 	@echo 'Makefile for a pelican Web site                                           '
 	@echo '                                                                          '
@@ -40,7 +42,26 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
-html:
+theme/static/css/style.css: 
+	node_modules/sass/sass.js scss/style.scss theme/static/css/style.css
+
+theme/static/js/jquery.js:
+	cp node_modules/jquery/dist/jquery.min.js theme/static/js
+
+theme/static/js/leaflet.js:
+	cp node_modules/leaflet/dist/leaflet.js* theme/static/js
+
+theme/static/js/slick.min.js:
+	cp node_modules/slick-carousel/slick/slick.min.js theme/static/js
+
+theme/static/js/materialize.min.js:
+	cp node_modules/materialize-css/dist/js/materialize.min.js theme/static/js
+
+theme/static/fonts/material-icons:
+	mkdir theme/static/fonts/material-icons/
+	cp node_modules/material-icons/iconfont/*.woff* theme/static/fonts/material-icons/
+
+html: clean theme/static/css/style.css theme/static/js/leaflet.js theme/static/js/slick.min.js theme/static/js/materialize.min.js theme/static/fonts/material-icons
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
@@ -76,6 +97,6 @@ publish:
 
 install:
 	pip install -r requirements.txt
-	npm instal
+	npm install
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish github
