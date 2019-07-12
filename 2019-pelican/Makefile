@@ -63,6 +63,7 @@ theme/static/fonts/material-icons:
 
 html: clean theme/static/css/style.css theme/static/js/leaflet.js theme/static/js/slick.min.js theme/static/js/materialize.min.js theme/static/fonts/material-icons
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+	rm -f ../2019/{archives.html,authors.html,categories.html,tags.html}
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
