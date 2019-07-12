@@ -100,4 +100,7 @@ install:
 	pip install -r requirements.txt
 	npm install
 
+deploy:
+	cd .. && .travis/push-to-github
+
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish github
