@@ -33,7 +33,7 @@ sur les publications à venir.
 ### Hyperliens
 
 La création de liens vers le présent site est autorisée et
-bigrement encouragée 😁.
+bigrement encouragée, pardi 😁 !
 
 ### Données nominatives
 
