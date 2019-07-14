@@ -21,6 +21,6 @@ git commit -m "Publish 2019 website"
 git config user.name "Travis CI"
 git config user.email "travis@travis-ci.org"
 git config --global push.default simple
-git remote add push-remote git@github.com:recontres-django/rencontres-django.github.io.git
+git remote add push-remote "git@github.com:rencontres-django/rencontres-django.github.io.git"
 
 git push push-remote $DEPLOY_BRANCH
