@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+
+<head>
+  {% block head %}
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" href="{{SITEURL}}/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="apple-touch-icon" href="{{SITEURL}}/apple_touch_icon.png" />
+  <link type="text/css" rel="stylesheet" href="{{SITEURL}}/css/style.css" media="screen" />
+  {% endblock head %}
+</head>
+
+<body id="top">
+  <div class="navbar-fixed">
+    <nav class="teal">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="{{ SITEURL }}/" class="brand-logo">
+          <img src="{{SITEURL}}/images/logo.png" alt="{{ SITENAME }}" height="55" />
+        </a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          {% for p in pages %}
+          <li{% if p == page %} class="active" {% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <ul id="nav-mobile" class="side-nav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="{{SITEURL}}/{{ MOBILE_MENU_BANNER }}" alt="" />
+        </div>
+        <span class="white-text name">DjangoCong</span>
+        <span class="white-text email">Marseille 2019</span>
+      </div>
+    </li>
+    <li><a href="{{ SITEURL }}/">Accueil</a></li>
+    {% for p in pages %}
+    <li{% if p == page %} class="active" {% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+      {% endfor %}
+  </ul>
+
+  <div id="index-banner" class="position-relative">
+    <div class="row">
+      <img src="{{SITEURL}}/images/marseille.png" alt="Marseille" class="col s12 no-padding" />
+    </div>
+    <div class="section hero">
+      {% block hero %}
+      <h1 class="header center white-text">{{ page.title }}</h1>
+      {% endblock %}
+    </div>
+  </div>
+  <nav class="blue">
+    <div class="container nav-wrapper">
+      <div class="col s12">
+        <a href="{{ SITEURL }}/" class="breadcrumb">Accueil</a>
+        {% if page.title %}
+        <a href="{{ SITEURL }}/{{ page.url }}" class="breadcrumb">{{ page.title }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  {% block raw_content %}
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="row text-container">
+          <div class="small-12 large-9 small-centered columns">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+  <footer class="page-footer teal">
+    <div class="fixed-action-btn">
+      <a href="#top" class="totop btn-floating btn-large waves-effect waves-light yellow scale-transition scale-out">
+        <i class="large material-icons">arrow_upward</i>
+      </a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">{{ SITENAME }}</h5>
+          <p class="grey-text text-lighten-4">{{ SITEDESCRIPTION }}</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Éditions précédentes</h5>
+          <ul>
+            {% for event in PREVIOUS_EVENTS %}
+            <li>
+              <a class="white-text" href="{{ event.link }}" target="_blank">{{ event.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Liens utiles</h5>
+          <ul>
+            {% for link in LINKS %}
+            <li>
+              <a class="white-text" href="{{ link.link }}" {% if link.new_tab %} target="_blank"
+                {% endif %}>{{ link.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Design par <a class="yellow-text text-lighten-3" href="https://www.footlun.ch/" target="_blank">Piju</a>
+        |
+        Poney par <a href="https://www.facebook.com/nautilus.hyacinthum/" target="_blank">Nautilebleu</a> |
+        Généré via <a href="https://blog.getpelican.com/">Pelican</a> avec Python |
+        Copyright &copy; Tous droits réservés
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="{{SITEURL}}/js/jquery.min.js"></script>
+  <script type="text/javascript" src="{{SITEURL}}/js/leaflet.js"></script>
+  <script type="text/javascript" src="{{SITEURL}}/js/slick.min.js"></script>
+  <script type="text/javascript" src="{{SITEURL}}/js/materialize.min.js"></script>
+  <script type="text/javascript" src="{{SITEURL}}/js/app.js"></script>
+</body>
+
+</html>

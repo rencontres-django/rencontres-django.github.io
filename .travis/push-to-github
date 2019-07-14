@@ -1,0 +1,28 @@
+#!/bin/bash -eux
+
+DEPLOY_BRANCH=master
+
+if [ "$TRAVIS_BRANCH" != "$DEPLOY_BRANCH" ]; then
+    echo "Not deploying $TRAVIS_BRANCH, only $DEPLOY_BRANCH"
+    exit
+fi
+
+# SSH Configuration
+openssl aes-256-cbc -K $encrypted_0a86ef4af003_key -iv $encrypted_0a86ef4af003_iv -in .travis/travis_key.enc -out .travis/travis_key -d
+echo "Host github.com" > ~/.ssh/config
+echo "  IdentityFile  $(pwd)/.travis/travis_key" >> ~/.ssh/config
+chmod 400 .travis/travis_key
+echo "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==" > ~/.ssh/known_hosts 
+
+git checkout $DEPLOY_BRANCH
+git status
+git add 2019
+git commit -m "Publish 2019 website"
+
+# Git configuration
+git config user.name "Travis CI"
+git config user.email "travis@travis-ci.org"
+git config --global push.default simple
+git remote add push-remote "git@github.com:rencontres-django/rencontres-django.github.io.git"
+
+git push push-remote $DEPLOY_BRANCH

@@ -1,0 +1,11 @@
+language: python
+dist: xenial
+python: 3.7
+
+before_install: cd 2019-pelican
+install:
+ - make install
+script:
+ - make html
+after_success:
+ - make deploy
