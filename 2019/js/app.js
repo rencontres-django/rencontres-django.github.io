@@ -79,9 +79,9 @@
 
 
 // Leaflet
-var map = L.map('map_djangocong').setView([50.6307514, 3.0581], 12);
+var map = L.map('map_djangocong').setView([43.29155, 5.40662], 12);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-L.marker([50.6307514, 3.0581]).addTo(map)
-    .bindPopup('<h4>La Grappe</h4><p>75, rue Léon Gambetta<br>59000 Lille</p><p>Métro | Bus | V’Lille : République Beaux-Arts</p>')
+L.marker([43.29155, 5.40662]).addTo(map)
+    .bindPopup('<h4>Entre2Murs</h4><p>318 Rue St Pierre<br>13005 Marseille</p>')
