@@ -1,226 +1,75 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% set text_based = False %}
 
+{% block section %}
 
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <div class="row text-container">
-          <div class="small-12 large-9 small-centered columns">
-            <h2>Activités</h2>
-            <p>
-              En intérieur ou en extérieur, il y a plein de choses à faire
-              avec des ami·es Djangonautes à Marseille. Nous allons remplir
-              cette section avec les activités proposées (sprints, balades, …)
-            </p>
-            <h2>Conférence</h2>
-            <p>
-              Voici déjà une première partie du programme. Il sera mis à jour dans les prochains jours avec le reste des conférences / ateliers.
-            </p>
-          </div>
-        </div>
+<div class="row">
+  <div class="small-12 large-9 small-centered columns">
+    <h2>Activités</h2>
+    <p>
+      En intérieur ou en extérieur, il y a plein de choses à faire
+      avec des ami·es Djangonautes à Marseille. Nous allons remplir
+      cette section avec les activités proposées (sprints, balades, …)
+    </p>
+    <h2>Conférence</h2>
+    <p>
+      Voici déjà une première partie du programme. Il sera mis à jour dans les prochains jours avec le reste des
+      conférences / ateliers.
+    </p>
+  </div>
+</div>
+</div>
+<div class="row">
+  {% for talk in TALKS %}
+
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image">
+        <img class="avatar" src="{{ talk.image }}">
+        <span class="card-title">{{ talk.author }}</span>
       </div>
-      <div class="row">
+      <div class="card-content">
+        <span class="card-title">{{ talk.title }}</span>
+        <span class="card-subtitle">Samedi 14 septembre - horaire</span>
+        <p>{{ talk.description }}</p>
+      </div>
+      <div class="card-action">
+        {% if talk.home_page %}
+        <a href="{{talk.home_page}}" target="_blank" class="waves-effect waves-light btn-floating social">
+          <i class="fa fa-home"></i>
+        </a>
+        {% endif %}
 
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="">
-              <span class="card-title">Lucien Deleu</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">Un CMS conçu pour la performance écologique</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>Description à venir</p>
-            </div>
-            <div class="card-action">
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
+        {% if talk.github %}
+        <a href="http://github.com/{{ talk.github }}" target="_blank"
+          class="waves-effect waves-light btn-floating social github">
+          <i class="fab fa-github"></i>
+        </a>
+        {% endif %}
 
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
-                            <i class="fab fa-linkedin"></i> LinkedIn</a>
+        {% if talk.twitter %}
+        <a href="http://twitter.com/{{ talk.twitter }}" target="_blank"
+          class="waves-effect waves-light btn-floating social twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        {% endif %}
 
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social twitter">
-              <i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="">
-              <span class="card-title">Sarah Diot-Girard</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">De la polysémie en milieu hybride (ou comment faire communiquer data scientists et développeurs Web)</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>Du vocabulaire utilisé à la fois en Data Science et en développement Web, mais avec des sens radicalement différents. Et du coup les stand-ups deviennent comiques. Et les roadmaps embrouillées. </p>
-            </div>
-            <div class="card-action">
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
-                            <i class="fab fa-linkedin"></i> LinkedIn</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social twitter">
-              <i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="">
-              <span class="card-title">Anouk HELLO</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">Streaming XLSX from Django to JS: the right way</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>Je parlerai de la problématique concernant la place de certaines chaînes traduites: dans l'application client ? service par l'API ? dans quels cas et contextes est-ce nécessaire ?
-Je parlerai de la solution permettant, via un "pipe" JavaScript natif, de streamer le flux HTTP directement dans un fichier sans passer par un objet en mémoire.</p>
-            </div>
-            <div class="card-action">
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
-                            <i class="fab fa-linkedin"></i> LinkedIn</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social twitter">
-              <i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="https://avatars.githubusercontent.com/ewjoachim">
-              <span class="card-title">Joachim Jablon - ewjoachim</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">async def django()</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>DEP0009 : La proposition d’Andrew Godwin d’ajouter le support asynchrone à Python a été acceptée en Juillet. En quoi consiste-t-elle ? Que va-t-elle changer ? Et comment participer à la transition ?</p>
-            </div>
-            <div class="card-action">
-              <a href="https://ewjoach.im" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
-
-              <a href="https://www.linkedin.com/in/ewjoachim/" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
-              <i class="fab fa-linkedin"></i> Linkedin</a>
-
-              <a href="https://www.github.com/ewjoachim/" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-              <a href="https://www.twitter.com/ewjoachim/" target="_blank" class="waves-effect waves-light btn-floating social twitter">
-              <i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="https://avatars.githubusercontent.com/mdamien">
-              <span class="card-title">Damien Marié</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">Et si Django tournait dans votre navigateur, serait-ce la fin de Javascript ?</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>Description à venir</p>
-            </div>
-            <div class="card-action">
-              <a href="http://dam.io/" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
-
-              <a href="https://www.github.com/mdamien/" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-              <a href="https://www.twitter.com/dam_io/" target="_blank" class="waves-effect waves-light btn-floating social twitter">
-              <i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="https://avatars.githubusercontent.com/eclar">
-              <span class="card-title">Mehdi Raddadi - Eclar</span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">Déployer Django avec compose</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>Explication de la construction d'un squelette de projet déployé avec docker-compose ainsi que le processus de développement associé. Tests en local et sur gitlab-ci puis déploiement.</p>
-            </div>
-            <div class="card-action">
-              <a href="http://mehdiraddadi.com/" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
-
-              <a href="https://www.linkedin.com/in/mehdi-raddadi-b0706761/" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
-              <i class="fab fa-linkedin"></i> LinkedIn</a>
-
-              <a href="https://github.com/eclar" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img class="avatar" src="">
-              <span class="card-title">Arthur Vuillard et Samira Rabaâoui </span>
-            </div>
-            <div class="card-content">
-              <span class="card-title">Surveiller le bon fonctionnement de son appli Django</span>
-              <span class="card-subtitle">Samedi 14 septembre - horaire</span>
-              <p>Nous développons des applis web avec Django, mais pas seulement : nous les installons sur un serveur, et devons les faire évoluer au fil du temps.
-Dans cette présentation, nous allons montrer comment automatiser la surveillance du bon fonctionnement d'une appli Django, et comment être alerté·e·s lors d'une défaillance. Nous présenterons quels sont les éléments à surveiller et comment le faire sans se prendre la tête !</p>
-            </div>
-            <div class="card-action">
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social">
-              <i class="fa fa-home"></i> Site web</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
-                            <i class="fab fa-linkedin"></i> LinkedIn</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social github">
-              <i class="fab fa-github"></i> Github</a>
-
-              <a href="" target="_blank" class="waves-effect waves-light btn-floating social twitter">
-              <i class="fab fa-twitter"></i> Twitter</a>
-            </div>
-          </div>
-        </div>
-
-
-
-
+        {% if talk.linkedin %}
+        <a href="" target="_blank" class="waves-effect waves-light btn-floating social linkedin">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        {% endif %}
       </div>
     </div>
   </div>
 
+  {% if loop.index0 % 3 == 2 %}
+</div>
+<div class="row">
+  {% endif %}
+  {% endfor %}
 
-{% endblock %}
+</div>
+
+{% endblock section %}
