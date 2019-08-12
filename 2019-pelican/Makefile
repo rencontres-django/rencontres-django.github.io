@@ -58,10 +58,14 @@ theme/static/js/materialize.min.js:
 	cp node_modules/materialize-css/dist/js/materialize.min.js theme/static/js
 
 theme/static/fonts/material-icons:
-	mkdir theme/static/fonts/material-icons/
+	mkdir -p theme/static/fonts/material-icons/
 	cp node_modules/material-icons/iconfont/*.woff* theme/static/fonts/material-icons/
 
-html: clean theme/static/css/style.css theme/static/js/leaflet.js theme/static/js/slick.min.js theme/static/js/materialize.min.js theme/static/fonts/material-icons
+webfonts:
+	mkdir -p theme/static/webfonts
+	cp node_modules/@fortawesome/fontawesome-free/webfonts/*woff* theme/static/webfonts
+
+html: clean theme/static/css/style.css theme/static/js/leaflet.js theme/static/js/slick.min.js theme/static/js/materialize.min.js theme/static/fonts/material-icons webfonts
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 	rm -f ../2019/{archives.html,authors.html,categories.html,tags.html}
 
