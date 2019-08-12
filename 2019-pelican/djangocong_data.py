@@ -6,9 +6,27 @@ from typing import Optional
 class Sponsor:
     logo: str
     link: str = "#"
+    name: str = ""
 
 
-SPONSORS = []
+SPONSORS = [
+    Sponsor(
+        name="Hybird", link="https://hybird.org/", logo="images/friends/hybird.png"
+    ),
+    Sponsor(
+        name="Isshub", link="https://www.isshub.io/", logo="images/friends/isshub.png"
+    ),
+    Sponsor(
+        name="PeopleDoc",
+        link="https://www.people-doc.fr/",
+        logo="images/friends/peopledoc.png",
+    ),
+    Sponsor(
+        name="Providenz",
+        link="http://providenz.fr/",
+        logo="images/friends/providenz.png",
+    ),
+]
 
 
 @dataclass
