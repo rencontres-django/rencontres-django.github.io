@@ -69,17 +69,19 @@
     </div>
   </nav>
 
+  {% set text_based = True %}
   {% block raw_content %}
   <div class="container">
     <div class="section">
-      <div class="row">
-        <div class="row text-container">
-          <div class="small-12 large-9 small-centered columns">
-            {% block content %}
-            {% endblock %}
-          </div>
+
+      {% block section %}
+      <div class="row text-container">
+        <div class="small-12 large-9 small-centered columns">
+          {% block content %}
+          {% endblock %}
         </div>
       </div>
+      {% endblock section %}
     </div>
   </div>
   {% endblock %}
