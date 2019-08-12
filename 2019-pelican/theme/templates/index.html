@@ -47,7 +47,8 @@
             <h4 class="center">Django<br />à Marseille</h4>
 
             <p class="light">
-              Cette année, l'évènement se tiendra à Marseille, dans les locaux de Entre2Murs (318 Rue St Pierre 13005 Marseille).
+              Cette année, l'évènement se tiendra à Marseille, dans les locaux de Entre2Murs (318 Rue St Pierre 13005
+              Marseille).
             </p>
             <p class="light">
               L'hébergement n'est pas fourni mais il y a de nombreux hôtels et
@@ -101,9 +102,15 @@
       <div class="row text-container">
         <div class="col s24 center">
           <h3>❤️ <a id="cfp">Appel à présentations</a> ❤️</h3>
-          <p class="left-align light"><h5>Que vous soyez nouveau·elle dans la communauté ou bien là depuis un bail, que vous vouliez nous parler des nouvelles API de Django ou bien de FishPoney, le poisson rouge connecté avec Django, ou bien même de trucs qui ont pas grand chose à voir avec Django, <strong>vous êtes les bienvenu·es</strong>. On veut vous écouter et on se mettra en quatre pour vous aider à venir nous parler.</h5></p>
+          <p class="left-align light">
+            <h5>Que vous soyez nouveau·elle dans la communauté ou bien là depuis un bail, que vous vouliez nous parler
+              des nouvelles API de Django ou bien de FishPoney, le poisson rouge connecté avec Django, ou bien même de
+              trucs qui ont pas grand chose à voir avec Django, <strong>vous êtes les bienvenu·es</strong>. On veut vous
+              écouter et on se mettra en quatre pour vous aider à venir nous parler.</h5>
+          </p>
 
-          <p  class="left-align light"><h5>La date limite de dépôt de proposition est le vendredi 23 août 2018 à 00:00:01.</h5>
+          <p class="left-align light">
+            <h5>La date limite de dépôt de proposition est le vendredi 23 août 2018 à 00:00:01.</h5>
           </p>
           <h3><a href="https://forms.gle/NjmMQTv8QNrBxwv67">Cliquez ici pour proposer une présentation</a></h3>
         </div>
@@ -233,18 +240,13 @@
       <div class="row">
         <div class="col s10 offset-s1 center position-relative sponsors">
           <div class="slick responsive">
+            {% for sponsor in SPONSORS %}
             <div>
-              <a href="https://hybird.org/"><img src="images/friends/hybird.png" alt="Hybird"/></a>
+              <a href="{{ sponsor.link }}" target="_blank">
+                <img src="{{ SITEURL }}/{{ sponsor.logo }}" alt="{{ sponsor.name }}" />
+              </a>
             </div>
-            <div>
-              <a href="https://www.isshub.io/"><img src="images/friends/isshub.png" alt="Isshub"/></a>
-            </div>
-            <div>
-  <a href="https://www.people-doc.fr/"><img src="images/friends/peopledoc.png" alt="PeopleDoc"/></a>
-          </div>
-          <div>
-  <a href="http://providenz.fr/"><img src="images/friends/providenz.png" alt="Providenz"/></a>
-</div>
+            {% endfor %}
           </div>
           <div class="icon-preview prev">
             <i class="material-icons dp48">chevron_left</i>
@@ -259,7 +261,7 @@
 
 
 
-<div class="maps">
+  <div class="maps">
     <div id="map_djangocong" style="height: 400px;"></div>
   </div>
 
