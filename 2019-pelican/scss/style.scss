@@ -3,13 +3,10 @@
 @import '../node_modules/materialize-social/materialize-social';
 
 $material-icons-font-path: '../fonts/material-icons/';
-@import '../node_modules/font-awesome-scss/scss/font-awesome.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all';
 @import '../node_modules/slick-carousel/slick/slick.scss';
 @import '../node_modules/leaflet/dist/leaflet';
 @import '../node_modules/material-icons/iconfont/material-icons.scss';
-
-// @import '../node_modules/fontawesome/scss/fa-solid.scss';
-// @import '../node_modules/fontawesome/scss/fa-brands.scss';
 
 $blue: #376F9E;
 $yellow: #FFD241;
