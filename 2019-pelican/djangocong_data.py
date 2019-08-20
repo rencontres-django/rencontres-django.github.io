@@ -26,6 +26,16 @@ SPONSORS = [
         link="http://providenz.fr/",
         logo="images/friends/providenz.png",
     ),
+    Sponsor(
+        name="YourLabs",
+        link="https://www.yourlabs.biz/",
+        logo="images/friends/yourlabs.png",
+    ),
+    Sponsor(
+        name="Evolix",
+        link="https://evolix.com/",
+        logo="images/friends/evolix.png",
+    ),
 ]
 
 
@@ -60,9 +70,9 @@ TALKS = [
     Talk(
         author="Sarah Diot-Girard",
         time="Samedi 14 septembre",
-        title="""De la polysémie en milieu hybride (ou comment faire communiquer 
+        title="""De la polysémie en milieu hybride (ou comment faire communiquer
             data scientists et développeurs Web)""",
-        description="""Du vocabulaire utilisé à la fois en Data Science et en 
+        description="""Du vocabulaire utilisé à la fois en Data Science et en
             développement Web, mais avec des sens radicalement différents. Et du
             coup les stand-ups deviennent comiques. Et les roadmaps embrouillées.""",
         github="SdgJlbl",
