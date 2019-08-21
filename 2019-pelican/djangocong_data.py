@@ -65,7 +65,14 @@ TALKS = [
         author="Lucien Deleu",
         title="Un CMS conçu pour la performance écologique",
         time="Samedi 14 septembre",
-        description="""Description à venir""",
+        description="""Les CMS sont parmis les types de site les plus demandés,
+            souvent déployés pour de simples sites vitrines. Le compromis entre
+            légèreté et personnalisation n'est pas simple. Avec ces compromis,
+            la page d'accueil d'un site vitrine va contenir des centaines de requêtes,
+            du javascript venant de tous les horizons, celui-là même qui vous permettra
+            d'observer une animation de chargement.
+            Nous avons travaillé sur un compromis pour mettre fin à tout ça,
+            pour le découvrir, venez voir notre présentation.""",
     ),
     Talk(
         author="Sarah Diot-Girard",
