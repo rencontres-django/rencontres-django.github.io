@@ -71,7 +71,7 @@ TALKS = [
             la page d'accueil d'un site vitrine va contenir des centaines de requêtes,
             du javascript venant de tous les horizons, celui-là même qui vous permettra
             d'observer une animation de chargement.
-            Nous avons travaillé sur un compromis pour mettre fin à tout ça,
+            Nous avons travaillé sur une solution pour mettre fin à tout ça,
             pour le découvrir, venez voir notre présentation.""",
     ),
     Talk(
