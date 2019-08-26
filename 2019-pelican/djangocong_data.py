@@ -62,6 +62,13 @@ class Talk:
 
 TALKS = [
     Talk(
+        author="Eliot Berriot",
+        title="Tester son application django avec Factory-boy",
+        time="Samedi 14 septembre",
+        description="""Comment utiliser Factory-Boy pour générer très facilement des données pour tester son application
+""",
+    ),
+    Talk(
         author="Lucien Deleu",
         title="Un CMS conçu pour la performance écologique",
         time="Samedi 14 septembre",
@@ -101,12 +108,25 @@ TALKS = [
         home_page="https://ewjoach.im",
     ),
     Talk(
+        author="Jérémy Lecour & Grégory Colpart",
+        time="Samedi 14 septembre",
+        title="""Ansible pour automatiser le déploiement et la configuration""",
+        description="""On posera les concepts de base d'Ansible et on présentera différents cas d'usage possibles pour une équipe de dev/devops, le plus possible sous forme de démo afin de rendre ça dynamique et pratique.""",
+    ),
+    Talk(
         author="Damien Marié",
         time="Samedi 14 septembre",
         title="""Et si Django tournait dans votre navigateur, serait-ce la fin de
             Javascript ?""",
         description="""Description à venir""",
     ),
+Talk(
+    author="Thomas Mignot",
+    title="Data binding et components isomorphique avec Django",
+    time="Samedi 14 septembre",
+    description="""Comment synchroniser des clients web, ne plus écrire une ligne de HTML ni recharger une page grace à Ryzom
+""",
+),    
     Talk(
         author="Mehdi Raddadi - Eclar",
         time="Samedi 14 septembre",
