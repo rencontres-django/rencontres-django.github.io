@@ -12,14 +12,21 @@
       avec des ami·es Djangonautes à Marseille. Nous allons remplir
       cette section avec les activités proposées (sprints, balades, …)
     </p>
-    <h2>Conférence</h2>
+    <h2>Lightning Talk</h2>
     <p>
-      Voici déjà une première partie du programme. Il sera mis à jour dans les prochains jours avec le reste des
-      conférences / ateliers.
+      Un Lightning Talk est une présentation très courte (maximum 5 minutes). Dés le samedi matin (ou même avant par e-mail) vous pourrez proposer votre Lightning Talk. Après la dernière conférence, un moment sera réservé pour que les différents LT soient présentés, les uns après les autres.
     </p>
+    <h2>Barcamps</h2>
+    <p>
+      Nous finirons la première journée par plusieurs sessions d'atelier barcamp. Là encore, toute la journée du samedi, une liste sera disponible pour proposer des sujets de barcamps. Les sujets interressants les plus de personnes seront ensuite traités, dans les trois d'atelier que le lieu propose.
+    </p>
+
+    <h2>Conférences</h2>
   </div>
 </div>
-</div>
+
+
+
 <div class="row">
   {% for talk in TALKS %}
 
@@ -70,6 +77,19 @@
   {% endif %}
   {% endfor %}
 
+</div>
+
+<div class="row">
+  <div class="small-12 large-9 small-centered columns">
+    <h2>Lightning Talk</h2>
+    <p>
+      Un Lightning Talk est une présentation très courte (maximum 5 minutes). Dés le samedi matin (ou même avant par e-mail) vous pourrez proposer votre Lightning Talk. Après la dernière conférence, un moment sera réservé pour que les différents LT soient présentés, les uns après les autres.
+    </p>
+    <h2>Barcamps</h2>
+    <p>
+      Nous finirons cette première journée par plusieurs session d'atelier barcamp. Là encore, toute la journée du samedi, une liste sera disponible pour proposer des sujets de barcamps. Les sujets interressants les plus de personnes seront ensuite traités, dans les trois d'atelier que le lieu propose.
+    </p>
+  </div>
 </div>
 
 {% endblock section %}
