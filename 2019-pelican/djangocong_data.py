@@ -154,6 +154,20 @@ Talk(
             alerté·e·s lors d'une défaillance. Nous présenterons quels sont les
             éléments à surveiller et comment le faire sans se prendre la tête !""",
     ),
+    Talk(
+        author="Laurent Paoletti",
+        time="Samedi 14 septembre",
+        title="""Des équipes et des briques: introduction à la méthode Lego Serious Play""",
+        description="""À la fin des années 90, les chercheurs du centre de développement 
+        de Lego ont eu l'idée d'utiliser leurs propres briques pour favoriser la 
+        créativité et favoriser une démarche d'intelligence collective. 
+        Cette méthode alors émergente a permis à Lego de repenser totalement sa stratégie,
+         et de devenir un des premiers fabricants de jeu au monde.""",
+        github="providenz",
+        twitter="providenz",
+        linkedin="laurentpaoletti",
+        home_page="https://providenz.fr",
+    ),
 ]
 
 CONTACT_EMAIL = "j-mad@j-mad.com"
