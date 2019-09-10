@@ -64,36 +64,19 @@ TALKS = [
     Talk(
         author="Eliot Berriot",
         title="Tester son application django avec Factory-boy",
-        time="Samedi 14 septembre",
+        time="Samedi 14 septembre de 9h30 à 10h",
         description="""Comment utiliser Factory-Boy pour générer très facilement des données pour tester son application
 """,
     ),
     Talk(
-        author="Lucien Deleu",
-        title="Un CMS conçu pour la performance écologique",
-        time="Samedi 14 septembre",
-        description="""Les CMS sont parmis les types de site les plus demandés,
-            souvent déployés pour de simples sites vitrines. Le compromis entre
-            légèreté et personnalisation n'est pas simple. Avec ces compromis,
-            la page d'accueil d'un site vitrine va contenir des centaines de requêtes,
-            du javascript venant de tous les horizons, celui-là même qui vous permettra
-            d'observer une animation de chargement.
-            Nous avons travaillé sur une solution pour mettre fin à tout ça,
-            pour le découvrir, venez voir notre présentation.""",
-    ),
-    Talk(
-        author="Sarah Diot-Girard",
-        time="Samedi 14 septembre",
-        title="""De la polysémie en milieu hybride (ou comment faire communiquer
-            data scientists et développeurs Web)""",
-        description="""Du vocabulaire utilisé à la fois en Data Science et en
-            développement Web, mais avec des sens radicalement différents. Et du
-            coup les stand-ups deviennent comiques. Et les roadmaps embrouillées.""",
-        github="SdgJlbl",
+        author="Jérémy Lecour & Grégory Colpart",
+        time="Samedi 14 septembre de 10h30 à 11h",
+        title="""Ansible pour automatiser le déploiement et la configuration""",
+        description="""On posera les concepts de base d'Ansible et on présentera différents cas d'usage possibles pour une équipe de dev/devops, le plus possible sous forme de démo afin de rendre ça dynamique et pratique.""",
     ),
     Talk(
         author="Anouk HELLO",
-        time="Samedi 14 septembre",
+        time="Samedi 14 septembre de 11h à 11h30",
         title="""Streaming XLSX from Django to JS: the right way""",
         description="""Je parlerai de la problématique concernant la place de
             certaines chaînes traduites: dans l'application client ? Service par
@@ -103,8 +86,18 @@ TALKS = [
             un objet en mémoire.""",
     ),
     Talk(
+        author="Sarah Diot-Girard",
+        time="Samedi 14 septembre de 11h30 à 12h",
+        title="""De la polysémie en milieu hybride (ou comment faire communiquer
+            data scientists et développeurs Web)""",
+        description="""Du vocabulaire utilisé à la fois en Data Science et en
+            développement Web, mais avec des sens radicalement différents. Et du
+            coup les stand-ups deviennent comiques. Et les roadmaps embrouillées.""",
+        github="SdgJlbl",
+    ),
+    Talk(
         author="Joachim Jablon",
-        time="Samedi 14 septembre",
+        time="Samedi 14 septembre de 13h30 à 14h",
         title="""async def django()""",
         description="""DEP0009 : La proposition d’Andrew Godwin d’ajouter le support
             asynchrone à Python a été acceptée en Juillet. En quoi consiste-t-elle ?
@@ -115,36 +108,21 @@ TALKS = [
         home_page="https://ewjoach.im",
     ),
     Talk(
-        author="Jérémy Lecour & Grégory Colpart",
-        time="Samedi 14 septembre",
-        title="""Ansible pour automatiser le déploiement et la configuration""",
-        description="""On posera les concepts de base d'Ansible et on présentera différents cas d'usage possibles pour une équipe de dev/devops, le plus possible sous forme de démo afin de rendre ça dynamique et pratique.""",
-    ),
-    Talk(
-        author="Damien Marié",
-        time="Samedi 14 septembre",
-        title="""Et si Django tournait dans votre navigateur, serait-ce la fin de
-            Javascript ?""",
-        description="""Description à venir""",
-    ),
-Talk(
-    author="Thomas Mignot",
-    title="Data binding et components isomorphique avec Django",
-    time="Samedi 14 septembre",
-    description="""Comment synchroniser des clients web, ne plus écrire une ligne de HTML ni recharger une page grace à Ryzom
-""",
-),    
-    Talk(
-        author="Mehdi Raddadi - Eclar",
-        time="Samedi 14 septembre",
-        title="""Déployer Django avec compose""",
-        description="""Explication de la construction d'un squelette de projet déployé
-            avec docker-compose ainsi que le processus de développement associé.
-            Tests en local et sur gitlab-ci puis déploiement.""",
+        author="Lucien Deleu",
+        title="Un CMS conçu pour la performance écologique",
+        time="Samedi 14 septembre de 14h à 14h30",
+        description="""Les CMS sont parmis les types de site les plus demandés,
+            souvent déployés pour de simples sites vitrines. Le compromis entre
+            légèreté et personnalisation n'est pas simple. Avec ces compromis,
+            la page d'accueil d'un site vitrine va contenir des centaines de requêtes,
+            du javascript venant de tous les horizons, celui-là même qui vous permettra
+            d'observer une animation de chargement.
+            Nous avons travaillé sur une solution pour mettre fin à tout ça,
+            pour le découvrir, venez voir notre présentation.""",
     ),
     Talk(
         author="Arthur Vuillard et Samira Rabaâoui",
-        time="Samedi 14 septembre",
+        time="Samedi 14 septembre de 14h30 à 15h",
         title="""Surveiller le bon fonctionnement de son appli Django""",
         description="""Nous développons des applis web avec Django, mais pas
             seulement : nous les installons sur un serveur, et devons les faire évoluer
@@ -154,6 +132,32 @@ Talk(
             alerté·e·s lors d'une défaillance. Nous présenterons quels sont les
             éléments à surveiller et comment le faire sans se prendre la tête !""",
     ),
+
+
+
+#    Talk(
+#        author="Damien Marié",
+#        time="Samedi 14 septembre",
+#        title="""Et si Django tournait dans votre navigateur, serait-ce la fin de
+#            Javascript ?""",
+#        description="""Description à venir""",
+#    ),
+Talk(
+    author="Thomas Mignot",
+    title="Data binding et components isomorphique avec Django",
+    time="Samedi 14 septembre de 15h30 à 16h",
+    description="""Comment synchroniser des clients web, ne plus écrire une ligne de HTML ni recharger une page grace à Ryzom
+""",
+),
+    Talk(
+        author="Mehdi Raddadi - Eclar",
+        time="Samedi 14 septembre de 16h à 16h30",
+        title="""Déployer Django avec compose""",
+        description="""Explication de la construction d'un squelette de projet déployé
+            avec docker-compose ainsi que le processus de développement associé.
+            Tests en local et sur gitlab-ci puis déploiement.""",
+    ),
+
 ]
 
 CONTACT_EMAIL = "j-mad@j-mad.com"
