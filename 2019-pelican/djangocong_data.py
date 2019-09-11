@@ -70,7 +70,7 @@ TALKS = [
     ),
     Talk(
         author="Jérémy Lecour & Grégory Colpart",
-        time="Samedi 14 septembre de 10h30 à 11h",
+        time="Samedi 14 septembre de 10h à 10h30",
         title="""Ansible pour automatiser le déploiement et la configuration""",
         description="""On posera les concepts de base d'Ansible et on présentera différents cas d'usage possibles pour une équipe de dev/devops, le plus possible sous forme de démo afin de rendre ça dynamique et pratique.""",
     ),
@@ -157,7 +157,20 @@ Talk(
             avec docker-compose ainsi que le processus de développement associé.
             Tests en local et sur gitlab-ci puis déploiement.""",
     ),
-
+   Talk(
+        author="Laurent Paoletti",
+        time="Samedi 14 septembre de 16h30 à 17h",
+        title="""Des équipes et des briques: introduction à la méthode Lego Serious Play""",
+        description="""À la fin des années 90, les chercheurs du centre de développement
+        de Lego ont eu l'idée d'utiliser leurs propres briques pour favoriser la
+        créativité et favoriser une démarche d'intelligence collective.
+        Cette méthode alors émergente a permis à Lego de repenser totalement sa stratégie,
+         et de devenir un des premiers fabricants de jeu au monde.""",
+        github="providenz",
+        twitter="providenz",
+        linkedin="laurentpaoletti",
+        home_page="https://providenz.fr",
+    ),
 ]
 
 CONTACT_EMAIL = "j-mad@j-mad.com"
