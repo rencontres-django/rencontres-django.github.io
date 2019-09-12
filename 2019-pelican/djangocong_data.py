@@ -69,10 +69,13 @@ TALKS = [
 """,
     ),
     Talk(
-        author="Jérémy Lecour & Grégory Colpart",
+        author="Jérémy Lecour",
         time="Samedi 14 septembre de 10h à 10h30",
-        title="""Ansible pour automatiser le déploiement et la configuration""",
+        title="""Ansible pour les développeurs web""",
         description="""On posera les concepts de base d'Ansible et on présentera différents cas d'usage possibles pour une équipe de dev/devops, le plus possible sous forme de démo afin de rendre ça dynamique et pratique.""",
+        github="jlecour",
+        twitter="jlecour",
+        home_page="https://jeremy.lecour.fr",
     ),
     Talk(
         author="Anouk HELLO",
