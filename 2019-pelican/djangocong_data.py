@@ -103,7 +103,7 @@ TALKS = [
         time="Samedi 14 septembre de 13h30 à 14h",
         title="""async def django()""",
         description="""DEP0009 : La proposition d’Andrew Godwin d’ajouter le support
-            asynchrone à Python a été acceptée en Juillet. En quoi consiste-t-elle ?
+            asynchrone à Django a été acceptée en Juillet. En quoi consiste-t-elle ?
             Que va-t-elle changer ? Et comment participer à la transition ?""",
         github="ewjoachim",
         twitter="ewjoachim",
